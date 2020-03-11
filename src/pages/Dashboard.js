@@ -5,6 +5,7 @@ import Spinner from '../layout/Spinner';
 import ConfirmedCases from '../components/ConfirmedCases';
 import DeathCount from '../components/DeathCount';
 import RecoveredCount from '../components/RecoveredCount';
+import Map from '../components/Map';
 import Chart1 from '../components/charts/Chart1';
 import Chart2 from '../components/charts/Chart2';
 
@@ -22,7 +23,7 @@ const Dashboard = () => {
   return (
     <div>
       {confirmed ? <Navbar lastUpdated={confirmed.last_updated} /> : <Navbar />}
-      <div className='container grid-4'>
+      <section className='container grid-4 section-1'>
         <div className='card'>
           {confirmed ? (
             <ConfirmedCases confirmedCases={confirmed} />
@@ -30,7 +31,9 @@ const Dashboard = () => {
             <Spinner />
           )}
         </div>
-        <div className='card'>map component</div>
+        <div className='leaflet-container' style={{ marginTop: '0.7rem' }}>
+          <Map />
+        </div>
         <div className='card'>
           {deaths ? <DeathCount deathCount={deaths} /> : <Spinner />}
         </div>
@@ -41,7 +44,7 @@ const Dashboard = () => {
             <Spinner />
           )}
         </div>
-      </div>
+      </section>
       <div className='container grid-2'>
         <div className='card'>
           {confirmed && deaths ? (

@@ -3,6 +3,8 @@ import { Doughnut } from 'react-chartjs-2';
 
 const Chart2 = ({ confirmedCases }) => {
   const [chartData, setChartData] = useState();
+  const [chartDataExcludingChina, setChartDataExcludingChina] = useState();
+  const [includeChina, setIncludeChina] = useState(true);
 
   const formatData = () => {
     const countries = confirmedCases.locations.map(place => {
@@ -87,11 +89,37 @@ const Chart2 = ({ confirmedCases }) => {
     // eslint-disable-next-line
   }, []);
 
+  const onChange = () => {
+    console.log('onchange includeChina');
+    setIncludeChina(!includeChina);
+    const newChartData = chartData;
+    const chinaIndex = chartData.labels.indexOf('Mainland China');
+    console.log(newChartData);
+    const newChartLabels = newChartData.labels.filter(
+      item => item !== 'Mainland China'
+    );
+    const newChartDataset = newChartData.datasets[0].data.filter(
+      (element, index) => index !== chinaIndex
+    );
+    newChartData.labels = newChartLabels;
+    newChartData.datasets[0].data = newChartDataset;
+    setChartDataExcludingChina(newChartData);
+  };
+
   return (
     <div>
+      <h2 className='text-primary'>Confirmed Cases by Country</h2>
+
+      <input
+        name='includeChina'
+        type='checkbox'
+        checked={includeChina}
+        onChange={onChange}
+      />
+      <label> Include China</label>
       {chartData && (
         <Doughnut
-          data={chartData}
+          data={includeChina ? chartData : chartDataExcludingChina}
           options={{
             title: {
               responsive: true,

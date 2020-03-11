@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import 'react-perfect-scrollbar/dist/css/styles.css';
+import CountUp from 'react-countup';
 
 const ConfirmedCases = ({ confirmedCases }) => {
   const { latest } = confirmedCases;
@@ -49,8 +48,16 @@ const ConfirmedCases = ({ confirmedCases }) => {
 
   return (
     <div>
-      <div>
-        <h1 className='text-danger text-center large'>{latest}</h1>
+      <div className='container'>
+        <h1 className='text-danger text-center large'>
+          <CountUp start={latest / 2} end={latest} delay={0} duration={1}>
+            {({ countUpRef }) => (
+              <div>
+                <span ref={countUpRef} />
+              </div>
+            )}
+          </CountUp>
+        </h1>
         <p className='text-center small'>Confirmed Cases</p>
       </div>
       <div className='stat-list-container'>
@@ -58,7 +65,18 @@ const ConfirmedCases = ({ confirmedCases }) => {
           {countryList &&
             countryList.map((c, i) => (
               <li key={i}>
-                {c.country} - {c.latest}
+                <div className='grid-2-stats medium'>
+                  <div className='text-danger'>
+                    <CountUp start={0} end={c.latest} delay={0} duration={1}>
+                      {({ countUpRef }) => (
+                        <div>
+                          <span ref={countUpRef} />
+                        </div>
+                      )}
+                    </CountUp>
+                  </div>{' '}
+                  <div>{c.country}</div>
+                </div>
               </li>
             ))}
         </ul>

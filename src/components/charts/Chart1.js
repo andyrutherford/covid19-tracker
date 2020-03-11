@@ -108,6 +108,7 @@ const Chart1 = ({ confirmedCases, deathCount }) => {
 
   return (
     <div>
+      <h1 className='text-primary'>Confirmed Cases and Deaths by Day</h1>
       {chartConfirmedData && chartDeathsData && chartDates && (
         <Line data={data} />
       )}

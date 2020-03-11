@@ -51,7 +51,7 @@ img {
 .stat-list-container {
   height: 500px;
 
-  overflow-y: auto
+  overflow-y: auto;
 }
 
 /* Text Styles*/
@@ -67,8 +67,14 @@ img {
   line-height: 1.2;
 }
 
+.medium {
+  font-size: 1rem;
+  font-weight: 100;
+  line-height: 2;
+}
+
 .small {
-  font-size: .8rem;
+  font-size: 0.8rem;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
@@ -127,7 +133,6 @@ img {
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
 }
-
 
 /* List */
 .list {
@@ -209,6 +214,12 @@ img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
+}
+
+.grid-2-stats {
+  display: grid;
+  grid-template-columns: 50px auto;
+  grid-gap: 0rem;
 }
 
 .grid-3 {
@@ -385,6 +396,11 @@ table th {
   margin-bottom: 1rem;
 }
 
+.navbar-subtext {
+  padding: 0 1rem;
+  margin: 0;
+}
+
 .navbar ul {
   display: flex;
 }
@@ -406,13 +422,11 @@ table th {
 /* Mobile Styles */
 
 @media (max-width: 970px) {
-
   .grid-3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
   }
-
 }
 
 @media (max-width: 700px) {
@@ -449,4 +463,15 @@ table th {
     text-align: center;
     justify-content: center;
   }
+}
+
+/* Map */
+.leaflet-container {
+  height: 500px;
+  width: auto;
+}
+
+/* Sections */
+.section-1 {
+  height: 500px;
 }

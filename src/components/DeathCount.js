@@ -56,7 +56,10 @@ const DeathCount = ({ deathCount }) => {
           {countryList &&
             countryList.map((c, i) => (
               <li key={i}>
-                {c.country} - {c.latest}
+                <div className='grid-2-stats medium'>
+                  <div className='text-primary'>{c.latest}</div>{' '}
+                  <div>{c.country}</div>
+                </div>
               </li>
             ))}
         </ul>

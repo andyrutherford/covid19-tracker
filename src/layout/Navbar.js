@@ -4,14 +4,16 @@ import Moment from 'react-moment';
 const Navbar = ({ title, lastUpdated }) => {
   return (
     <div className='navbar bg-primary'>
-      <h1>
-        <a href='/'>{title}</a>
-      </h1>
-      {lastUpdated && (
-        <p>
-          Last updated <Moment local>{lastUpdated}</Moment>{' '}
-        </p>
-      )}
+      <div>
+        <h2>
+          <a href='/'>{title}</a>
+        </h2>
+        {lastUpdated && (
+          <p className='navbar-subtext small'>
+            Last updated <Moment local>{lastUpdated}</Moment>{' '}
+          </p>
+        )}
+      </div>
       <ul>
         {' '}
         <li>
