@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Pie } from 'react-chartjs-2';
 
 const Chart2 = ({ confirmedCases }) => {
-  const [data, setData] = useState();
   const [chartData, setChartData] = useState();
 
   const formatData = () => {
@@ -38,19 +37,15 @@ const Chart2 = ({ confirmedCases }) => {
     final.sort(function(a, b) {
       return parseFloat(b.latest) - parseFloat(a.latest);
     });
-    // console.log(final);
-    setData(final);
 
     const generateCountriesList = final => {
       const arr = [];
-      // console.log(final);
       final.map(c => arr.push(c.country));
       return arr;
     };
 
     const generateCountriesCases = final => {
       const arr = [];
-      console.log(final);
       final.map(c => arr.push(c.latest));
       return arr;
     };
@@ -90,6 +85,7 @@ const Chart2 = ({ confirmedCases }) => {
 
   useEffect(() => {
     formatData();
+    // eslint-disable-next-line
   }, []);
 
   return <div>{chartData && <Pie data={chartData} />}</div>;

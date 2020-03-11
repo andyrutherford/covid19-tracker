@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const RecoveredCount = ({ recoveredCount }) => {
-  const { lastUpdated, latest, location } = recoveredCount;
+  const { latest } = recoveredCount;
   const [countryList, setCountryList] = useState();
 
   const formatData = () => {
@@ -42,6 +42,7 @@ const RecoveredCount = ({ recoveredCount }) => {
 
   useEffect(() => {
     formatData();
+    // eslint-disable-next-line
   }, []);
 
   return (

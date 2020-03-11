@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const DeathCount = ({ deathCount }) => {
-  const { lastUpdated, latest, location } = deathCount;
+  const { latest } = deathCount;
   const [countryList, setCountryList] = useState();
 
   const formatData = () => {
@@ -42,6 +42,7 @@ const DeathCount = ({ deathCount }) => {
 
   useEffect(() => {
     formatData();
+    // eslint-disable-next-line
   }, []);
 
   return (

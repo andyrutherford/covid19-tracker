@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const ConfirmedCases = ({ confirmedCases }) => {
+const Chart1 = ({ confirmedCases }) => {
   const { latest } = confirmedCases;
   const [countryList, setCountryList] = useState();
 
@@ -42,6 +42,7 @@ const ConfirmedCases = ({ confirmedCases }) => {
 
   useEffect(() => {
     formatData();
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -60,4 +61,4 @@ const ConfirmedCases = ({ confirmedCases }) => {
   );
 };
 
-export default ConfirmedCases;
+export default Chart1;
