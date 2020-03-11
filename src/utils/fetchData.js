@@ -5,26 +5,32 @@ import mockRecovered from './mockdata/mockRecovered.json';
 
 const url = 'https://coronavirus-tracker-api.herokuapp.com';
 
+const mockData = false;
+
 export const getConfirmed = async () => {
-  try {
-    const res = await axios.get(`${url}/confirmed`);
-    console.log('confirmed: ', res.data);
-    return res.data;
-  } catch (err) {
-    console.error(err.message);
+  if (!mockData) {
+    try {
+      const res = await axios.get(`${url}/confirmed`);
+      console.log('confirmed: ', res.data);
+      return res.data;
+    } catch (err) {
+      console.error(err.message);
+    }
   }
-  // return mockConfirmed;
+  return mockConfirmed;
 };
 
 export const getDeaths = async () => {
-  try {
-    const res = await axios.get(`${url}/deaths`);
-    console.log('deaths: ', res.data);
-    return res.data;
-  } catch (err) {
-    console.error(err.message);
+  if (!mockData) {
+    try {
+      const res = await axios.get(`${url}/deaths`);
+      console.log('deaths: ', res.data);
+      return res.data;
+    } catch (err) {
+      console.error(err.message);
+    }
   }
-  // return mockDeaths;
+  return mockDeaths;
 };
 
 export const getRecovered = async () => {

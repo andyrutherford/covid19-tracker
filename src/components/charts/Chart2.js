@@ -38,12 +38,12 @@ const Chart2 = ({ confirmedCases }) => {
     final.sort(function(a, b) {
       return parseFloat(b.latest) - parseFloat(a.latest);
     });
-    console.log(final);
+    // console.log(final);
     setData(final);
 
     const generateCountriesList = final => {
       const arr = [];
-      console.log(final);
+      // console.log(final);
       final.map(c => arr.push(c.country));
       return arr;
     };

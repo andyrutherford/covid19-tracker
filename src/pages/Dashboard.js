@@ -47,8 +47,8 @@ const Dashboard = () => {
       </div>
       <div className='container grid-2'>
         <div className='card'>
-          {confirmed ? (
-            <ConfirmedChart confirmedCases={confirmed} />
+          {confirmed && deaths ? (
+            <ConfirmedChart confirmedCases={confirmed} deathCount={deaths} />
           ) : (
             <p>Loading confirmed chart...</p>
           )}
