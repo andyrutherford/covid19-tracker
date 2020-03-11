@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const ConfirmedCases = ({ confirmedCases }) => {
-  const { lastUpdated, latest, location } = confirmedCases;
+  const { latest } = confirmedCases;
   const [countryList, setCountryList] = useState();
 
   const formatData = () => {
@@ -26,8 +26,8 @@ const ConfirmedCases = ({ confirmedCases }) => {
       );
     });
 
-    // Sort in descending order
-    const final = result.map(b => {
+    // Sort in descending order, and trim
+    const final = result.slice(0, 15).map(b => {
       return {
         country: Object.keys(b).toString(),
         latest: Object.values(b).toString()
@@ -37,9 +37,6 @@ const ConfirmedCases = ({ confirmedCases }) => {
     final.sort(function(a, b) {
       return parseFloat(b.latest) - parseFloat(a.latest);
     });
-
-    console.log(final);
-
     setCountryList(final);
   };
 

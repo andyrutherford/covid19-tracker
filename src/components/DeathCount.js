@@ -27,7 +27,7 @@ const DeathCount = ({ deathCount }) => {
     });
 
     // Sort in descending order
-    const final = result.map(b => {
+    const final = result.slice(0, 15).map(b => {
       return {
         country: Object.keys(b).toString(),
         latest: Object.values(b).toString()
@@ -37,9 +37,6 @@ const DeathCount = ({ deathCount }) => {
     final.sort(function(a, b) {
       return parseFloat(b.latest) - parseFloat(a.latest);
     });
-
-    console.log(final);
-
     setCountryList(final);
   };
 
