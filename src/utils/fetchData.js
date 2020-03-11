@@ -5,7 +5,7 @@ import mockRecovered from './mockdata/mockRecovered.json';
 
 const url = 'https://coronavirus-tracker-api.herokuapp.com';
 
-const mockData = true;
+const mockData = false;
 
 export const getConfirmed = async () => {
   if (!mockData) {

@@ -27,7 +27,7 @@ const RecoveredCount = ({ recoveredCount }) => {
     });
 
     // Sort in descending order
-    const final = result.slice(0, 15).map(b => {
+    const final = result.slice(0, 50).map(b => {
       return {
         country: Object.keys(b).toString(),
         latest: Object.values(b).toString()
@@ -47,16 +47,20 @@ const RecoveredCount = ({ recoveredCount }) => {
 
   return (
     <div>
-      <h2 className='text-primary'>{latest}</h2>
-      <p>Recovered </p>
-      <ul>
-        {countryList &&
-          countryList.map((c, i) => (
-            <li key={i}>
-              {c.country} - {c.latest}
-            </li>
-          ))}
-      </ul>
+      <div>
+        <h1 className='text-success text-center large'>{latest}</h1>
+        <p className='text-center small'>Recovered</p>
+      </div>
+      <div className='stat-list-container'>
+        <ul>
+          {countryList &&
+            countryList.map((c, i) => (
+              <li key={i}>
+                {c.country} - {c.latest}
+              </li>
+            ))}
+        </ul>
+      </div>
     </div>
   );
 };

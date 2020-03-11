@@ -22,7 +22,7 @@ const Dashboard = () => {
   return (
     <div>
       {confirmed ? <Navbar lastUpdated={confirmed.last_updated} /> : <Navbar />}
-      <div className='container grid-3'>
+      <div className='container grid-4'>
         <div className='card'>
           {confirmed ? (
             <ConfirmedCases confirmedCases={confirmed} />
@@ -30,6 +30,7 @@ const Dashboard = () => {
             <Spinner />
           )}
         </div>
+        <div className='card'>map component</div>
         <div className='card'>
           {deaths ? <DeathCount deathCount={deaths} /> : <Spinner />}
         </div>

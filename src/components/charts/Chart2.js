@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 
 const Chart2 = ({ confirmedCases }) => {
   const [chartData, setChartData] = useState();
@@ -69,14 +69,13 @@ const Chart2 = ({ confirmedCases }) => {
     };
 
     const data = {
-      labels: countriesList,
+      labels: countriesList.slice(0, 10),
       datasets: [
         {
           label: 'Confirmed Cases',
           fill: true,
           backgroundColor: colorsArray(),
-          borderColor: 'rgb(220, 20, 60)',
-          data: countriesCases
+          data: countriesCases.slice(0, 10)
         }
       ]
     };
@@ -88,7 +87,27 @@ const Chart2 = ({ confirmedCases }) => {
     // eslint-disable-next-line
   }, []);
 
-  return <div>{chartData && <Pie data={chartData} />}</div>;
+  return (
+    <div>
+      {chartData && (
+        <Doughnut
+          data={chartData}
+          options={{
+            title: {
+              responsive: true,
+              maintainAspectRatio: true,
+              display: true,
+              fontSize: 20
+            },
+            legend: {
+              display: true,
+              position: 'right'
+            }
+          }}
+        />
+      )}
+    </div>
+  );
 };
 
 export default Chart2;

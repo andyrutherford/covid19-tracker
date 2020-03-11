@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
-const Chart1 = ({ confirmedCases }) => {
+const ConfirmedCases = ({ confirmedCases }) => {
   const { latest } = confirmedCases;
   const [countryList, setCountryList] = useState();
 
@@ -27,7 +29,7 @@ const Chart1 = ({ confirmedCases }) => {
     });
 
     // Sort in descending order, and trim
-    const final = result.slice(0, 15).map(b => {
+    const final = result.slice(0, 50).map(b => {
       return {
         country: Object.keys(b).toString(),
         latest: Object.values(b).toString()
@@ -47,18 +49,22 @@ const Chart1 = ({ confirmedCases }) => {
 
   return (
     <div>
-      <h2 className='text-primary'>{latest}</h2>
-      <p>Confirmed Cases</p>
-      <ul>
-        {countryList &&
-          countryList.map((c, i) => (
-            <li key={i}>
-              {c.country} - {c.latest}
-            </li>
-          ))}
-      </ul>
+      <div>
+        <h1 className='text-danger text-center large'>{latest}</h1>
+        <p className='text-center small'>Confirmed Cases</p>
+      </div>
+      <div className='stat-list-container'>
+        <ul>
+          {countryList &&
+            countryList.map((c, i) => (
+              <li key={i}>
+                {c.country} - {c.latest}
+              </li>
+            ))}
+        </ul>
+      </div>
     </div>
   );
 };
 
-export default Chart1;
+export default ConfirmedCases;
