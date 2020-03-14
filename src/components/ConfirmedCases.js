@@ -28,7 +28,7 @@ const ConfirmedCases = ({ confirmedCases }) => {
     });
 
     // Sort in descending order, and trim
-    const final = result.slice(0, 50).map(b => {
+    const final = result.slice(0, 100).map(b => {
       return {
         country: Object.keys(b).toString(),
         latest: Object.values(b).toString()
@@ -50,7 +50,12 @@ const ConfirmedCases = ({ confirmedCases }) => {
     <div>
       <div className='container'>
         <h1 className='text-danger text-center large'>
-          <CountUp start={latest / 2} end={latest} delay={0} duration={1}>
+          <CountUp
+            start={latest / 2}
+            end={parseInt(latest)}
+            delay={0}
+            duration={2}
+          >
             {({ countUpRef }) => (
               <div>
                 <span ref={countUpRef} />
@@ -67,7 +72,12 @@ const ConfirmedCases = ({ confirmedCases }) => {
               <li key={i}>
                 <div className='grid-2-stats medium'>
                   <div className='text-danger'>
-                    <CountUp start={0} end={c.latest} delay={0} duration={1}>
+                    <CountUp
+                      start={0}
+                      end={parseInt(c.latest)}
+                      delay={0}
+                      duration={Math.random() * (2 - 1) + 1}
+                    >
                       {({ countUpRef }) => (
                         <div>
                           <span ref={countUpRef} />

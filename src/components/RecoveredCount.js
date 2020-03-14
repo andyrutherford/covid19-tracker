@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import CountUp from 'react-countup';
 
 const RecoveredCount = ({ recoveredCount }) => {
   const { latest } = recoveredCount;
@@ -27,7 +28,7 @@ const RecoveredCount = ({ recoveredCount }) => {
     });
 
     // Sort in descending order
-    const final = result.slice(0, 50).map(b => {
+    const final = result.slice(0, 100).map(b => {
       return {
         country: Object.keys(b).toString(),
         latest: Object.values(b).toString()
@@ -48,7 +49,21 @@ const RecoveredCount = ({ recoveredCount }) => {
   return (
     <div>
       <div>
-        <h1 className='text-success text-center large'>{latest}</h1>
+        <h1 className='text-success text-center large'>
+          {' '}
+          <CountUp
+            start={latest / 2}
+            end={parseInt(latest)}
+            delay={0}
+            duration={2}
+          >
+            {({ countUpRef }) => (
+              <div>
+                <span ref={countUpRef} />
+              </div>
+            )}
+          </CountUp>
+        </h1>
         <p className='text-center small'>Recovered</p>
       </div>
       <div className='stat-list-container'>
@@ -57,7 +72,20 @@ const RecoveredCount = ({ recoveredCount }) => {
             countryList.map((c, i) => (
               <li key={i}>
                 <div className='grid-2-stats medium'>
-                  <div className='text-success'>{c.latest}</div>{' '}
+                  <div className='text-success'>
+                    <CountUp
+                      start={0}
+                      end={parseInt(c.latest)}
+                      delay={0}
+                      duration={Math.random() * (2 - 1) + 1}
+                    >
+                      {({ countUpRef }) => (
+                        <div>
+                          <span ref={countUpRef} />
+                        </div>
+                      )}
+                    </CountUp>
+                  </div>{' '}
                   <div>{c.country}</div>
                 </div>
               </li>

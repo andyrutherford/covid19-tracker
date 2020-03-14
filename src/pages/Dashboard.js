@@ -31,9 +31,15 @@ const Dashboard = () => {
             <Spinner />
           )}
         </div>
-        <div className='leaflet-container' style={{ marginTop: '0.7rem' }}>
-          <Map />
-        </div>
+
+        {confirmed ? (
+          <div className='leaflet-container' style={{ marginTop: '0.7rem' }}>
+            <Map confirmedCases={confirmed} />
+          </div>
+        ) : (
+          <Spinner />
+        )}
+
         <div className='card'>
           {deaths ? <DeathCount deathCount={deaths} /> : <Spinner />}
         </div>
@@ -47,8 +53,12 @@ const Dashboard = () => {
       </section>
       <div className='container grid-2'>
         <div className='card'>
-          {confirmed && deaths ? (
-            <Chart1 confirmedCases={confirmed} deathCount={deaths} />
+          {confirmed && deaths && recovered ? (
+            <Chart1
+              confirmedCases={confirmed}
+              deathCount={deaths}
+              recoveredCount={recovered}
+            />
           ) : (
             <Spinner />
           )}

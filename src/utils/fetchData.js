@@ -12,12 +12,14 @@ export const getConfirmed = async () => {
     try {
       const res = await axios.get(`${url}/confirmed`);
       console.log('fetch confirmed success');
+      console.log(res.data);
       return res.data;
     } catch (err) {
       console.error(err.message);
     }
   }
   console.log('using mock data!');
+  console.log(mockConfirmed);
   return mockConfirmed;
 };
 

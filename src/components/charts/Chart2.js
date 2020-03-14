@@ -4,7 +4,7 @@ import { Doughnut } from 'react-chartjs-2';
 const Chart2 = ({ confirmedCases }) => {
   const [chartData, setChartData] = useState();
   const [chartDataExcludingChina, setChartDataExcludingChina] = useState();
-  const [includeChina, setIncludeChina] = useState(true);
+  const [includeChina, setIncludeChina] = useState(false);
 
   const formatData = () => {
     const countries = confirmedCases.locations.map(place => {
@@ -29,7 +29,7 @@ const Chart2 = ({ confirmedCases }) => {
     });
 
     // Sort in descending order, and trim
-    const final = result.slice(0, 15).map(b => {
+    const final = result.slice(0, 100).map(b => {
       return {
         country: Object.keys(b).toString(),
         latest: Object.values(b).toString()
@@ -82,6 +82,22 @@ const Chart2 = ({ confirmedCases }) => {
       ]
     };
     setChartData(data);
+
+    const formatDataExcludingChina = data => {
+      const newChartData = { ...data };
+      const chinaIndex = newChartData.labels.indexOf('China');
+      const newChartLabels = newChartData.labels.filter(
+        item => item !== 'China'
+      );
+      const newChartDataset = newChartData.datasets[0].data.filter(
+        (element, index) => index !== chinaIndex
+      );
+      newChartData.labels = newChartLabels;
+      newChartData.datasets[0].data = newChartDataset;
+      setChartDataExcludingChina(newChartData);
+    };
+
+    formatDataExcludingChina(data);
   };
 
   useEffect(() => {
@@ -92,19 +108,45 @@ const Chart2 = ({ confirmedCases }) => {
   const onChange = () => {
     console.log('onchange includeChina');
     setIncludeChina(!includeChina);
-    const newChartData = chartData;
-    const chinaIndex = chartData.labels.indexOf('Mainland China');
-    console.log(newChartData);
-    const newChartLabels = newChartData.labels.filter(
-      item => item !== 'Mainland China'
-    );
-    const newChartDataset = newChartData.datasets[0].data.filter(
-      (element, index) => index !== chinaIndex
-    );
-    newChartData.labels = newChartLabels;
-    newChartData.datasets[0].data = newChartDataset;
-    setChartDataExcludingChina(newChartData);
   };
+
+  const chartWithChina = () =>
+    chartData && (
+      <Doughnut
+        data={chartData}
+        options={{
+          title: {
+            responsive: true,
+            maintainAspectRatio: true,
+            display: true,
+            fontSize: 20
+          },
+          legend: {
+            display: true,
+            position: 'right'
+          }
+        }}
+      />
+    );
+
+  const chartWithoutChina = () =>
+    chartDataExcludingChina && (
+      <Doughnut
+        data={chartDataExcludingChina}
+        options={{
+          title: {
+            responsive: true,
+            maintainAspectRatio: true,
+            display: true,
+            fontSize: 20
+          },
+          legend: {
+            display: true,
+            position: 'right'
+          }
+        }}
+      />
+    );
 
   return (
     <div>
@@ -113,27 +155,12 @@ const Chart2 = ({ confirmedCases }) => {
       <input
         name='includeChina'
         type='checkbox'
-        checked={includeChina}
+        checked={!includeChina}
         onChange={onChange}
+        disabled
       />
-      <label> Include China</label>
-      {chartData && (
-        <Doughnut
-          data={includeChina ? chartData : chartDataExcludingChina}
-          options={{
-            title: {
-              responsive: true,
-              maintainAspectRatio: true,
-              display: true,
-              fontSize: 20
-            },
-            legend: {
-              display: true,
-              position: 'right'
-            }
-          }}
-        />
-      )}
+      <label> Exclude China</label>
+      {includeChina ? chartWithChina() : chartWithoutChina()}
     </div>
   );
 };
