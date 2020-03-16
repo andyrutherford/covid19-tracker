@@ -37,7 +37,6 @@ const MyPopupMarker = ({ content, position }) => (
 );
 
 const MyMarkersList = ({ markers }) => {
-  console.log(markers);
   const items = markers.map(({ key, ...props }) => (
     <MyPopupMarker key={key} {...props} />
   ));
@@ -48,32 +47,43 @@ const Map = ({ confirmedCases }) => {
   const [mapData, setMapData] = useState(null);
 
   const formatData = () => {
+    // Get data with valid country names
     const a = confirmedCases.locations
-      .filter(element => element.country === 'US')
-      .slice(0, 50);
-    console.log(a);
-    const b = a.map(element => element.coordinates);
-    console.log(b);
+      .filter(element => element.country !== undefined)
+      .slice(0, 200);
+
+    // Map data to retrieve coordinates, latest, country, province
+    const c = a.map(element => {
+      return {
+        coords: element.coordinates,
+        latest: element.latest,
+        country: element.country,
+        province: element.province
+      };
+    });
+
+    // Create and format new markers data
     const newMarkers = [];
-    for (let key of b) {
+    for (let [index, key] of c.entries()) {
+      const content =
+        key.province === ''
+          ? `${key.country}: ${key.latest} Confirmed Cases`
+          : `${key.province}, ${key.country}: ${key.latest} Confirmed Cases`;
       newMarkers.push({
-        key: 'myKey',
-        position: [parseInt(key.lat), parseInt(key.long)],
-        content: 'myContent'
+        key: index,
+        position: [parseInt(key.coords.lat), parseInt(key.coords.long)],
+        content
       });
     }
-
     const mapState = {
       markers: newMarkers
     };
-
-    console.log(mapState);
-
     setMapData(mapState);
   };
 
   useEffect(() => {
     formatData();
+    //eslint-disable-next-line
   }, []);
 
   // const state = {
@@ -85,7 +95,7 @@ const Map = ({ confirmedCases }) => {
   // };
 
   return (
-    <LeafletMap center={[51.505, -0.09]} zoom={13}>
+    <LeafletMap center={[37.091226, -95.875351]} zoom={3}>
       <TileLayer
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'

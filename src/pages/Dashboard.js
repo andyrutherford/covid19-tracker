@@ -23,15 +23,16 @@ const Dashboard = () => {
   return (
     <div>
       {confirmed ? <Navbar lastUpdated={confirmed.last_updated} /> : <Navbar />}
-      <section className='container grid-4 section-1'>
-        <div className='card'>
+      <section className='container grid-1 section-1'>
+        {/*  
+      <div className='card'>
           {confirmed ? (
             <ConfirmedCases confirmedCases={confirmed} />
           ) : (
             <Spinner />
           )}
         </div>
-
+          */}
         {confirmed ? (
           <div className='leaflet-container' style={{ marginTop: '0.7rem' }}>
             <Map confirmedCases={confirmed} />
@@ -39,7 +40,7 @@ const Dashboard = () => {
         ) : (
           <Spinner />
         )}
-
+        {/*
         <div className='card'>
           {deaths ? <DeathCount deathCount={deaths} /> : <Spinner />}
         </div>
@@ -50,6 +51,7 @@ const Dashboard = () => {
             <Spinner />
           )}
         </div>
+          </div>*/}
       </section>
       <div className='container grid-2'>
         <div className='card'>
