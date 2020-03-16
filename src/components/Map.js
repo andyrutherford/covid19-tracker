@@ -1,40 +1,75 @@
-// import React from 'react';
-// import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
-
-// class Map extends React.Component {
-//   render() {
-//     return (
-//       <LeafletMap
-//         center={[50, 10]}
-//         zoom={6}
-//         maxZoom={10}
-//         attributionControl={true}
-//         zoomControl={true}
-//         doubleClickZoom={true}
-//         scrollWheelZoom={true}
-//         dragging={true}
-//         animate={true}
-//         easeLinearity={0.35}
-//       >
-//         <TileLayer url='http://{s}.tile.osm.org/{z}/{x}/{y}.png' />
-//         <Marker position={[50, 10]}>
-//           <Popup>Popup for any custom information.</Popup>
-//         </Marker>
-//       </LeafletMap>
-//     );
-//   }
-// }
-
-// export default Map;
-
 import React, { useState, useEffect, Fragment } from 'react';
-import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
+import {
+  Map as LeafletMap,
+  TileLayer,
+  Marker,
+  CircleMarker,
+  Popup,
+  Circle
+} from 'react-leaflet';
+import L from 'leaflet';
 
-const MyPopupMarker = ({ content, position }) => (
-  <Marker position={position}>
-    <Popup>{content}</Popup>
-  </Marker>
-);
+// const customMarker = L.icon({ iconUrl: require('./pin.svg') });
+
+const MyPopupMarker = ({ content, position, latest }) => {
+  // const radius = latest * 25;
+  // return (
+  //   <Marker position={position}>
+  //     <Popup>{content}</Popup>
+  //     <Circle
+  //       center={{
+  //         lat: position[0],
+  //         lng: position[1]
+  //       }}
+  //       fillColor='red'
+  //       radius={radius}
+  //       fillOpacity={0.5}
+  //       stroke={false}
+  //     />
+  //   </Marker>
+  // );
+  // console.log(20 * Math.log(latest / 1000));
+
+  const generateRadius = latest => {
+    // max possible is 100k
+    // what percent of 100k is the latest data, for example 25,000 of 100,000, so latest of 25k is 25% of 100k
+    // 25k / 100k
+    // latest / 100k -> percent of max
+    // 50 * percent -> value
+
+    // 70/100,000 = .0007
+    // 50 * .0007 -> way less than 5
+
+    //min must be 10k
+
+    // const min = 5;
+    // const max = 50;
+    // if (latest < 10000) {
+    //   return min;
+    // } else {
+    //   // latest is greater than 10000
+    //   // so x is at least .1
+    //   const x = latest / 100000;
+    //   const y = 50 * x;
+    //   console.log(y);
+    // }
+    // return 5;
+
+    return Math.log(latest) * 2.5 < 5 ? 5 : Math.log(latest) * 2.5;
+  };
+
+  return (
+    <CircleMarker
+      center={[position[0], position[1]]}
+      radius={generateRadius(latest)}
+      fillColor='red'
+      fillOpacity={0.5}
+      stroke={false}
+    >
+      <Popup>{content}</Popup>
+    </CircleMarker>
+  );
+};
 
 const MyMarkersList = ({ markers }) => {
   const items = markers.map(({ key, ...props }) => (
@@ -48,9 +83,9 @@ const Map = ({ confirmedCases }) => {
 
   const formatData = () => {
     // Get data with valid country names
-    const a = confirmedCases.locations
-      .filter(element => element.country !== undefined)
-      .slice(0, 200);
+    const a = confirmedCases.locations.filter(
+      element => element.country !== undefined
+    );
 
     // Map data to retrieve coordinates, latest, country, province
     const c = a.map(element => {
@@ -71,10 +106,12 @@ const Map = ({ confirmedCases }) => {
           : `${key.province}, ${key.country}: ${key.latest} Confirmed Cases`;
       newMarkers.push({
         key: index,
+        latest: key.latest,
         position: [parseInt(key.coords.lat), parseInt(key.coords.long)],
         content
       });
     }
+    console.log(newMarkers);
     const mapState = {
       markers: newMarkers
     };
@@ -110,3 +147,93 @@ const Map = ({ confirmedCases }) => {
 };
 
 export default Map;
+
+// import React, { Component } from 'react';
+// import {
+//   Map as LeafletMap,
+//   TileLayer,
+//   Marker,
+//   Tooltip,
+//   Popup,
+//   Circle
+// } from 'react-leaflet';
+// import axios from 'axios';
+
+// const url = 'https://api.spacexdata.com/v2/launchpads';
+// const leafURL =
+//   'https://api.mapbox.com/styles/v1/nicknyr/cje7mtk2y6gf92snsydobiahf/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibmlja255ciIsImEiOiJjajduNGptZWQxZml2MndvNjk4eGtwbDRkIn0.L0aWwfHlFJVGa-WOj7EHaA';
+
+// class Map extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       latlng: {
+//         lat: 28.5618571,
+//         lng: -80.577366
+//       },
+//       data: []
+//     };
+//   }
+
+//   componentWillMount() {
+//     axios
+//       .get(url)
+//       .then(res => {
+//         this.setState({ data: res.data });
+//       })
+//       .catch(err => {
+//         console.log('error');
+//       });
+//   }
+
+//   render() {
+//     const { data } = this.state;
+//     console.log(data);
+//     return (
+//       <div>
+//         <LeafletMap
+//           style={{ height: '100vh' }}
+//           center={this.state.latlng}
+//           zoom={4}
+//         >
+//           <TileLayer url={leafURL} attribution='<attribution>' />
+//           {data.map((elem, i) => {
+//             return (
+//               <Marker
+//                 key={i}
+//                 position={{
+//                   lat: elem.location.latitude,
+//                   lng: elem.location.longitude
+//                 }}
+//               >
+//                 <Popup>
+//                   <span>
+//                     {elem.full_name}
+//                     <br />
+//                     {elem.status}
+//                     <br />
+//                     {elem.details}
+//                     <br />
+//                     {elem.vehicles_launched.map((elem, i) => {
+//                       return <p key={i}>{elem}</p>;
+//                     })}
+//                   </span>
+//                 </Popup>
+//                 <Circle
+//                   center={{
+//                     lat: elem.location.latitude,
+//                     lng: elem.location.longitude
+//                   }}
+//                   fillColor='red'
+//                   radius={(Math.floor(Math.random() * 10) + 1) * 100000}
+//                 />
+//               </Marker>
+//             );
+//           })}
+//         </LeafletMap>
+//       </div>
+//     );
+//   }
+// }
+
+// export default Map;
