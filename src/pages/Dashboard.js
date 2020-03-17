@@ -6,8 +6,8 @@ import ConfirmedCases from '../components/ConfirmedCases';
 import DeathCount from '../components/DeathCount';
 import RecoveredCount from '../components/RecoveredCount';
 import Map from '../components/Map';
+import CasesByCountryChart from '../components/charts/CasesByCountryChart';
 import Chart1 from '../components/charts/Chart1';
-import Chart2 from '../components/charts/Chart2';
 
 const Dashboard = () => {
   const [confirmed, setConfirmed] = useState(null);
@@ -57,7 +57,11 @@ const Dashboard = () => {
               )}
             </div>
             <div className='card'>
-              {confirmed ? <Chart2 confirmedCases={confirmed} /> : <Spinner />}
+              {confirmed ? (
+                <CasesByCountryChart confirmedCases={confirmed} />
+              ) : (
+                <Spinner />
+              )}
             </div>
           </div>
         </div>

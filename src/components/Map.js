@@ -42,8 +42,6 @@ const Map = ({ confirmedCases }) => {
       .filter(element => element.country !== undefined)
       .filter(element => element.latest > 0);
 
-    console.log(a);
-
     // Map data to retrieve coordinates, latest, country, province
     const c = a.map(element => {
       return {
@@ -68,7 +66,6 @@ const Map = ({ confirmedCases }) => {
         content
       });
     }
-    console.log(newMarkers);
     const mapState = {
       markers: newMarkers
     };
