@@ -38,7 +38,7 @@ const Navbar = ({ title, lastUpdated }) => {
 
           <Rodal visible={showModal} onClose={onHideModal} width={600}>
             <div className='modal'>
-              <h2>Content</h2>
+              <h2>Coronavirus COVID-19 Tracker</h2>
               <p className='small'>
                 This dashboard contains a comprehensive overview of the
                 progression of Coronavirus COVID-19 spread.

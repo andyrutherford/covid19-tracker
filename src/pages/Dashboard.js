@@ -23,53 +23,47 @@ const Dashboard = () => {
   return (
     <div>
       {confirmed ? <Navbar lastUpdated={confirmed.last_updated} /> : <Navbar />}
-      <section className='container grid-4 section-1'>
-        <div className='card'>
-          {confirmed ? (
-            <ConfirmedCases confirmedCases={confirmed} />
-          ) : (
-            <Spinner />
-          )}
-        </div>
+      {confirmed && deaths && recovered ? (
+        <div>
+          <section className='container grid-4 section-1'>
+            <div className='card'>
+              <ConfirmedCases confirmedCases={confirmed} />
+            </div>
 
-        {confirmed ? (
-          <div
-            className='map leaflet-container'
-            style={{ marginTop: '0.7rem', zIndex: '0' }}
-          >
-            <Map confirmedCases={confirmed} />
+            <div
+              className='map leaflet-container'
+              style={{ marginTop: '0.7rem', zIndex: '0' }}
+            >
+              <Map confirmedCases={confirmed} />
+            </div>
+
+            <div className='card'>
+              <DeathCount deathCount={deaths} />
+            </div>
+            <div className='card'>
+              <RecoveredCount recoveredCount={recovered} />
+            </div>
+          </section>
+          <div className='container grid-2'>
+            <div className='card'>
+              {confirmed && deaths && recovered ? (
+                <Chart1
+                  confirmedCases={confirmed}
+                  deathCount={deaths}
+                  recoveredCount={recovered}
+                />
+              ) : (
+                <Spinner />
+              )}
+            </div>
+            <div className='card'>
+              {confirmed ? <Chart2 confirmedCases={confirmed} /> : <Spinner />}
+            </div>
           </div>
-        ) : (
-          <Spinner />
-        )}
-
-        <div className='card'>
-          {deaths ? <DeathCount deathCount={deaths} /> : <Spinner />}
         </div>
-        <div className='card'>
-          {recovered ? (
-            <RecoveredCount recoveredCount={recovered} />
-          ) : (
-            <Spinner />
-          )}
-        </div>
-      </section>
-      <div className='container grid-2'>
-        <div className='card'>
-          {confirmed && deaths && recovered ? (
-            <Chart1
-              confirmedCases={confirmed}
-              deathCount={deaths}
-              recoveredCount={recovered}
-            />
-          ) : (
-            <Spinner />
-          )}
-        </div>
-        <div className='card'>
-          {confirmed ? <Chart2 confirmedCases={confirmed} /> : <Spinner />}
-        </div>
-      </div>
+      ) : (
+        <Spinner />
+      )}
     </div>
   );
 };
