@@ -390,6 +390,7 @@ table th {
   justify-content: space-between;
   align-items: center;
   padding: 0.7rem 2rem;
+  position: relative;
   z-index: 1;
   width: 100%;
   opacity: 0.9;
@@ -478,5 +479,16 @@ table th {
 
 /* Modal */
 .modal {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.modal a {
+  color: black;
+  padding: 0;
+  margin: 0;
+  text-decoration: underline;
+}
+
+.modal a:hover {
   color: black;
 }

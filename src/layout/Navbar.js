@@ -19,7 +19,9 @@ const Navbar = ({ title, lastUpdated }) => {
     <div className='navbar bg-primary'>
       <div>
         <h2>
-          <a href='/'>{title}</a>
+          <a href='/'>
+            <i className='fas fa-globe-americas'></i> {title}
+          </a>
         </h2>
         {lastUpdated && (
           <p className='navbar-subtext small'>
@@ -30,10 +32,42 @@ const Navbar = ({ title, lastUpdated }) => {
       <ul>
         {' '}
         <li>
-          <button onClick={onShowModal}>show</button>
+          <a href='#' onClick={onShowModal}>
+            <i className='fas fa-question-circle'></i>
+          </a>
 
-          <Rodal visible={showModal} onClose={onHideModal}>
-            <div className='modal'>Content</div>
+          <Rodal visible={showModal} onClose={onHideModal} width={600}>
+            <div className='modal'>
+              <h2>Content</h2>
+              <p className='small'>
+                This dashboard contains a comprehensive overview of the
+                progression of Coronavirus COVID-19 spread.
+              </p>
+              <p className='small'>
+                It is under constant development and features may be added or
+                removed without notice.
+              </p>
+              <p className='small'>
+                This page and its contents, including all data and mapping is
+                provided for educational and academic research purposes. The
+                page relies upon publicly available data sourced from{' '}
+                <a href='https://github.com/CSSEGISandData/COVID-19'>
+                  JHU CSSE
+                </a>{' '}
+                and ExpDev07's{' '}
+                <a href='https://github.com/ExpDev07/coronavirus-tracker-api'>
+                  coronavirus-tracker-api
+                </a>
+                .
+              </p>
+
+              <p className='small'>
+                For any questions or inquires, send me an email at{' '}
+                <a href='mailto:andrew.rutherford.6@gmail.com' target='_top'>
+                  andrew.rutherford.6@gmail.com
+                </a>
+              </p>
+            </div>
           </Rodal>
         </li>
       </ul>
@@ -42,7 +76,7 @@ const Navbar = ({ title, lastUpdated }) => {
 };
 
 Navbar.defaultProps = {
-  title: 'nCov2020'
+  title: 'Coronavirus COVID-19 Tracker'
 };
 
 export default Navbar;

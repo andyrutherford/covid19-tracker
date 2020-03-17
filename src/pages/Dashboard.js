@@ -32,13 +32,16 @@ const Dashboard = () => {
           )}
         </div>
 
-        {/* confirmed ? (
-          <div className='leaflet-container' style={{ marginTop: '0.7rem' }}>
+        {confirmed ? (
+          <div
+            className='map leaflet-container'
+            style={{ marginTop: '0.7rem', zIndex: '0' }}
+          >
             <Map confirmedCases={confirmed} />
           </div>
         ) : (
           <Spinner />
-        ) */}
+        )}
 
         <div className='card'>
           {deaths ? <DeathCount deathCount={deaths} /> : <Spinner />}
