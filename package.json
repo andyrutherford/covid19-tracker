@@ -20,7 +20,8 @@
     "react-moment": "^0.9.7",
     "react-perfect-scrollbar": "^1.5.8",
     "react-scripts": "3.4.0",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "rodal": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",

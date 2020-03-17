@@ -475,3 +475,8 @@ table th {
 .section-1 {
   height: 500px;
 }
+
+/* Modal */
+.modal {
+  color: black;
+}
