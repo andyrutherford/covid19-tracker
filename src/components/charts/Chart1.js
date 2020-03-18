@@ -14,7 +14,7 @@ const Chart1 = ({ confirmedCases, deathCount, recoveredCount }) => {
     const generateDatesArray = () => {
       const today = moment().format('M/D/YY');
       const arr = [];
-      for (let i = 1; i < 20; i++) {
+      for (let i = 1; i < 60; i++) {
         const date = moment()
           .subtract(i, 'days')
           .format('M/D/YY');
@@ -52,7 +52,7 @@ const Chart1 = ({ confirmedCases, deathCount, recoveredCount }) => {
     const generateDatesArray = () => {
       const today = moment().format('M/D/YY');
       const arr = [];
-      for (let i = 1; i < 20; i++) {
+      for (let i = 1; i < 60; i++) {
         const date = moment()
           .subtract(i, 'days')
           .format('M/D/YY');
@@ -87,7 +87,7 @@ const Chart1 = ({ confirmedCases, deathCount, recoveredCount }) => {
     const generateDatesArray = () => {
       const today = moment().format('M/D/YY');
       const arr = [];
-      for (let i = 1; i < 20; i++) {
+      for (let i = 1; i < 60; i++) {
         const date = moment()
           .subtract(i, 'days')
           .format('M/D/YY');
