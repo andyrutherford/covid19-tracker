@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 
-const Chart2 = ({ chartData, title }) => {
+const Chart2 = ({ chartData, title, showLegend }) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Chart2 = ({ chartData, title }) => {
                 fontSize: 20
               },
               legend: {
-                display: true,
+                display: showLegend,
                 position: 'right'
               }
             }}

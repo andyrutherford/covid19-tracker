@@ -20,7 +20,7 @@ const Navbar = ({ title, lastUpdated }) => {
       <div>
         <h2>
           <a href='/'>
-            <i className='fas fa-globe-americas'></i> {title}
+            <i className='fas fa-globe-americas fa-lg'></i> {title}
           </a>
         </h2>
         {lastUpdated && (
@@ -32,8 +32,13 @@ const Navbar = ({ title, lastUpdated }) => {
       <ul>
         {' '}
         <li>
+          <a href='https://github.com/andyrutherford/covid19-tracker'>
+            <i className='fab fa-github fa-2x'></i>
+          </a>
+        </li>
+        <li>
           <a href='#' onClick={onShowModal}>
-            <i className='fas fa-question-circle'></i>
+            <i className='fas fa-question-circle fa-2x'></i>
           </a>
 
           <Rodal visible={showModal} onClose={onHideModal} width={600}>

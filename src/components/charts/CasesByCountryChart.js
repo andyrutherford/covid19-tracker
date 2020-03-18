@@ -19,8 +19,11 @@ const CasesByCountryChart = ({ confirmedCases }) => {
     for (let i = 0; i < 21; i++) {
       colorsArr.push(generateColors());
     }
-    setColorsArray(colorsArr);
+    // setColorsArray(colorsArr);
+    return colorsArr;
   };
+
+  const colors = generateColorsArray();
 
   const formatDataInclChina = () => {
     const countries = confirmedCases.locations.map(place => {
@@ -58,8 +61,6 @@ const CasesByCountryChart = ({ confirmedCases }) => {
       })
       .slice(0, 20);
 
-    console.log(formattedArray);
-
     const generateCountriesList = formattedArray => {
       const arr = [];
       formattedArray.map(c => arr.push(c.country));
@@ -81,7 +82,7 @@ const CasesByCountryChart = ({ confirmedCases }) => {
         {
           label: 'Confirmed Cases',
           fill: true,
-          backgroundColor: colorsArray,
+          backgroundColor: colors,
           data: countriesCases.slice(0, 10)
         }
       ]
@@ -126,8 +127,6 @@ const CasesByCountryChart = ({ confirmedCases }) => {
       })
       .slice(0, 20);
 
-    console.log(formattedArray);
-
     const generateCountriesList = formattedArray => {
       const arr = [];
       formattedArray.map(c => arr.push(c.country));
@@ -150,10 +149,9 @@ const CasesByCountryChart = ({ confirmedCases }) => {
     const countriesDataExclChina = countriesCases.filter(
       (element, index) => index !== chinaIndex
     );
-    // const colorsArrayExclChina = colorsArray.filter((element, index) => index !== chinaIndex);
-
-    console.log(countriesListExclChina);
-    console.log(countriesDataExclChina);
+    const colorsArrayExclChina = colors.filter(
+      (element, index) => index !== chinaIndex
+    );
 
     const chartData = {
       labels: countriesListExclChina.slice(0, 10),
@@ -161,7 +159,7 @@ const CasesByCountryChart = ({ confirmedCases }) => {
         {
           label: 'Confirmed Cases',
           fill: true,
-          backgroundColor: colorsArray,
+          backgroundColor: colorsArrayExclChina,
           data: countriesDataExclChina.slice(0, 10)
         }
       ]
@@ -183,12 +181,20 @@ const CasesByCountryChart = ({ confirmedCases }) => {
     <div className='grid-2'>
       <div>
         {chartDataInclChina && (
-          <Chart2 chartData={chartDataInclChina} title={'Cases incl. China'} />
+          <Chart2
+            chartData={chartDataInclChina}
+            title={'Cases incl. China'}
+            showLegend={true}
+          />
         )}
       </div>
       <div>
         {chartDataExclChina && (
-          <Chart2 chartData={chartDataExclChina} title={'Cases excl. China'} />
+          <Chart2
+            chartData={chartDataExclChina}
+            title={'Cases excl. China'}
+            showLegend={false}
+          />
         )}
       </div>
     </div>
