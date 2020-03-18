@@ -35,13 +35,14 @@ const DeathCount = ({ deathCount }) => {
       };
     });
 
-    final
+    const countryArray = final
       .sort(function(a, b) {
         return parseFloat(b.latest) - parseFloat(a.latest);
       })
-      .slice(0, 100);
+      .slice(0, 100)
+      .filter(element => element.latest > 0);
 
-    setCountryList(final);
+    setCountryList(countryArray);
   };
 
   useEffect(() => {

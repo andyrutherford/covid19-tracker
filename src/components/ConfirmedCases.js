@@ -35,12 +35,13 @@ const ConfirmedCases = ({ confirmedCases }) => {
       };
     });
 
-    final
+    const countryArray = final
       .sort(function(a, b) {
         return parseFloat(b.latest) - parseFloat(a.latest);
       })
-      .slice(0, 100);
-    setCountryList(final);
+      .slice(0, 100)
+      .filter(element => element.latest > 0);
+    setCountryList(countryArray);
   };
 
   useEffect(() => {
