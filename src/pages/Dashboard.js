@@ -27,7 +27,7 @@ const Dashboard = () => {
   return (
     <div>
       {confirmed ? <Navbar lastUpdated={confirmed.last_updated} /> : <Navbar />}
-      {/*{confirmed && deaths && recovered ? (
+      {confirmed && deaths && recovered ? (
         <div>
           <section className='container grid-4 section-1'>
             <div className='card'>
@@ -71,10 +71,10 @@ const Dashboard = () => {
         </div>
       ) : (
         <Spinner />
-      )} */}
-      <div className='container'>
+      )}
+      {/* <div className='container'>
         {timeline ? <Timeline timeline={timeline} /> : <Spinner />}
-      </div>
+      </div> */}
     </div>
   );
 };
