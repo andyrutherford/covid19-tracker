@@ -28,16 +28,19 @@ const RecoveredCount = ({ recoveredCount }) => {
     });
 
     // Sort in descending order
-    const final = result.slice(0, 100).map(b => {
+    const final = result.map(b => {
       return {
         country: Object.keys(b).toString(),
         latest: Object.values(b).toString()
       };
     });
 
-    final.sort(function(a, b) {
-      return parseFloat(b.latest) - parseFloat(a.latest);
-    });
+    final
+      .sort(function(a, b) {
+        return parseFloat(b.latest) - parseFloat(a.latest);
+      })
+      .slice(0, 100);
+
     setCountryList(final);
   };
 
