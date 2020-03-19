@@ -34,10 +34,9 @@ const Timeline = ({ timeline }) => {
           };
 
           data.push(obj);
-          console.log(data.slice(0, 1));
         }
-        const newData = data.slice(0, 1);
-        setTimelineData(newData);
+        const selectedDays = data.slice(0, 3);
+        setTimelineData(selectedDays);
       });
   };
 
@@ -45,23 +44,6 @@ const Timeline = ({ timeline }) => {
     formatData();
     //eslint-disable-next-line
   }, []);
-
-  const products = [
-    { time: 1, description: 'abc' },
-    { time: 2, description: 'def' }
-  ];
-
-  const myData = [
-    {
-      date: '18 March',
-      time: [
-        {
-          time_and_description: 'the time and description',
-          source: 'source'
-        }
-      ]
-    }
-  ];
 
   const columns = [
     {
@@ -76,29 +58,29 @@ const Timeline = ({ timeline }) => {
 
   return (
     <div>
-      <BootstrapTable keyField='id' data={products} columns={columns} />
-      <ul>
-        {timelineData &&
-          timelineData
-            .map((element, index) => (
-              <li key={index}>
-                <h3>{element.date}</h3>
-                <ul>
-                  {element.time
-                    .map((el, idx) => (
-                      <li>
+      <h2 className='text-primary'>Timeline</h2>
+      <div className='timeline-container'>
+        <ul className='list'>
+          {timelineData &&
+            timelineData
+              .map((element, index) => (
+                <li key={index}>
+                  <h3>{element.date}</h3>
+                  <ul>
+                    {element.time.map((el, idx) => (
+                      <li key={idx}>
                         {el.time_and_description}{' '}
                         <a className='small' href={el.source}>
                           Source
                         </a>
                       </li>
-                    ))
-                    .slice(0, 5)}
-                </ul>
-              </li>
-            ))
-            .slice(0, 3)}
-      </ul>
+                    ))}
+                  </ul>
+                </li>
+              ))
+              .slice(0, 3)}
+        </ul>
+      </div>
     </div>
   );
 };

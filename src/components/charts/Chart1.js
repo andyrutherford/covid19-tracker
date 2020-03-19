@@ -20,12 +20,11 @@ const Chart1 = ({ confirmedCases, deathCount, recoveredCount }) => {
           .format('M/D/YY');
         arr.push(date);
       }
-      arr.unshift(today);
       return arr.reverse();
     };
 
     const datesArray = generateDatesArray();
-
+    // console.log(datesArray);
     setChartDates(datesArray);
 
     const generateTotalsArray = datesArray => {
@@ -40,8 +39,8 @@ const Chart1 = ({ confirmedCases, deathCount, recoveredCount }) => {
 
       return arr;
     };
-
     const dayTotalsArray = generateTotalsArray(datesArray);
+    // console.log(dayTotalsArray);
 
     setConfirmedChartData(dayTotalsArray);
   };
@@ -154,7 +153,9 @@ const Chart1 = ({ confirmedCases, deathCount, recoveredCount }) => {
     <div>
       <h2 className='text-primary'>Confirmed Cases and Deaths by Day</h2>
       {chartConfirmedData && chartDeathsData && chartDates && (
-        <Line data={data} />
+        <div>
+          <Line data={data} />
+        </div>
       )}
     </div>
   );

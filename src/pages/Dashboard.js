@@ -9,6 +9,7 @@ import RecoveredCount from '../components/RecoveredCount';
 import Map from '../components/Map';
 import CasesByCountryChart from '../components/charts/CasesByCountryChart';
 import Chart1 from '../components/charts/Chart1';
+import CountriesChart from '../components/charts/CountriesChart';
 import Timeline from '../components/Timeline';
 
 const Dashboard = () => {
@@ -72,9 +73,23 @@ const Dashboard = () => {
       ) : (
         <Spinner />
       )}
-      {/* <div className='container'>
-        {timeline ? <Timeline timeline={timeline} /> : <Spinner />}
-      </div> */}
+      <div className='container grid-2'>
+        <div className='card'>
+          {confirmed && deaths && recovered ? (
+            <CountriesChart
+              confirmedCases={confirmed}
+              deathCount={deaths}
+              recoveredCount={recovered}
+            />
+          ) : (
+            <Spinner />
+          )}
+        </div>
+        <div className='card'>
+          {' '}
+          {timeline ? <Timeline timeline={timeline} /> : <Spinner />}
+        </div>
+      </div>
     </div>
   );
 };

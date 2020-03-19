@@ -50,7 +50,6 @@ img {
 
 .stat-list-container {
   height: 500px;
-
   overflow-y: auto;
 }
 
@@ -491,4 +490,10 @@ table th {
 
 .modal a:hover {
   color: black;
+}
+
+/* Timeline */
+.timeline-container {
+  height: 500px;
+  overflow-y: auto;
 }
