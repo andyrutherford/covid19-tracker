@@ -39,8 +39,8 @@ const ConfirmedCases = ({ confirmedCases }) => {
       .sort(function(a, b) {
         return parseFloat(b.latest) - parseFloat(a.latest);
       })
-      .slice(0, 100)
-      .filter(element => element.latest > 0);
+      .filter(element => element.latest > 0)
+      .slice(0, 100);
     setCountryList(countryArray);
   };
 

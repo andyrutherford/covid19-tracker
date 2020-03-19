@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Doughnut } from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 
 const Chart2 = ({ chartData, title, showLegend }) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
     setData(chartData);
+    //eslint-disable-next-line
   }, []);
 
   return (
@@ -13,7 +14,7 @@ const Chart2 = ({ chartData, title, showLegend }) => {
       {data && (
         <div>
           <h2 className='text-primary'>{title}</h2>
-          <Doughnut
+          <Pie
             data={chartData}
             options={{
               title: {

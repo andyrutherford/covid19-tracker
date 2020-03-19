@@ -12,7 +12,6 @@ const Chart1 = ({ confirmedCases, deathCount, recoveredCount }) => {
     const { locations } = confirmedCases;
 
     const generateDatesArray = () => {
-      const today = moment().format('M/D/YY');
       const arr = [];
       for (let i = 1; i < 60; i++) {
         const date = moment()
@@ -128,15 +127,15 @@ const Chart1 = ({ confirmedCases, deathCount, recoveredCount }) => {
       {
         label: 'Deaths',
         fill: false,
-        backgroundColor: 'rgb(139, 0, 0)',
-        borderColor: 'rgb(220, 20, 60)',
+        backgroundColor: 'rgb(220, 20, 60)',
+        borderColor: 'rgb(139, 0, 0)',
         data: chartDeathsData
       },
       {
         label: 'Recovered',
         fill: false,
-        backgroundColor: 'rgb(50,205,50)',
-        borderColor: 'rgb(0, 255, 0)',
+        backgroundColor: 'rgb(0, 255, 0)',
+        borderColor: 'rgb(50,205,50)',
         data: chartRecoveredData
       }
     ]
@@ -151,7 +150,7 @@ const Chart1 = ({ confirmedCases, deathCount, recoveredCount }) => {
 
   return (
     <div>
-      <h2 className='text-primary'>Confirmed Cases and Deaths by Day</h2>
+      <h2 className='text-primary'>Worldwide Confirmed Cases</h2>
       {chartConfirmedData && chartDeathsData && chartDates && (
         <div>
           <Line data={data} />

@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import cheerio from 'cheerio';
-import BootstrapTable from 'react-bootstrap-table-next';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 
 const Timeline = ({ timeline }) => {
   const [timelineData, setTimelineData] = useState(null);
 
   const formatData = () => {
-    let names = [];
     let $ = cheerio.load(timeline);
     const data = [];
     $('h2:contains("Timeline for major updates (GMT)")')
@@ -44,17 +42,6 @@ const Timeline = ({ timeline }) => {
     formatData();
     //eslint-disable-next-line
   }, []);
-
-  const columns = [
-    {
-      desc: 'time_and_description',
-      text: 'Description'
-    },
-    {
-      dataField: 'source',
-      text: 'Source'
-    }
-  ];
 
   return (
     <div>

@@ -38,6 +38,7 @@ export const getRecovered = async () => {
   if (!mockData) {
     try {
       const res = await axios.get(`${url}/recovered`);
+      console.log(res.data);
       return res.data;
     } catch (err) {
       console.error(err.message);

@@ -159,7 +159,18 @@ const CasesByCountryChart = ({ confirmedCases }) => {
         {
           label: 'Confirmed Cases',
           fill: true,
-          backgroundColor: colorsArrayExclChina,
+          backgroundColor: [
+            'maroon',
+            'red',
+            'orange',
+            'yellow',
+            'lime',
+            'green',
+            'teal',
+            'blue',
+            'fuchsia',
+            'purple'
+          ],
           data: countriesDataExclChina.slice(0, 10)
         }
       ]
@@ -170,30 +181,33 @@ const CasesByCountryChart = ({ confirmedCases }) => {
 
   useEffect(() => {
     generateColorsArray();
+
+    //eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     formatDataInclChina();
     formatDataExclChina();
+    //eslint-disable-next-line
   }, [colorsArray]);
 
   return (
-    <div className='grid-2'>
+    <div>
       <div>
-        {chartDataInclChina && (
+        {/* chartDataInclChina && (
           <Chart2
             chartData={chartDataInclChina}
             title={'Cases incl. China'}
             showLegend={true}
           />
-        )}
+        )*/}
       </div>
       <div>
         {chartDataExclChina && (
           <Chart2
             chartData={chartDataExclChina}
-            title={'Cases excl. China'}
-            showLegend={false}
+            title={'Confirmed Cases outside of China'}
+            showLegend={true}
           />
         )}
       </div>

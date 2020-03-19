@@ -8,9 +8,21 @@ const CountriesChart = ({ confirmedCases, deathCount, recoveredCount }) => {
   const [countryData, setCountryData] = useState([]);
 
   const formatData = country => {
-    const { locations } = confirmedCases;
+    const confirmedLocations = confirmedCases.locations;
+    const deathLocations = deathCount.locations;
+    const recoveredLocations = recoveredCount.locations;
 
-    const datesAndTotals = {};
+    const datesAndTotals = {
+      country: null,
+      dates: null,
+      totals: {
+        confirmed: null,
+        deaths: null,
+        recovered: null
+      }
+    };
+
+    // { country: 'usa', dates: [], totals: [{ confirmed: []}, {deaths: []}, {recovered: []}]}
 
     if (country === 'US') {
       datesAndTotals.country = 'United States';
@@ -18,10 +30,17 @@ const CountriesChart = ({ confirmedCases, deathCount, recoveredCount }) => {
       datesAndTotals.country = country;
     }
 
-    const filteredCountry = locations.filter(
+    const filteredCountryConfirmed = confirmedLocations.filter(
       element => element.country === country
     );
-    console.log(filteredCountry);
+
+    const filteredCountryDeaths = deathLocations.filter(
+      element => element.country === country
+    );
+
+    const filteredCountryRecovered = recoveredLocations.filter(
+      element => element.country === country
+    );
 
     const generateDatesArray = () => {
       const today = moment().format('M/D/YY');
@@ -32,16 +51,17 @@ const CountriesChart = ({ confirmedCases, deathCount, recoveredCount }) => {
           .format('M/D/YY');
         arr.push(date);
       }
+      arr.unshift(today);
       return arr.reverse();
     };
 
     const datesArray = generateDatesArray();
     datesAndTotals.dates = datesArray;
 
-    const generateTotalsArray = datesArray => {
+    const generateTotalsArray = (datesArray, totalsArray) => {
       const arr = [];
       for (let i = 0; i < datesArray.length - 1; i++) {
-        const total = filteredCountry
+        const total = totalsArray
           .map(loc => loc.history[datesArray[i]])
           .reduce((acc, cur) => parseInt(acc) + parseInt(cur));
         arr.push(total);
@@ -50,10 +70,22 @@ const CountriesChart = ({ confirmedCases, deathCount, recoveredCount }) => {
       return arr;
     };
 
-    const dayTotalsArray = generateTotalsArray(datesArray);
-    datesAndTotals.totals = dayTotalsArray;
-    console.log(datesAndTotals);
-    //return datesAndTotals;
+    const confirmedTotalsArray = generateTotalsArray(
+      datesArray,
+      filteredCountryConfirmed
+    );
+    const deathTotalsArray = generateTotalsArray(
+      datesArray,
+      filteredCountryDeaths
+    );
+    const recoveredTotalsArray = generateTotalsArray(
+      datesArray,
+      filteredCountryRecovered
+    );
+
+    datesAndTotals.totals.confirmed = confirmedTotalsArray;
+    datesAndTotals.totals.deaths = deathTotalsArray;
+    datesAndTotals.totals.recovered = recoveredTotalsArray;
 
     setCountryData(countries => [...countries, datesAndTotals]);
   };
@@ -68,9 +100,10 @@ const CountriesChart = ({ confirmedCases, deathCount, recoveredCount }) => {
 
   return (
     <div className='grid-2'>
+      {' '}
       {countryData &&
         countryData.map((country, index) => (
-          <CountryChart chartData={countryData[index]} />
+          <CountryChart key={index} chartData={countryData[index]} />
         ))}
     </div>
   );
