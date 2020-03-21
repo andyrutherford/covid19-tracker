@@ -11,6 +11,7 @@ export const getConfirmed = async () => {
   if (!mockData) {
     try {
       const res = await axios.get(`${url}/confirmed`);
+      console.log(res.data);
       return res.data;
     } catch (err) {
       console.error(err.message);
@@ -38,7 +39,7 @@ export const getRecovered = async () => {
   if (!mockData) {
     try {
       const res = await axios.get(`${url}/recovered`);
-      console.log(res.data);
+
       return res.data;
     } catch (err) {
       console.error(err.message);

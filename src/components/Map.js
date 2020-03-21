@@ -10,7 +10,10 @@ const MyPopupMarker = ({ content, position, latest }) => {
   const generateRadius = latest => {
     // Minimum radius size is 5
     // Maximum radius size is ~50
-    return Math.log(latest) * 2.5 < 5 ? 5 : Math.log(latest) * 2.5;
+
+    //Set size of circle markers (between 1 to 3)
+    const markerSize = 1.5;
+    return Math.log(latest) * 2.5 < 5 ? 5 : Math.log(latest) * markerSize;
   };
 
   return (
@@ -78,7 +81,7 @@ const Map = ({ confirmedCases }) => {
   }, []);
 
   return (
-    <LeafletMap center={[37.091226, -95.875351]} zoom={3}>
+    <LeafletMap center={[37.091226, -95.875351]} zoom={2}>
       <TileLayer
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
