@@ -82,7 +82,6 @@ const Dashboard = () => {
               {demographics && (
                 <DemographicsCharts demographicsData={demographics} />
               )}
-              />
             </div>
           </div>
         </div>
