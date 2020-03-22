@@ -12,9 +12,6 @@ const PreexistingConditionsChart = ({ preexistingConditionsData }) => {
       element.rate.slice(0, element.rate.length - 1)
     );
 
-    console.log(labels);
-    console.log(percentages);
-
     const data = {
       labels: labels,
       datasets: [

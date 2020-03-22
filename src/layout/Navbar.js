@@ -33,12 +33,12 @@ const Navbar = ({ title, lastUpdated }) => {
         {' '}
         <li>
           <a href='https://github.com/andyrutherford/covid19-tracker'>
-            <i className='fab fa-github fa-2x'></i>
+            <i className='fab fa-github-alt fa-lg'></i>
           </a>
         </li>
         <li>
           <a href='#' onClick={onShowModal}>
-            <i className='fas fa-question-circle fa-2x'></i>
+            <i className='fas fa-question fa-lg'></i>
           </a>
 
           <Rodal visible={showModal} onClose={onHideModal} width={600}>
@@ -46,7 +46,15 @@ const Navbar = ({ title, lastUpdated }) => {
               <h2>Coronavirus COVID-19 Tracker</h2>
               <p className='small'>
                 This dashboard contains a comprehensive overview of the
-                progression of Coronavirus COVID-19 spread.
+                progression of the{' '}
+                <a
+                  href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019'
+                  rel='noopener noreferrer'
+                  target='_blank'
+                >
+                  Coronavirus COVID-19
+                </a>{' '}
+                spread.
               </p>
               <p className='small'>
                 It is under constant development and features may be added or
@@ -62,6 +70,14 @@ const Navbar = ({ title, lastUpdated }) => {
                 and ExpDev07's{' '}
                 <a href='https://github.com/ExpDev07/coronavirus-tracker-api'>
                   coronavirus-tracker-api
+                </a>
+                . Demographics data comes from worldometer's{' '}
+                <a
+                  href='https://www.worldometers.info/coronavirus/coronavirus-age-sex-demographics/'
+                  rel='noopener noreferrer'
+                  taget='_blank'
+                >
+                  COVID-19 Demographics
                 </a>
                 .
               </p>
