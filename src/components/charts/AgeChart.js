@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Doughnut } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
 const AgeChart = ({ ageData }) => {
   const [chartData, setChartData] = useState(null);
-
-  const colors = ['maroon', 'red', 'orange', 'yellow', 'lime', 'green'];
 
   // Format labels to show only 5 age groups
   const labels = ageData.map(ageGroup => ageGroup.age).slice(0, 4);
@@ -29,12 +27,12 @@ const AgeChart = ({ ageData }) => {
     .concat(zeroToFiftyPercent);
 
   const data = {
-    labels: labels,
+    labels: labels.reverse(),
     datasets: [
       {
         label: 'By Age',
-        backgroundColor: colors,
-        data: percentages
+        backgroundColor: 'rgb(51,51,51)',
+        data: percentages.reverse()
       }
     ]
   };
@@ -47,9 +45,9 @@ const AgeChart = ({ ageData }) => {
   return (
     <div>
       {' '}
-      <h2 className='text-primary'>Cases by Age Group</h2>
+      <h2 className='text-primary'>Age Group</h2>
       {chartData && (
-        <Doughnut
+        <Bar
           data={chartData}
           options={{
             title: {
@@ -59,12 +57,19 @@ const AgeChart = ({ ageData }) => {
               fontSize: 20
             },
             legend: {
-              display: true,
+              display: false,
               position: 'left'
             }
           }}
         />
       )}
+      <div style={{ width: '50%' }}>
+        <p className='x-small'>
+          Death Rate = (number of deaths / number of cases) = probability of
+          dying if infected by the virus (%). The percentages do not have to add
+          up to 100%, as they do NOT represent share of deaths by age group.
+        </p>
+      </div>
     </div>
   );
 };

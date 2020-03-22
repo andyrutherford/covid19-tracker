@@ -26,8 +26,6 @@ const SexChart = ({ sexData }) => {
     ]
   };
 
-  console.log(data);
-
   useEffect(() => {
     setChartData(data);
     //eslint-disable-next-line
@@ -36,7 +34,7 @@ const SexChart = ({ sexData }) => {
   return (
     <div>
       {' '}
-      <h2 className='text-primary'>Cases by Sex</h2>
+      <h2 className='text-primary'>Sex</h2>
       {chartData && (
         <Doughnut
           data={chartData}
@@ -49,11 +47,18 @@ const SexChart = ({ sexData }) => {
             },
             legend: {
               display: true,
-              position: 'right'
+              position: 'left'
             }
           }}
         />
       )}
+      <div style={{ width: '50%' }}>
+        <p className='x-small'>
+          Death Rate = (number of deaths / number of cases) = probability of
+          dying if infected by the virus (%). The percentages do not have to add
+          up to 100%, as they do NOT represent share of deaths by sex.
+        </p>
+      </div>
     </div>
   );
 };

@@ -77,12 +77,10 @@ const Dashboard = () => {
               <Timeline timeline={timeline} />
             </div>
           </div>
-          <div className='container grid-1'>
-            <div className='card'>
-              {demographics && (
-                <DemographicsCharts demographicsData={demographics} />
-              )}
-            </div>
+          <div className='container'>
+            {demographics && (
+              <DemographicsCharts demographicsData={demographics} />
+            )}
           </div>
         </div>
       ) : (

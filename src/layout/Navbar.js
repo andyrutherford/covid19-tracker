@@ -18,7 +18,7 @@ const Navbar = ({ title, lastUpdated }) => {
   return (
     <div className='navbar bg-primary'>
       <div>
-        <h2>
+        <h2 className='navbar-title'>
           <a href='/'>
             <i className='fas fa-globe-americas fa-lg'></i> {title}
           </a>

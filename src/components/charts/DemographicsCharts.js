@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import cheerio from 'cheerio';
 import AgeChart from './AgeChart';
 import SexChart from './SexChart';
+import PreexistingConditionsChart from './PreexistingConditionsChart';
 
 const DemographicsCharts = ({ demographicsData }) => {
   const [demographics, setDemographics] = useState({
@@ -108,9 +109,20 @@ const DemographicsCharts = ({ demographicsData }) => {
 
   // console.log(demographicsData);
   return (
-    <div className='card grid-2'>
-      <div>{demographics.age && <AgeChart ageData={demographics.age} />}</div>
-      <div>{demographics.sex && <SexChart sexData={demographics.sex} />}</div>
+    <div className='grid-3'>
+      <div className='card'>
+        {demographics.age && <AgeChart ageData={demographics.age} />}
+      </div>
+      <div className='card'>
+        {demographics.sex && <SexChart sexData={demographics.sex} />}
+      </div>
+      <div className='card'>
+        {demographics.preexistingConditions && (
+          <PreexistingConditionsChart
+            preexistingConditionsData={demographics.preexistingConditions}
+          />
+        )}
+      </div>
     </div>
   );
 };
