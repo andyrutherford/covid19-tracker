@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 
 const Chart2 = ({ chartData, title, showLegend }) => {
   const [data, setData] = useState(null);
@@ -14,7 +14,7 @@ const Chart2 = ({ chartData, title, showLegend }) => {
       {data && (
         <div>
           <h2 className='text-primary'>{title}</h2>
-          <Pie
+          <Doughnut
             data={chartData}
             options={{
               title: {
