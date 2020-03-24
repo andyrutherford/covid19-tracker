@@ -35,21 +35,24 @@ const Dashboard = () => {
       {confirmed ? <Navbar lastUpdated={confirmed.last_updated} /> : <Navbar />}
       {confirmed && deaths && recovered && timeline ? (
         <div>
-          <div style={{ zIndex: '1000' }}>
-            <Search
-              confirmedCases={confirmed}
-              deathCount={deaths}
-              recoveredCount={recovered}
-            />
-          </div>
           <section className='container grid-4 section-1'>
             <div className='card'>
               <ConfirmedCases confirmedCases={confirmed} />
             </div>
             <div style={{ zIndex: '0' }}>
+              <div style={{ zIndex: '9000', position: 'relative' }}>
+                <Search
+                  confirmedCases={confirmed}
+                  deathCount={deaths}
+                  recoveredCount={recovered}
+                />
+              </div>
               <div
                 className='map leaflet-container'
-                style={{ marginTop: '0.7rem', zIndex: '0' }}
+                style={{
+                  marginTop: '0.7rem',
+                  zIndex: '0'
+                }}
               >
                 <Map confirmedCases={confirmed} />
               </div>

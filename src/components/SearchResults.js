@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Rodal from 'rodal';
+import ModalChart1 from '../components/charts/ModalChart1';
 
-const SearchResults = ({ selectedCountry }) => {
+const SearchResults = ({ selectedCountry, data }) => {
   const [showModal, setShowModal] = useState(false);
   const [country, setCountry] = useState(null);
+  const [countryData, setCountryData] = useState({
+    confirmed: null,
+    deaths: null,
+    recovered: null
+  });
 
   const onShowModal = () => {
     setShowModal(true);
@@ -15,37 +21,78 @@ const SearchResults = ({ selectedCountry }) => {
 
   const formatName = () => {
     let displayName = selectedCountry;
+
+    if (selectedCountry === 'United Kingdom') {
+      displayName = 'The United Kingdom';
+    }
+    if (selectedCountry === 'United Arab Emirates') {
+      displayName = 'The United Arab Emirates';
+    }
     if (selectedCountry === 'US') {
       displayName = 'The United States';
-    }
-    if (selectedCountry === 'UK') {
-      displayName = 'The United Kingdom';
     }
     if (selectedCountry === 'Korea, South') {
       displayName = 'South Korea';
     }
+    if (selectedCountry.includes('*')) {
+      displayName = selectedCountry.replace('*', '');
+    }
     if (selectedCountry.includes(', ')) {
-      const newName = selectedCountry
+      displayName = selectedCountry
         .split(', ')
         .reverse()
         .join()
         .replace(',', ' ');
-      displayName = newName;
     }
     setCountry(displayName);
+  };
+
+  const generateCountryData = () => {
+    const confirmedLatest = data.confirmed.reduce(
+      (prev, cur) => prev + cur.latest,
+      0
+    );
+    const deathsLatest = data.deaths.reduce(
+      (prev, cur) => prev + cur.latest,
+      0
+    );
+    const recoveredLatest = data.recovered.reduce(
+      (prev, cur) => prev + cur.latest,
+      0
+    );
+    setCountryData({
+      ...countryData,
+      confirmed: confirmedLatest,
+      deaths: deathsLatest,
+      recovered: recoveredLatest
+    });
   };
 
   // Show modal when a country is selected
   useEffect(() => {
     onShowModal();
     formatName();
+    generateCountryData();
   }, [selectedCountry]);
 
   return (
-    <Rodal visible={showModal} onClose={onHideModal} width={600}>
+    <Rodal visible={showModal} onClose={onHideModal} width={1000} height={460}>
       <div className='modal'>
-        <h2>{country}</h2>
-        <p className='small'>Showing country data for {selectedCountry} !</p>
+        <h1 className='large'>{country}</h1>
+        <div className='container grid-2'>
+          <div>
+            <p className='small'>{countryData.confirmed} confirmed cases</p>
+            <p className='small'>{countryData.deaths} deaths</p>
+            <p className='small'>{countryData.recovered} recovered</p>
+          </div>
+          <div>
+            <ModalChart1
+              confirmedCases={data.confirmed}
+              deathCount={data.deaths}
+              recoveredCount={data.recovered}
+            />{' '}
+          </div>
+        </div>
       </div>
     </Rodal>
   );

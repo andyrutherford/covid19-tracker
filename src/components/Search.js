@@ -78,7 +78,10 @@ const Search = ({ confirmedCases, deathCount, recoveredCount }) => {
         </form>
       )}
       {searchState.country && (
-        <SearchResults selectedCountry={searchState.country} />
+        <SearchResults
+          selectedCountry={searchState.country}
+          data={searchState.countryData}
+        />
       )}
     </div>
   );
