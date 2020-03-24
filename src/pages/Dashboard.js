@@ -7,6 +7,7 @@ import Spinner from '../layout/Spinner';
 import ConfirmedCases from '../components/ConfirmedCases';
 import DeathCount from '../components/DeathCount';
 import RecoveredCount from '../components/RecoveredCount';
+import Search from '../components/Search';
 import Map from '../components/Map';
 import CasesByCountryChart from '../components/charts/CasesByCountryChart';
 import Chart1 from '../components/charts/Chart1';
@@ -34,16 +35,24 @@ const Dashboard = () => {
       {confirmed ? <Navbar lastUpdated={confirmed.last_updated} /> : <Navbar />}
       {confirmed && deaths && recovered && timeline ? (
         <div>
+          <div style={{ zIndex: '1000' }}>
+            <Search
+              confirmedCases={confirmed}
+              deathCount={deaths}
+              recoveredCount={recovered}
+            />
+          </div>
           <section className='container grid-4 section-1'>
             <div className='card'>
               <ConfirmedCases confirmedCases={confirmed} />
             </div>
-
-            <div
-              className='map leaflet-container'
-              style={{ marginTop: '0.7rem', zIndex: '0' }}
-            >
-              <Map confirmedCases={confirmed} />
+            <div style={{ zIndex: '0' }}>
+              <div
+                className='map leaflet-container'
+                style={{ marginTop: '0.7rem', zIndex: '0' }}
+              >
+                <Map confirmedCases={confirmed} />
+              </div>
             </div>
 
             <div className='card'>

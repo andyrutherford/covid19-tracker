@@ -3,7 +3,14 @@ import CountryChart from './CountryChart';
 var moment = require('moment');
 
 const CountriesChart = ({ confirmedCases, deathCount, recoveredCount }) => {
-  const selectedCountries = ['US', 'Germany', 'Vietnam', 'Italy'];
+  const selectedCountries = [
+    'US',
+    'Germany',
+    'Vietnam',
+    'Italy',
+    'Malaysia',
+    'Indonesia'
+  ];
 
   const [countryData, setCountryData] = useState([]);
 

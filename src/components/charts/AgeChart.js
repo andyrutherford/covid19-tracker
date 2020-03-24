@@ -30,8 +30,14 @@ const AgeChart = ({ ageData }) => {
     labels: labels.reverse(),
     datasets: [
       {
-        label: 'By Age',
-        backgroundColor: 'rgb(51,51,51)',
+        label: 'Death Rate (%)',
+        backgroundColor: [
+          '#1B4F72',
+          '#21618C',
+          '#2874A6',
+          '#2E86C1',
+          '#3498DB'
+        ].reverse(),
         data: percentages.reverse()
       }
     ]
