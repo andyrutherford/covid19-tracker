@@ -1,7 +1,7 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 
-const CountryChart = ({ chartData }) => {
+const NewCountryChart = ({ chartData }) => {
   const { country, dates, totals } = chartData;
 
   const data = {
@@ -13,6 +13,20 @@ const CountryChart = ({ chartData }) => {
         backgroundColor: 'rgb(169, 169, 169)',
         borderColor: 'rgb(105, 105, 105)',
         data: totals.confirmed
+      },
+      {
+        label: 'Deaths',
+        fill: false,
+        backgroundColor: 'rgb(220, 20, 60)',
+        borderColor: 'rgb(139, 0, 0)',
+        data: totals.deaths
+      },
+      {
+        label: 'Recovered',
+        fill: false,
+        backgroundColor: 'rgb(0, 255, 0)',
+        borderColor: 'rgb(50,205,50)',
+        data: totals.recovered
       }
     ]
   };
@@ -60,4 +74,4 @@ const CountryChart = ({ chartData }) => {
   );
 };
 
-export default CountryChart;
+export default NewCountryChart;

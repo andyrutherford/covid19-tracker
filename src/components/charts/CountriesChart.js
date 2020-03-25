@@ -1,117 +1,199 @@
 import React, { useEffect, useState } from 'react';
-import CountryChart from './CountryChart';
+import { Line } from 'react-chartjs-2';
 var moment = require('moment');
 
-const CountriesChart = ({ confirmedCases, deathCount, recoveredCount }) => {
+const CountriesChart = ({ confirmedCases, deathCount }) => {
   const selectedCountries = [
     'US',
     'Germany',
-    'Vietnam',
     'Italy',
-    'Malaysia',
-    'Indonesia'
+    'Korea, South',
+    'United Kingdom',
+    'Spain'
   ];
 
-  const [countryData, setCountryData] = useState([]);
+  const chartColors = [
+    '#003f5c',
+    '#444e86',
+    '#955196',
+    '#dd5182',
+    '#ff6e54',
+    '#ffa600'
+  ];
 
-  const formatData = country => {
-    const confirmedLocations = confirmedCases.locations;
-    const deathLocations = deathCount.locations;
-    const recoveredLocations = recoveredCount.locations;
+  const [confirmedData, setConfirmedData] = useState(null);
+  const [deathsData, setDeathsData] = useState(null);
 
-    const datesAndTotals = {
-      country: null,
-      dates: null,
-      totals: {
-        confirmed: null,
-        deaths: null,
-        recovered: null
-      }
+  const [confirmedChartData, setConfirmedChartData] = useState(null);
+  const [deathsChartData, setDeathsChartData] = useState(null);
+
+  const formatData = (selectedCountries, selectedDataset, key) => {
+    const locations = selectedDataset.locations;
+
+    const data = {
+      dates: [],
+      dataset: []
     };
 
-    // { country: 'usa', dates: [], totals: [{ confirmed: []}, {deaths: []}, {recovered: []}]}
-
-    if (country === 'US') {
-      datesAndTotals.country = 'United States';
-    } else {
-      datesAndTotals.country = country;
-    }
-
-    const filteredCountryConfirmed = confirmedLocations.filter(
-      element => element.country === country
-    );
-
-    const filteredCountryDeaths = deathLocations.filter(
-      element => element.country === country
-    );
-
-    const filteredCountryRecovered = recoveredLocations.filter(
-      element => element.country === country
-    );
-
+    // Create dates array
     const generateDatesArray = () => {
-      const today = moment().format('M/D/YY');
       const arr = [];
-      for (let i = 1; i < 40; i++) {
+      for (let i = 1; i < 30; i++) {
         const date = moment()
           .subtract(i, 'days')
           .format('M/D/YY');
         arr.push(date);
       }
-      arr.unshift(today);
       return arr.reverse();
     };
 
     const datesArray = generateDatesArray();
-    datesAndTotals.dates = datesArray;
+    data.dates = datesArray;
 
-    const generateTotalsArray = (datesArray, totalsArray) => {
-      const arr = [];
-      for (let i = 0; i < datesArray.length - 1; i++) {
-        const total = totalsArray
-          .map(loc => loc.history[datesArray[i]])
-          .reduce((acc, cur) => parseInt(acc) + parseInt(cur));
-        arr.push(total);
+    for (let country of selectedCountries) {
+      const filteredCountryConfirmed = locations.filter(
+        element => element.country === country
+      );
+
+      const generateTotalsArray = (datesArray, totalsArray) => {
+        const arr = [];
+        for (let i = 0; i < datesArray.length; i++) {
+          const total = totalsArray
+            .map(loc => loc.history[datesArray[i]])
+            .reduce((acc, cur) => parseInt(acc) + parseInt(cur));
+          arr.push(total);
+        }
+        return arr;
+      };
+
+      const countryTotals = generateTotalsArray(
+        datesArray,
+        filteredCountryConfirmed
+      );
+
+      data.dataset.push({
+        country: country,
+        totals: countryTotals
+      });
+    }
+
+    if (key === 'confirmed') {
+      setConfirmedData(data);
+    }
+    if (key === 'deaths') {
+      setDeathsData(data);
+    }
+  };
+
+  const confData = {
+    labels: null,
+    datasets: []
+  };
+
+  const detData = {
+    labels: null,
+    datasets: []
+  };
+
+  const options = {
+    legend: {
+      display: true
+    },
+    elements: {
+      point: {
+        radius: 3
       }
+    },
+    scales: {
+      xAxes: [
+        {
+          ticks: {
+            display: true,
+            autoSkip: true
+          }
+        }
+      ],
+      yAxes: [
+        {
+          ticks: {
+            display: true,
+            autoSkip: true,
+            maxTicksLimit: 8
+          }
+        }
+      ]
+    }
+  };
 
-      return arr;
-    };
-
-    const confirmedTotalsArray = generateTotalsArray(
-      datesArray,
-      filteredCountryConfirmed
-    );
-    const deathTotalsArray = generateTotalsArray(
-      datesArray,
-      filteredCountryDeaths
-    );
-    const recoveredTotalsArray = generateTotalsArray(
-      datesArray,
-      filteredCountryRecovered
-    );
-
-    datesAndTotals.totals.confirmed = confirmedTotalsArray;
-    datesAndTotals.totals.deaths = deathTotalsArray;
-    datesAndTotals.totals.recovered = recoveredTotalsArray;
-
-    setCountryData(countries => [...countries, datesAndTotals]);
+  const generateChartData = key => {
+    if (key === 'confirmed') {
+      confData.labels = confirmedData.dates;
+      for (let [index, set] of confirmedData.dataset.entries()) {
+        confData.datasets.push({
+          label: set.country,
+          fill: false,
+          backgroundColor: 'rgb(169, 169, 169)',
+          borderColor: chartColors[index],
+          data: set.totals
+        });
+      }
+      setConfirmedChartData(confData);
+    }
+    if (key === 'deaths') {
+      detData.labels = deathsData.dates;
+      for (let [index, set] of deathsData.dataset.entries()) {
+        detData.datasets.push({
+          label: set.country,
+          fill: false,
+          backgroundColor: 'rgb(169, 169, 169)',
+          borderColor: chartColors[index],
+          data: set.totals
+        });
+      }
+      setDeathsChartData(detData);
+    }
   };
 
   useEffect(() => {
-    for (const element in selectedCountries) {
-      formatData(selectedCountries[element]);
-    }
-
+    formatData(selectedCountries, confirmedCases, 'confirmed');
+    formatData(selectedCountries, deathCount, 'deaths');
     //eslint-disable-next-line
   }, []);
 
+  useEffect(() => {
+    if (confirmedData) {
+      generateChartData('confirmed');
+    }
+    //eslint-disable-next-line
+  }, [confirmedData]);
+
+  useEffect(() => {
+    if (deathsData) {
+      generateChartData('deaths');
+    }
+    //eslint-disable-next-line
+  }, [deathsData]);
+
   return (
-    <div className='grid-2'>
-      {' '}
-      {countryData &&
-        countryData.map((country, index) => (
-          <CountryChart key={index} chartData={countryData[index]} />
-        ))}
+    <div>
+      <div>
+        {' '}
+        <h3 className='text-primary'>Confirmed Cases</h3>{' '}
+        {confirmedChartData && (
+          <div>
+            <Line data={confirmedChartData} options={options} />
+          </div>
+        )}
+      </div>
+      <div>
+        {' '}
+        <h3 className='text-primary'>Deaths</h3>{' '}
+        {deathsChartData && (
+          <div>
+            <Line data={deathsChartData} options={options} />
+          </div>
+        )}
+      </div>
     </div>
   );
 };

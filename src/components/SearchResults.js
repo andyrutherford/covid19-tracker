@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Rodal from 'rodal';
+import FlagIcon from '../components/FlagIcon';
 import ModalChart1 from '../components/charts/ModalChart1';
 
 const SearchResults = ({ selectedCountry, data }) => {
@@ -78,6 +79,7 @@ const SearchResults = ({ selectedCountry, data }) => {
   return (
     <Rodal visible={showModal} onClose={onHideModal} width={1000} height={460}>
       <div className='modal'>
+        <FlagIcon code='sk' size='3x' squared={true} />
         <h1 className='large'>{country}</h1>
         <div className='container grid-2'>
           <div>

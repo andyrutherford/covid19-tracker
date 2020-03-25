@@ -62,7 +62,8 @@ const Dashboard = () => {
               <DeathCount deathCount={deaths} />
             </div>
             <div className='card'>
-              <RecoveredCount recoveredCount={recovered} />
+              <p>old recovered component here</p>
+              {/*<RecoveredCount recoveredCount={recovered} />*/}
             </div>
           </section>
           <div className='container grid-2'>
@@ -79,11 +80,7 @@ const Dashboard = () => {
           </div>
           <div className='container grid-2'>
             <div className='card'>
-              <CountriesChart
-                confirmedCases={confirmed}
-                deathCount={deaths}
-                recoveredCount={recovered}
-              />
+              <CountriesChart confirmedCases={confirmed} deathCount={deaths} />
             </div>
             <div className='card'>
               <Timeline timeline={timeline} />
