@@ -23,7 +23,6 @@ const Chart1 = ({ confirmedCases, deathCount, recoveredCount }) => {
     };
 
     const datesArray = generateDatesArray();
-    // console.log(datesArray);
     setChartDates(datesArray);
 
     const generateTotalsArray = datesArray => {

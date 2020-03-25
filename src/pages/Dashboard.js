@@ -6,7 +6,6 @@ import Navbar from '../layout/Navbar';
 import Spinner from '../layout/Spinner';
 import ConfirmedCases from '../components/ConfirmedCases';
 import DeathCount from '../components/DeathCount';
-import RecoveredCount from '../components/RecoveredCount';
 import Search from '../components/Search';
 import Map from '../components/Map';
 import CasesByCountryChart from '../components/charts/CasesByCountryChart';
@@ -32,14 +31,18 @@ const Dashboard = () => {
 
   return (
     <div>
-      {confirmed ? <Navbar lastUpdated={confirmed.last_updated} /> : <Navbar />}
+      {confirmed && deaths && recovered && timeline ? (
+        <Navbar lastUpdated={confirmed.last_updated} />
+      ) : (
+        <Navbar />
+      )}
       {confirmed && deaths && recovered && timeline ? (
         <div>
-          <section className='container grid-4 section-1'>
+          <section className='container grid-3-top section-1'>
             <div className='card'>
               <ConfirmedCases confirmedCases={confirmed} />
             </div>
-            <div style={{ zIndex: '0' }}>
+            <div style={{ zIndex: '0', marginTop: '0.7rem' }}>
               <div style={{ zIndex: '9000', position: 'relative' }}>
                 <Search
                   confirmedCases={confirmed}
@@ -61,12 +64,11 @@ const Dashboard = () => {
             <div className='card'>
               <DeathCount deathCount={deaths} />
             </div>
-            <div className='card'>
-              <p>old recovered component here</p>
-              {/*<RecoveredCount recoveredCount={recovered} />*/}
-            </div>
           </section>
           <div className='container grid-2'>
+            <div className='card'>
+              <CasesByCountryChart confirmedCases={confirmed} />
+            </div>
             <div className='card'>
               <Chart1
                 confirmedCases={confirmed}
@@ -74,12 +76,9 @@ const Dashboard = () => {
                 recoveredCount={recovered}
               />
             </div>
-            <div className='card'>
-              <CasesByCountryChart confirmedCases={confirmed} />
-            </div>
           </div>
           <div className='container grid-2'>
-            <div className='card'>
+            <div>
               <CountriesChart confirmedCases={confirmed} deathCount={deaths} />
             </div>
             <div className='card'>

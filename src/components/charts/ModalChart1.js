@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Bar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 var moment = require('moment');
 
 const ModalChart1 = ({ confirmedCases, deathCount, recoveredCount }) => {
@@ -24,18 +24,14 @@ const ModalChart1 = ({ confirmedCases, deathCount, recoveredCount }) => {
 
     const datesArray = generateDatesArray();
 
-    // setChartData({ ...chartData, dates: generateDatesArray() });
-
     const generateTotalsArray = (datesArray, data) => {
       const arr = [];
       for (let i = 0; i < datesArray.length - 1; i++) {
         const total = data
           .map(loc => loc.history[datesArray[i]])
-          .reduce((acc, cur) => parseInt(acc) + parseInt(cur));
+          .reduce((acc, cur) => parseInt(acc) + parseInt(cur), 0);
         arr.push(total);
       }
-      //arr.push(confirmedCases.latest);
-      console.log(arr);
       return arr;
     };
 
@@ -90,7 +86,7 @@ const ModalChart1 = ({ confirmedCases, deathCount, recoveredCount }) => {
   return (
     <div>
       {' '}
-      <Bar data={data} options={options} />
+      <Line data={data} options={options} />
     </div>
   );
 };

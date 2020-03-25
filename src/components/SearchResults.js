@@ -74,18 +74,17 @@ const SearchResults = ({ selectedCountry, data }) => {
     onShowModal();
     formatName();
     generateCountryData();
+    //eslint-disable-next-line
   }, [selectedCountry]);
 
   return (
     <Rodal visible={showModal} onClose={onHideModal} width={1000} height={460}>
       <div className='modal'>
-        <FlagIcon code='sk' size='3x' squared={true} />
         <h1 className='large'>{country}</h1>
         <div className='container grid-2'>
           <div>
-            <p className='small'>{countryData.confirmed} confirmed cases</p>
-            <p className='small'>{countryData.deaths} deaths</p>
-            <p className='small'>{countryData.recovered} recovered</p>
+            <p className='medium'>{countryData.confirmed} confirmed cases</p>
+            <p className='medium'>{countryData.deaths} deaths</p>
           </div>
           <div>
             <ModalChart1

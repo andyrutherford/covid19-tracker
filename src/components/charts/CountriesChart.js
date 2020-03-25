@@ -8,7 +8,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
     'Germany',
     'Italy',
     'Korea, South',
-    'United Kingdom',
+    'Iran',
     'Spain'
   ];
 
@@ -97,7 +97,11 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
 
   const options = {
     legend: {
-      display: true
+      display: true,
+      position: 'bottom',
+      labels: {
+        boxWidth: 20
+      }
     },
     elements: {
       point: {
@@ -130,7 +134,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
       confData.labels = confirmedData.dates;
       for (let [index, set] of confirmedData.dataset.entries()) {
         confData.datasets.push({
-          label: set.country,
+          label: set.country === 'US' ? 'United States' : set.country,
           fill: false,
           backgroundColor: 'rgb(169, 169, 169)',
           borderColor: chartColors[index],
@@ -143,7 +147,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
       detData.labels = deathsData.dates;
       for (let [index, set] of deathsData.dataset.entries()) {
         detData.datasets.push({
-          label: set.country,
+          label: set.country === 'US' ? 'United States' : set.country,
           fill: false,
           backgroundColor: 'rgb(169, 169, 169)',
           borderColor: chartColors[index],
@@ -176,18 +180,18 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
 
   return (
     <div>
-      <div>
+      <div className='card'>
         {' '}
-        <h3 className='text-primary'>Confirmed Cases</h3>{' '}
+        <h2 className='text-primary'>Confirmed Cases</h2>{' '}
         {confirmedChartData && (
           <div>
             <Line data={confirmedChartData} options={options} />
           </div>
         )}
       </div>
-      <div>
+      <div className='card'>
         {' '}
-        <h3 className='text-primary'>Deaths</h3>{' '}
+        <h2 className='text-primary'>Deaths</h2>{' '}
         {deathsChartData && (
           <div>
             <Line data={deathsChartData} options={options} />

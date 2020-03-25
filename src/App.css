@@ -234,9 +234,15 @@ img {
   grid-gap: 1rem;
 }
 
+.grid-3-top {
+  display: grid;
+  grid-template-columns: 250px auto 250px;
+  grid-gap: 1rem;
+}
+
 .grid-4 {
   display: grid;
-  grid-template-columns: 250px auto 250px 250px;
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
 }
 
@@ -478,7 +484,7 @@ table th {
 
 /* Map */
 .leaflet-container {
-  height: 500px;
+  height: 440px;
   width: auto;
 }
 
@@ -505,6 +511,6 @@ table th {
 
 /* Timeline */
 .timeline-container {
-  height: 500px;
+  height: 730px;
   overflow-y: auto;
 }
