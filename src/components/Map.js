@@ -6,14 +6,16 @@ import {
   Popup
 } from 'react-leaflet';
 
-const MyPopupMarker = ({ content, position, latest }) => {
+const MyPopupMarker = ({ content, position, latest, zoomLevel }) => {
   const generateRadius = latest => {
     // Minimum radius size is 5
     // Maximum radius size is ~50
 
     //Set size of circle markers (between 1 to 3)
-    const markerSize = 1.5;
-    return Math.log(latest) * 2.5 < 5 ? 5 : Math.log(latest) * markerSize;
+    //const markerSize = 1.5;
+    const markerSize = zoomLevel * 0.5;
+    //return Math.log(latest) * 2.5 < 5 ? 5 : Math.log(latest) * markerSize;
+    return Math.log(latest) * markerSize + markerSize;
   };
 
   return (
@@ -29,15 +31,19 @@ const MyPopupMarker = ({ content, position, latest }) => {
   );
 };
 
-const MyMarkersList = ({ markers }) => {
+const MyMarkersList = ({ markers, zoomLevel }) => {
+  const zoom = zoomLevel;
   const items = markers.map(({ key, ...props }) => (
-    <MyPopupMarker key={key} {...props} />
+    <MyPopupMarker zoomLevel={zoom} key={key} {...props} />
   ));
   return <Fragment>{items}</Fragment>;
 };
 
 const Map = ({ confirmedCases, usData }) => {
   const [mapData, setMapData] = useState({ markers: [] });
+
+  //This value must be set to the same value of the default zoom prop in Map component
+  const [zoom, setZoom] = useState(3);
 
   let data = {
     markers: []
@@ -70,7 +76,7 @@ const Map = ({ confirmedCases, usData }) => {
       newMarkers.push({
         key: `US_${index}`,
         latest: key.latest,
-        position: [parseInt(key.coords.lat), parseInt(key.coords.long)],
+        position: [parseFloat(key.coords.lat), parseFloat(key.coords.long)],
         content
       });
     }
@@ -127,14 +133,22 @@ const Map = ({ confirmedCases, usData }) => {
     //eslint-disable-next-line
   }, [formatData, formatUSData]);
 
+  const zoomChange = e => {
+    setZoom(e.target._zoom);
+  };
+
   return (
-    <LeafletMap center={[37.091226, -95.875351]} zoom={2}>
+    <LeafletMap
+      center={[37.091226, -95.875351]}
+      zoom={3}
+      onZoomEnd={e => zoomChange(e)}
+    >
       <TileLayer
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
       {mapData ? (
-        <MyMarkersList markers={mapData.markers} />
+        <MyMarkersList markers={mapData.markers} zoomLevel={zoom} />
       ) : (
         <div>loading...</div>
       )}
