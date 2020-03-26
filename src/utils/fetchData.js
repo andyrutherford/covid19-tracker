@@ -7,6 +7,8 @@ const url = 'https://coronavirus-tracker-api.herokuapp.com';
 
 const mockData = false;
 
+// USA specific https://coronavirus-tracker-api.herokuapp.com/v2/locations?source=csbs
+
 export const getConfirmed = async () => {
   if (!mockData) {
     try {
@@ -46,4 +48,16 @@ export const getRecovered = async () => {
   }
   console.log('using mock data!');
   return mockRecovered;
+};
+
+export const getUS = async () => {
+  try {
+    const res = await axios.get(
+      'https://coronavirus-tracker-api.herokuapp.com/v2/locations?source=csbs'
+    );
+    console.log(res.data);
+    return res.data;
+  } catch (err) {
+    console.error(err.message);
+  }
 };

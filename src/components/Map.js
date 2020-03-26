@@ -36,14 +36,19 @@ const MyMarkersList = ({ markers }) => {
   return <Fragment>{items}</Fragment>;
 };
 
-const Map = ({ confirmedCases }) => {
-  const [mapData, setMapData] = useState(null);
+const Map = ({ confirmedCases, usData }) => {
+  const [mapData, setMapData] = useState({ markers: [] });
+
+  let data = {
+    markers: []
+  };
 
   const formatData = () => {
     // Get data with valid country names
     const a = confirmedCases.locations
       .filter(element => element.country !== undefined)
-      .filter(element => element.latest > 0);
+      .filter(element => element.latest > 0)
+      .filter(element => element.country !== 'US');
 
     // Map data to retrieve coordinates, latest, country, province
     const c = a.map(element => {
@@ -63,22 +68,64 @@ const Map = ({ confirmedCases }) => {
           ? `${key.country}: ${key.latest} Confirmed Cases`
           : `${key.province}, ${key.country}: ${key.latest} Confirmed Cases`;
       newMarkers.push({
-        key: index,
+        key: `US_${index}`,
         latest: key.latest,
         position: [parseInt(key.coords.lat), parseInt(key.coords.long)],
         content
       });
     }
-    const mapState = {
-      markers: newMarkers
-    };
-    setMapData(mapState);
+    data.markers.push(...newMarkers);
+  };
+
+  const formatUSData = () => {
+    const arr = usData.locations.filter(
+      element => element.country !== undefined
+    );
+
+    // Map data to retrieve coordinates, latest, country, province
+    const c = arr.map(element => {
+      return {
+        coords: {
+          lat: element.coordinates.latitude,
+          long: element.coordinates.longitude
+        },
+        latest: element.latest.confirmed,
+        country: element.country,
+        province: element.province,
+        county: element.county
+      };
+    });
+    const newMarkers = [];
+    for (let [index, key] of c.entries()) {
+      const content =
+        key.county === ''
+          ? key.province === ''
+            ? `${key.country}: ${key.latest} Confirmed Cases`
+            : `${key.province}, ${key.country}: ${key.latest} Confirmed Cases`
+          : `${key.county}, ${key.province}, ${key.country}: ${key.latest} Confirmed Cases`;
+
+      newMarkers.push({
+        key: index,
+        latest: key.latest,
+        position: [parseFloat(key.coords.lat), parseFloat(key.coords.long)],
+        content
+      });
+    }
+    data.markers.push(...newMarkers);
   };
 
   useEffect(() => {
     formatData();
+    formatUSData();
     //eslint-disable-next-line
   }, []);
+
+  useEffect(() => {
+    if (data.markers.length > 0) {
+      setMapData(data);
+    }
+    //eslint-disable-next-line
+  }, [formatData, formatUSData]);
 
   return (
     <LeafletMap center={[37.091226, -95.875351]} zoom={2}>

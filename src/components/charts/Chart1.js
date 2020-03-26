@@ -101,7 +101,7 @@ const Chart1 = ({ confirmedCases, deathCount, recoveredCount }) => {
       for (let i = 0; i < datesArray.length - 1; i++) {
         const total = locations
           .map(loc => loc.history[datesArray[i]])
-          .reduce((acc, cur) => parseInt(acc) + parseInt(cur));
+          .reduce((acc, cur) => parseInt(acc) + parseInt(cur), 0);
         arr.unshift(total);
       }
       arr.push(recoveredCount.latest);
