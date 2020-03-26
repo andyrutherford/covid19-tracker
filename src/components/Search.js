@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import SearchResults from './SearchResults';
 
-const Search = ({ confirmedCases, deathCount, recoveredCount }) => {
+const Search = ({ confirmedCases, deathCount }) => {
   const [searchState, setSearchState] = useState({
     country: null,
     countryList: null,
     countryData: {
       confirmed: null,
-      deaths: null,
-      recovered: null
+      deaths: null
     }
   });
 
@@ -36,17 +35,14 @@ const Search = ({ confirmedCases, deathCount, recoveredCount }) => {
     const countryDeaths = deathCount.locations.filter(
       element => element.country === selectedCountry
     );
-    const countryRecovered = recoveredCount.locations.filter(
-      element => element.country === selectedCountry
-    );
+
     setSearchState({
       ...searchState,
       country: selectedCountry,
       countryData: {
         ...searchState.countryData,
         confirmed: countryConfirmed,
-        deaths: countryDeaths,
-        recovered: countryRecovered
+        deaths: countryDeaths
       }
     });
   };

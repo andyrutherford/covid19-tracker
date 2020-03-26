@@ -36,19 +36,19 @@ export const getDeaths = async () => {
   return mockDeaths;
 };
 
-export const getRecovered = async () => {
-  if (!mockData) {
-    try {
-      const res = await axios.get(`${url}/recovered`);
+// export const getRecovered = async () => {
+//   if (!mockData) {
+//     try {
+//       const res = await axios.get(`${url}/recovered`);
 
-      return res.data;
-    } catch (err) {
-      console.error(err.message);
-    }
-  }
-  console.log('using mock data!');
-  return mockRecovered;
-};
+//       return res.data;
+//     } catch (err) {
+//       console.error(err.message);
+//     }
+//   }
+//   console.log('using mock data!');
+//   return mockRecovered;
+// };
 
 export const getUS = async () => {
   try {

@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  getConfirmed,
-  getDeaths,
-  getRecovered,
-  getUS
-} from '../utils/fetchData';
+import { getConfirmed, getDeaths, getUS } from '../utils/fetchData';
 import { getTimeline } from '../utils/fetchTimeline';
 import { getDemographics } from '../utils/fetchDemographics';
 import Navbar from '../layout/Navbar';
@@ -22,7 +17,6 @@ import DemographicsCharts from '../components/charts/DemographicsCharts';
 const Dashboard = () => {
   const [confirmed, setConfirmed] = useState(null);
   const [deaths, setDeaths] = useState(null);
-  const [recovered, setRecovered] = useState(null);
   const [usData, setUsData] = useState(null);
   const [timeline, setTimeline] = useState(null);
   const [demographics, setDemographics] = useState(null);
@@ -30,7 +24,6 @@ const Dashboard = () => {
   useEffect(() => {
     getConfirmed().then(response => setConfirmed(response));
     getDeaths().then(response => setDeaths(response));
-    getRecovered().then(response => setRecovered(response));
     getUS().then(response => setUsData(response));
     getTimeline().then(response => setTimeline(response));
     getDemographics().then(response => setDemographics(response));
@@ -38,12 +31,12 @@ const Dashboard = () => {
 
   return (
     <div>
-      {confirmed && deaths && recovered && timeline ? (
+      {confirmed && deaths && timeline ? (
         <Navbar lastUpdated={confirmed.last_updated} />
       ) : (
         <Navbar />
       )}
-      {confirmed && deaths && recovered && usData && timeline ? (
+      {confirmed && deaths && usData && timeline ? (
         <div>
           <section className='container grid-3-top section-1'>
             <div className='card'>
@@ -51,11 +44,7 @@ const Dashboard = () => {
             </div>
             <div style={{ zIndex: '0', marginTop: '0.7rem' }}>
               <div style={{ zIndex: '9000', position: 'relative' }}>
-                <Search
-                  confirmedCases={confirmed}
-                  deathCount={deaths}
-                  recoveredCount={recovered}
-                />
+                <Search confirmedCases={confirmed} deathCount={deaths} />
               </div>
               <div
                 className='map leaflet-container'
@@ -77,11 +66,7 @@ const Dashboard = () => {
               <CasesByCountryChart confirmedCases={confirmed} />
             </div>
             <div className='card'>
-              <Chart1
-                confirmedCases={confirmed}
-                deathCount={deaths}
-                recoveredCount={recovered}
-              />
+              <Chart1 confirmedCases={confirmed} deathCount={deaths} />
             </div>
           </div>
           <div className='container grid-2'>
