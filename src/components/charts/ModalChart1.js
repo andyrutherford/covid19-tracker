@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 var moment = require('moment');
 
-const ModalChart1 = ({ confirmedCases, deathCount, recoveredCount }) => {
+const ModalChart1 = ({ confirmedCases, deathCount }) => {
   const [chartData, setChartData] = useState({
     dates: null,
     confirmed: null,
-    deaths: null,
-    recovered: null
+    deaths: null
   });
 
   const formatChartData = () => {
@@ -37,13 +36,11 @@ const ModalChart1 = ({ confirmedCases, deathCount, recoveredCount }) => {
 
     const confirmedTotals = generateTotalsArray(datesArray, confirmedCases);
     const deathTotals = generateTotalsArray(datesArray, deathCount);
-    const recoveredTotals = generateTotalsArray(datesArray, recoveredCount);
     setChartData({
       ...chartData,
       dates: datesArray,
       confirmed: confirmedTotals,
-      deaths: deathTotals,
-      recovered: recoveredTotals
+      deaths: deathTotals
     });
   };
 
@@ -63,13 +60,6 @@ const ModalChart1 = ({ confirmedCases, deathCount, recoveredCount }) => {
         backgroundColor: 'rgb(220, 20, 60)',
         borderColor: 'rgb(139, 0, 0)',
         data: chartData.deaths
-      },
-      {
-        label: 'Recovered',
-        fill: false,
-        backgroundColor: 'rgb(0, 255, 0)',
-        borderColor: 'rgb(50,205,50)',
-        data: chartData.recovered
       }
     ]
   };

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Rodal from 'rodal';
-import FlagIcon from '../components/FlagIcon';
 import ModalChart1 from '../components/charts/ModalChart1';
 
 const SearchResults = ({ selectedCountry, data }) => {
@@ -8,8 +7,7 @@ const SearchResults = ({ selectedCountry, data }) => {
   const [country, setCountry] = useState(null);
   const [countryData, setCountryData] = useState({
     confirmed: null,
-    deaths: null,
-    recovered: null
+    deaths: null
   });
 
   const onShowModal = () => {
@@ -57,15 +55,11 @@ const SearchResults = ({ selectedCountry, data }) => {
       (prev, cur) => prev + cur.latest,
       0
     );
-    const recoveredLatest = data.recovered.reduce(
-      (prev, cur) => prev + cur.latest,
-      0
-    );
+
     setCountryData({
       ...countryData,
       confirmed: confirmedLatest,
-      deaths: deathsLatest,
-      recovered: recoveredLatest
+      deaths: deathsLatest
     });
   };
 
@@ -78,7 +72,7 @@ const SearchResults = ({ selectedCountry, data }) => {
   }, [selectedCountry]);
 
   return (
-    <Rodal visible={showModal} onClose={onHideModal} width={1000} height={460}>
+    <Rodal visible={showModal} onClose={onHideModal} width={800} height={460}>
       <div className='modal'>
         <h1 className='large'>{country}</h1>
         <div className='container grid-2'>
@@ -90,7 +84,6 @@ const SearchResults = ({ selectedCountry, data }) => {
             <ModalChart1
               confirmedCases={data.confirmed}
               deathCount={data.deaths}
-              recoveredCount={data.recovered}
             />{' '}
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Select from 'react-select';
 import SearchResults from './SearchResults';
 
 const Search = ({ confirmedCases, deathCount }) => {
@@ -12,7 +13,7 @@ const Search = ({ confirmedCases, deathCount }) => {
   });
 
   const onChange = e => {
-    generateSelectedCountryData(e.target.value);
+    generateSelectedCountryData(e.value);
   };
 
   const generateCountryList = () => {
@@ -23,12 +24,15 @@ const Search = ({ confirmedCases, deathCount }) => {
 
     //Remove duplicate countries
     const uniqueCountriesList = [...new Set(countriesList)].sort();
+    const final = uniqueCountriesList.map(c => ({
+      value: c,
+      label: c
+    }));
 
-    return uniqueCountriesList;
+    return final;
   };
 
   const generateSelectedCountryData = selectedCountry => {
-    console.log('generate country data for ', selectedCountry);
     const countryConfirmed = confirmedCases.locations.filter(
       element => element.country === selectedCountry
     );
@@ -53,24 +57,20 @@ const Search = ({ confirmedCases, deathCount }) => {
 
   useEffect(() => {
     formatData();
+    //eslint-disable-next-line
   }, []);
 
   return (
     <div>
       {searchState.countryList && (
         <form>
-          <select onChange={onChange} defaultValue={'default'}>
-            <option value='default' disabled>
-              Select a country for more information
-            </option>
-            {searchState.countryList.map((country, index) => {
-              return (
-                <option key={index} value={country}>
-                  {country}
-                </option>
-              );
-            })}
-          </select>
+          {searchState.countryList && (
+            <Select
+              options={searchState.countryList}
+              placeholder='Select a country for more information...'
+              onChange={e => onChange(e)}
+            />
+          )}
         </form>
       )}
       {searchState.country && (

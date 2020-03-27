@@ -55,7 +55,6 @@ export const getUS = async () => {
     const res = await axios.get(
       'https://coronavirus-tracker-api.herokuapp.com/v2/locations?source=csbs'
     );
-    console.log(res.data);
     return res.data;
   } catch (err) {
     console.error(err.message);
