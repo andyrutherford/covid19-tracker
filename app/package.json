@@ -1,0 +1,53 @@
+{
+  "name": "coronavirus-covid-19-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "chart.js": "^2.9.3",
+    "cheerio": "^1.0.0-rc.3",
+    "csvtojson": "^2.0.10",
+    "leaflet": "^1.6.0",
+    "moment": "^2.24.0",
+    "react": "^16.13.0",
+    "react-bootstrap-table-next": "^4.0.0",
+    "react-chartjs-2": "^2.9.0",
+    "react-countup": "^4.3.3",
+    "react-dom": "^16.13.0",
+    "react-flag-icon-css": "^1.0.25",
+    "react-infinite-scroll-component": "^5.0.4",
+    "react-leaflet": "^2.6.1",
+    "react-modal": "^3.11.2",
+    "react-moment": "^0.9.7",
+    "react-perfect-scrollbar": "^1.5.8",
+    "react-scripts": "3.4.0",
+    "react-select": "^3.1.0",
+    "request": "^2.88.2",
+    "rodal": "^1.8.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:5000"
+}
