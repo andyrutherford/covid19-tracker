@@ -15,36 +15,54 @@ import Timeline from '../components/Timeline';
 import DemographicsCharts from '../components/charts/DemographicsCharts';
 
 const Dashboard = () => {
-  const [confirmed, setConfirmed] = useState(null);
-  const [deaths, setDeaths] = useState(null);
-  const [usData, setUsData] = useState(null);
-  const [timeline, setTimeline] = useState(null);
-  const [demographics, setDemographics] = useState(null);
+  const [caseData, setCaseData] = useState({
+    confirmed: null,
+    deaths: null,
+    usData: null,
+    timeline: null,
+    demographics: null
+  });
 
   useEffect(() => {
-    getConfirmed().then(response => setConfirmed(response));
-    getDeaths().then(response => setDeaths(response));
-    getUS().then(response => setUsData(response));
-    getTimeline().then(response => setTimeline(response));
-    getDemographics().then(response => setDemographics(response));
+    getConfirmed().then(response =>
+      setCaseData(prevState => ({ ...prevState, confirmed: response }))
+    );
+    getDeaths().then(response =>
+      setCaseData(prevState => ({ ...prevState, deaths: response }))
+    );
+    getUS().then(response =>
+      setCaseData(prevState => ({ ...prevState, usData: response }))
+    );
+    getTimeline().then(response =>
+      setCaseData(prevState => ({ ...prevState, timeline: response }))
+    );
+    getDemographics().then(response =>
+      setCaseData(prevState => ({ ...prevState, demographics: response }))
+    );
   }, []);
 
   return (
     <div>
-      {confirmed && deaths && timeline ? (
-        <Navbar lastUpdated={confirmed.last_updated} />
+      {caseData.confirmed && caseData.deaths && caseData.timeline ? (
+        <Navbar lastUpdated={caseData.confirmed.last_updated} />
       ) : (
         <Navbar />
       )}
-      {confirmed && deaths && usData && timeline ? (
+      {caseData.confirmed &&
+      caseData.deaths &&
+      caseData.usData &&
+      caseData.timeline ? (
         <div>
           <section className='container grid-3-top section-1'>
             <div className='card'>
-              <ConfirmedCases confirmedCases={confirmed} />
+              <ConfirmedCases confirmedCases={caseData.confirmed} />
             </div>
             <div style={{ zIndex: '0', marginTop: '0.7rem' }}>
               <div style={{ zIndex: '9000', position: 'relative' }}>
-                <Search confirmedCases={confirmed} deathCount={deaths} />
+                <Search
+                  confirmedCases={caseData.confirmed}
+                  deathCount={caseData.deaths}
+                />
               </div>
               <div
                 className='map leaflet-container'
@@ -53,33 +71,42 @@ const Dashboard = () => {
                   zIndex: '0'
                 }}
               >
-                <Map confirmedCases={confirmed} usData={usData} />
+                <Map
+                  confirmedCases={caseData.confirmed}
+                  usData={caseData.usData}
+                />
               </div>
             </div>
 
             <div className='card'>
-              <DeathCount deathCount={deaths} />
+              <DeathCount deathCount={caseData.deaths} />
             </div>
           </section>
           <div className='container grid-2'>
             <div className='card'>
-              <CasesByCountryChart confirmedCases={confirmed} />
+              <CasesByCountryChart confirmedCases={caseData.confirmed} />
             </div>
             <div className='card'>
-              <Chart1 confirmedCases={confirmed} deathCount={deaths} />
+              <Chart1
+                confirmedCases={caseData.confirmed}
+                deathCount={caseData.deaths}
+              />
             </div>
           </div>
           <div className='container grid-2'>
             <div>
-              <CountriesChart confirmedCases={confirmed} deathCount={deaths} />
+              <CountriesChart
+                confirmedCases={caseData.confirmed}
+                deathCount={caseData.deaths}
+              />
             </div>
             <div className='card'>
-              <Timeline timeline={timeline} />
+              <Timeline timeline={caseData.timeline} />
             </div>
           </div>
           <div className='container'>
-            {demographics && (
-              <DemographicsCharts demographicsData={demographics} />
+            {caseData.demographics && (
+              <DemographicsCharts demographicsData={caseData.demographics} />
             )}
           </div>
         </div>

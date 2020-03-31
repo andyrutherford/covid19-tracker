@@ -9,32 +9,32 @@ const mockData = false;
 
 // USA specific https://coronavirus-tracker-api.herokuapp.com/v2/locations?source=csbs
 
-export const getConfirmed = async () => {
-  if (!mockData) {
-    try {
-      const res = await axios.get(`${url}/confirmed`);
-      return res.data;
-    } catch (err) {
-      console.error(err.message);
-    }
-  }
-  console.log('using mock data!');
-  console.log(mockConfirmed);
-  return mockConfirmed;
-};
+// export const getConfirmed = async () => {
+//   if (!mockData) {
+//     try {
+//       const res = await axios.get(`${url}/confirmed`);
+//       return res.data;
+//     } catch (err) {
+//       console.error(err.message);
+//     }
+//   }
+//   console.log('using mock data!');
+//   console.log(mockConfirmed);
+//   return mockConfirmed;
+// };
 
-export const getDeaths = async () => {
-  if (!mockData) {
-    try {
-      const res = await axios.get(`${url}/deaths`);
-      return res.data;
-    } catch (err) {
-      console.error(err.message);
-    }
-  }
-  console.log('using mock data!');
-  return mockDeaths;
-};
+// export const getDeaths = async () => {
+//   if (!mockData) {
+//     try {
+//       const res = await axios.get(`${url}/deaths`);
+//       return res.data;
+//     } catch (err) {
+//       console.error(err.message);
+//     }
+//   }
+//   console.log('using mock data!');
+//   return mockDeaths;
+// };
 
 // export const getRecovered = async () => {
 //   if (!mockData) {
@@ -50,13 +50,40 @@ export const getDeaths = async () => {
 //   return mockRecovered;
 // };
 
-export const getUS = async () => {
+export const getConfirmed = async () => {
   try {
-    const res = await axios.get(
-      'https://coronavirus-tracker-api.herokuapp.com/v2/locations?source=csbs'
-    );
+    const res = await axios.get('/api/cases/confirmed');
     return res.data;
   } catch (err) {
-    console.error(err.message);
+    console.error(err);
   }
 };
+
+export const getDeaths = async () => {
+  try {
+    const res = await axios.get('/api/cases/deaths');
+    return res.data;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const getUS = async () => {
+  try {
+    const res = await axios.get('/api/cases/usa');
+    return res.data;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+// export const getUS = async () => {
+//   try {
+//     const res = await axios.get(
+//       'https://coronavirus-tracker-api.herokuapp.com/v2/locations?source=csbs'
+//     );
+//     return res.data;
+//   } catch (err) {
+//     console.error(err.message);
+//   }
+// };

@@ -1,13 +1,10 @@
 import axios from 'axios';
 
-const url =
-  'https://api.allorigins.win/raw?url=https://bnonews.com/index.php/2020/02/the-latest-coronavirus-cases/';
-
 export const getTimeline = async () => {
   try {
-    const res = await axios.get(url);
+    const res = await axios.get('/api/timeline');
     return res.data;
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };

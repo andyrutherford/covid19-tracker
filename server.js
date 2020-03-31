@@ -7,6 +7,7 @@ app.get('/', (req, res) => res.json({ msg: 'Response...' }));
 // Define Routes
 app.use('/api/cases', require('./routes/cases'));
 app.use('/api/timeline', require('./routes/timeline'));
+app.use('/api/demographics', require('./routes/demographics'));
 
 const PORT = process.env.PORT || 5000;
 
