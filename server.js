@@ -1,8 +1,11 @@
 const express = require('express');
+const apicache = require('apicache');
 
 const app = express();
 
-app.get('/', (req, res) => res.json({ msg: 'Response...' }));
+let cache = apicache.middleware;
+
+app.use(cache('1 hour'));
 
 // Define Routes
 app.use('/api/cases', require('./routes/cases'));
