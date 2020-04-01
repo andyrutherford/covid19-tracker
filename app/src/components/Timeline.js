@@ -20,7 +20,7 @@ const Timeline = ({ timeline }) => {
                   <h3>{element.date}</h3>
                   <ul>
                     {element.time.map((el, idx) => (
-                      <li key={idx}>
+                      <li key={idx} className='small'>
                         {el.time_and_description}{' '}
                         <a className='small' href={el.source}>
                           Source

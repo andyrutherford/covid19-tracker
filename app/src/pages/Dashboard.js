@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { getConfirmed, getDeaths, getUS } from '../utils/fetchData';
+import {
+  getLocations,
+  getConfirmed,
+  getDeaths,
+  getUS
+} from '../utils/fetchData';
 import { getTimeline } from '../utils/fetchTimeline';
 import { getDemographics } from '../utils/fetchDemographics';
 import Navbar from '../layout/Navbar';
 import Spinner from '../layout/Spinner';
+import Locations from '../components/Locations';
 import ConfirmedCases from '../components/ConfirmedCases';
-import DeathCount from '../components/DeathCount';
+import Tweets from '../components/Tweets';
 import Search from '../components/Search';
 import Map from '../components/Map';
 import CasesByCountryChart from '../components/charts/CasesByCountryChart';
@@ -16,6 +22,7 @@ import DemographicsCharts from '../components/charts/DemographicsCharts';
 
 const Dashboard = () => {
   const [caseData, setCaseData] = useState({
+    locations: null,
     confirmed: null,
     deaths: null,
     usData: null,
@@ -24,6 +31,9 @@ const Dashboard = () => {
   });
 
   useEffect(() => {
+    getLocations().then(response =>
+      setCaseData(prevState => ({ ...prevState, locations: response }))
+    );
     getConfirmed().then(response =>
       setCaseData(prevState => ({ ...prevState, confirmed: response }))
     );
@@ -48,14 +58,16 @@ const Dashboard = () => {
       ) : (
         <Navbar />
       )}
-      {caseData.confirmed &&
+      {caseData.locations &&
+      caseData.confirmed &&
       caseData.deaths &&
       caseData.usData &&
       caseData.timeline ? (
         <div>
           <section className='container grid-3-top section-1'>
             <div className='card'>
-              <ConfirmedCases confirmedCases={caseData.confirmed} />
+              {/* <ConfirmedCases confirmedCases={caseData.confirmed} /> */}
+              <Locations locations={caseData.locations} />
             </div>
             <div style={{ zIndex: '0', marginTop: '0.7rem' }}>
               <div style={{ zIndex: '9000', position: 'relative' }}>
@@ -79,7 +91,7 @@ const Dashboard = () => {
             </div>
 
             <div className='card'>
-              <DeathCount deathCount={caseData.deaths} />
+              <Tweets />
             </div>
           </section>
           <div className='container grid-2'>

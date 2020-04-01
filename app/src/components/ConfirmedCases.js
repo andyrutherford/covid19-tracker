@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 const ConfirmedCases = ({ confirmedCases }) => {
   const { latest } = confirmedCases;
@@ -69,30 +71,32 @@ const ConfirmedCases = ({ confirmedCases }) => {
         <p className='text-center small'>Confirmed Cases</p>
       </div>
       <div className='stat-list-container'>
-        <ul>
-          {countryList &&
-            countryList.map((c, i) => (
-              <li key={i}>
-                <div className='grid-2-stats medium'>
-                  <div className='text-danger'>
-                    <CountUp
-                      start={0}
-                      end={parseInt(c.latest)}
-                      delay={0}
-                      duration={Math.random() * (2 - 1) + 1}
-                    >
-                      {({ countUpRef }) => (
-                        <div>
-                          <span ref={countUpRef} />
-                        </div>
-                      )}
-                    </CountUp>
-                  </div>{' '}
-                  <div>{c.country}</div>
-                </div>
-              </li>
-            ))}
-        </ul>
+        <PerfectScrollbar>
+          <ul>
+            {countryList &&
+              countryList.map((c, i) => (
+                <li key={i}>
+                  <div className='grid-2-stats small'>
+                    <div className='text-danger'>
+                      <CountUp
+                        start={0}
+                        end={parseInt(c.latest)}
+                        delay={0}
+                        duration={Math.random() * (2 - 1) + 1}
+                      >
+                        {({ countUpRef }) => (
+                          <div>
+                            <span ref={countUpRef} />
+                          </div>
+                        )}
+                      </CountUp>
+                    </div>{' '}
+                    <div>{c.country}</div>
+                  </div>
+                </li>
+              ))}
+          </ul>
+        </PerfectScrollbar>
       </div>
     </div>
   );

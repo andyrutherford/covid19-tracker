@@ -50,6 +50,15 @@ const mockData = false;
 //   return mockRecovered;
 // };
 
+export const getLocations = async () => {
+  try {
+    const res = await axios.get('/api/locations');
+    return res.data;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 export const getConfirmed = async () => {
   try {
     const res = await axios.get('/api/cases/confirmed');

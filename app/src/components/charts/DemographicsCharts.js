@@ -13,7 +13,6 @@ const DemographicsCharts = ({ demographicsData }) => {
   const { age, sex, preexistingConditions } = demographicsData;
 
   useEffect(() => {
-    console.log(demographicsData);
     setDemographics({
       age,
       sex,

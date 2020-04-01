@@ -49,8 +49,7 @@ img {
 }
 
 .stat-list-container {
-  height: 500px;
-  overflow-y: auto;
+  height: 380px;
 }
 
 /* Text Styles*/
@@ -67,7 +66,7 @@ img {
 }
 
 .medium {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 100;
   line-height: 2;
 }
@@ -490,7 +489,7 @@ table th {
 
 /* Sections */
 .section-1 {
-  height: 500px;
+  height: 85vh;
 }
 
 /* Modal */

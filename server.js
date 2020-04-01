@@ -8,6 +8,7 @@ let cache = apicache.middleware;
 app.use(cache('1 hour'));
 
 // Define Routes
+app.use('/api/locations', require('./routes/locations'));
 app.use('/api/cases', require('./routes/cases'));
 app.use('/api/timeline', require('./routes/timeline'));
 app.use('/api/demographics', require('./routes/demographics'));
