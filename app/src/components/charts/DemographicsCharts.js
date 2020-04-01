@@ -18,9 +18,9 @@ const DemographicsCharts = ({ demographicsData }) => {
       sex,
       preexistingConditions
     });
+    //eslint-disable-next-line
   }, []);
 
-  // console.log(demographicsData);
   return (
     <div className='grid-3'>
       <div className='card'>

@@ -4,8 +4,6 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
 const Locations = ({ locations }) => {
-  const { latest } = locations;
-
   const [locationList, setLocationList] = useState({
     latestConfirmed: null,
     latestDeaths: null,
@@ -13,8 +11,6 @@ const Locations = ({ locations }) => {
   });
 
   const formatData = () => {
-    console.log(locations);
-
     const data = locations.locations.map(location => ({
       country: location.country === 'US' ? 'United States' : location.country,
       confirmed: location.latest.confirmed,

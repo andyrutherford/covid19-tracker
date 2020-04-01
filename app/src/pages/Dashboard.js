@@ -10,7 +10,6 @@ import { getDemographics } from '../utils/fetchDemographics';
 import Navbar from '../layout/Navbar';
 import Spinner from '../layout/Spinner';
 import Locations from '../components/Locations';
-import ConfirmedCases from '../components/ConfirmedCases';
 import Tweets from '../components/Tweets';
 import Search from '../components/Search';
 import Map from '../components/Map';
