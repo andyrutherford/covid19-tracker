@@ -13,7 +13,7 @@ const Chart1 = ({ confirmedCases, deathCount }) => {
 
     const generateDatesArray = () => {
       const arr = [];
-      for (let i = 1; i < 60; i++) {
+      for (let i = 1; i < 45; i++) {
         const date = moment()
           .subtract(i, 'days')
           .format('M/D/YY');
@@ -98,6 +98,26 @@ const Chart1 = ({ confirmedCases, deathCount }) => {
     ]
   };
 
+  const options = {
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            callback: function(value, index, values) {
+              return value > 1000 ? value / 1000 + 'k' : value;
+            }
+          }
+        }
+      ]
+    },
+    legend: {
+      display: true,
+      position: 'bottom'
+    },
+    maintainAspectRatio: false,
+    responsive: true
+  };
+
   useEffect(() => {
     formatConfirmedData();
     formatDeathsData();
@@ -108,8 +128,8 @@ const Chart1 = ({ confirmedCases, deathCount }) => {
     <div>
       <h2 className='text-primary'>Worldwide Confirmed Cases</h2>
       {chartConfirmedData && chartDeathsData && chartDates && (
-        <div>
-          <Line data={data} />
+        <div className='chart-container'>
+          <Line data={data} options={options} />
         </div>
       )}
     </div>

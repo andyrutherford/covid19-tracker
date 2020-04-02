@@ -122,11 +122,15 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
           ticks: {
             display: true,
             autoSkip: true,
-            maxTicksLimit: 8
+            maxTicksLimit: 8,
+            callback: function(value, index, values) {
+              return value > 1000 ? value / 1000 + 'k' : value;
+            }
           }
         }
       ]
-    }
+    },
+    maintainAspectRatio: false
   };
 
   const generateChartData = key => {
@@ -184,7 +188,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
         {' '}
         <h2 className='text-primary'>Confirmed Cases</h2>{' '}
         {confirmedChartData && (
-          <div>
+          <div className='chart-container'>
             <Line data={confirmedChartData} options={options} />
           </div>
         )}
@@ -193,7 +197,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
         {' '}
         <h2 className='text-primary'>Deaths</h2>{' '}
         {deathsChartData && (
-          <div>
+          <div className='chart-container'>
             <Line data={deathsChartData} options={options} />
           </div>
         )}

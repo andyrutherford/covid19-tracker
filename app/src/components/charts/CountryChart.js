@@ -41,7 +41,10 @@ const CountryChart = ({ chartData }) => {
           ticks: {
             display: true,
             autoSkip: true,
-            maxTicksLimit: 8
+            maxTicksLimit: 8,
+            callback: function(value, index, values) {
+              return value > 1000 ? value / 1000 + 'k' : value;
+            }
           }
         }
       ]

@@ -14,21 +14,23 @@ const Chart2 = ({ chartData, title, showLegend }) => {
       {data && (
         <div>
           <h2 className='text-primary'>{title}</h2>
-          <Doughnut
-            data={chartData}
-            options={{
-              title: {
+          <div className='chart-container'>
+            <Doughnut
+              data={chartData}
+              options={{
+                title: {
+                  display: true,
+                  fontSize: 20
+                },
+                legend: {
+                  display: showLegend,
+                  position: 'right'
+                },
                 responsive: true,
-                maintainAspectRatio: true,
-                display: true,
-                fontSize: 20
-              },
-              legend: {
-                display: showLegend,
-                position: 'right'
-              }
-            }}
-          />
+                maintainAspectRatio: false
+              }}
+            />
+          </div>
         </div>
       )}
     </div>

@@ -36,23 +36,25 @@ const SexChart = ({ sexData }) => {
       {' '}
       <h2 className='text-primary'>Sex</h2>
       {chartData && (
-        <Doughnut
-          data={chartData}
-          options={{
-            title: {
-              responsive: true,
-              maintainAspectRatio: true,
-              display: true,
-              fontSize: 20
-            },
-            legend: {
-              display: true,
-              position: 'left'
-            }
-          }}
-        />
+        <div className='demographics-chart-container'>
+          <Doughnut
+            data={chartData}
+            options={{
+              title: {
+                display: true,
+                fontSize: 20
+              },
+              legend: {
+                display: true,
+                position: 'left'
+              },
+              maintainAspectRatio: false,
+              responsive: true
+            }}
+          />
+        </div>
       )}
-      <div style={{ width: '50%' }}>
+      <div className='demographics-disclaimer'>
         <p className='x-small'>
           Death Rate = (number of deaths / number of cases) = probability of
           dying if infected by the virus (%). The percentages do not have to add

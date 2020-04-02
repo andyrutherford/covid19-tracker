@@ -117,12 +117,11 @@ const CasesByCountryChart = ({ confirmedCases }) => {
 
   return (
     <div>
-      <div></div>
       <div>
         {chartDataExclChina && (
           <Chart2
             chartData={chartDataExclChina}
-            title={'Confirmed Cases outside of China'}
+            title={'Cases outside of China'}
             showLegend={true}
           />
         )}

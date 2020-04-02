@@ -25,7 +25,10 @@ const Navbar = ({ title, lastUpdated }) => {
         </h2>
         {lastUpdated && (
           <p className='navbar-subtext small'>
-            Last updated <Moment local>{lastUpdated}</Moment>{' '}
+            Last updated{' '}
+            <Moment local format='HH:mm MMM DD YYYY '>
+              {lastUpdated}
+            </Moment>{' '}
           </p>
         )}
       </div>
@@ -97,7 +100,7 @@ const Navbar = ({ title, lastUpdated }) => {
 };
 
 Navbar.defaultProps = {
-  title: 'Coronavirus COVID-19 Tracker'
+  title: 'COVID-19 Tracker'
 };
 
 export default Navbar;

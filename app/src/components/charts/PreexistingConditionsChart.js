@@ -47,23 +47,26 @@ const PreexistingConditionsChart = ({ preexistingConditionsData }) => {
       {' '}
       <h2 className='text-primary'>Pre-Existing Conditions</h2>
       {chartData && (
-        <Bar
-          data={chartData}
-          options={{
-            title: {
-              responsive: true,
-              maintainAspectRatio: true,
-              display: true,
-              fontSize: 20
-            },
-            legend: {
-              display: false,
-              position: 'left'
-            }
-          }}
-        />
+        <div className='demographics-chart-container'>
+          <Bar
+            data={chartData}
+            options={{
+              title: {
+                responsive: true,
+                display: true,
+                fontSize: 20
+              },
+              legend: {
+                display: false,
+                position: 'left'
+              },
+              maintainAspectRatio: false,
+              responsive: true
+            }}
+          />
+        </div>
       )}
-      <div style={{ width: '50%' }}>
+      <div className='demographics-disclaimer'>
         <p className='x-small'>
           Death Rate = (number of deaths / number of cases) = probability of
           dying if infected by the virus (%). The percentages do not have to add

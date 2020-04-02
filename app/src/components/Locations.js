@@ -52,7 +52,10 @@ const Locations = ({ locations }) => {
     <div>
       {locationList.locations && (
         <Fragment>
-          <div className='container' style={{ marginLeft: '-1rem' }}>
+          <div
+            className='container case-totals'
+            style={{ marginLeft: '-1rem' }}
+          >
             <div>
               <h1 className='text-danger text-center large'>
                 <CountUp
@@ -68,7 +71,9 @@ const Locations = ({ locations }) => {
                   )}
                 </CountUp>
               </h1>
-              <p className='text-center small'>Confirmed Cases</p>
+              <p className='text-center small' style={{ margin: '0 ' }}>
+                Confirmed Cases
+              </p>
             </div>
             <div>
               <h1 className='text-primary text-center large'>
@@ -85,7 +90,9 @@ const Locations = ({ locations }) => {
                   )}
                 </CountUp>
               </h1>
-              <p className='text-center small'>Deaths</p>
+              <p className='text-center small' style={{ margin: '0 ' }}>
+                Deaths
+              </p>
             </div>
           </div>
           <div className='stat-list-container'>

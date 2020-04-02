@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { defaults } from 'react-chartjs-2';
 import {
   getLocations,
   getConfirmed,
@@ -18,6 +19,8 @@ import Chart1 from '../components/charts/Chart1';
 import CountriesChart from '../components/charts/CountriesChart';
 import Timeline from '../components/Timeline';
 import DemographicsCharts from '../components/charts/DemographicsCharts';
+
+// defaults.global.maintainAspectRatio = false;
 
 const Dashboard = () => {
   const [caseData, setCaseData] = useState({
@@ -68,8 +71,15 @@ const Dashboard = () => {
               {/* <ConfirmedCases confirmedCases={caseData.confirmed} /> */}
               <Locations locations={caseData.locations} />
             </div>
-            <div style={{ zIndex: '0', marginTop: '0.7rem' }}>
-              <div style={{ zIndex: '9000', position: 'relative' }}>
+            <div style={{ zIndex: '0' }}>
+              <div
+                className='search-box'
+                style={{
+                  zIndex: '9000',
+                  position: 'relative',
+                  marginTop: '0.7rem'
+                }}
+              >
                 <Search
                   confirmedCases={caseData.confirmed}
                   deathCount={caseData.deaths}
