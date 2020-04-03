@@ -78,6 +78,23 @@ export default props => {
           <div>Demographics</div>
         </div>
       </a>
+
+      <a
+        className='menu-item medium'
+        href='https://github.com/andyrutherford/covid19-tracker'
+        rel='noopener noreferrer'
+        target='_blank'
+        style={{ position: 'absolute', bottom: '0' }}
+      >
+        {' '}
+        <div className='grid-2-sidebar'>
+          {' '}
+          <div>
+            <i className='fab fa-github'></i>{' '}
+          </div>{' '}
+          <div>Github</div>
+        </div>
+      </a>
     </Menu>
   );
 };

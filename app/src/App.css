@@ -485,8 +485,8 @@ table th {
   position: fixed;
   width: 36px;
   height: 30px;
-  left: 36px;
-  top: 36px;
+  left: 22px;
+  top: 22px;
 }
 
 /* Color/shape of burger icon bars */
@@ -507,7 +507,7 @@ table th {
 
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
+  background: #333;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
@@ -538,6 +538,12 @@ table th {
 }
 
 @media (max-width: 700px) {
+
+  /* Disable sidebar on mobile */
+  .sidebar {
+    display: none;
+  }
+
   .small {
     margin: 0;
   }
