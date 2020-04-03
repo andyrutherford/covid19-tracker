@@ -8,6 +8,7 @@ import {
 } from '../utils/fetchData';
 import { getTimeline } from '../utils/fetchTimeline';
 import { getDemographics } from '../utils/fetchDemographics';
+import SideBar from '../layout/Sidebar';
 import Navbar from '../layout/Navbar';
 import Spinner from '../layout/Spinner';
 import Locations from '../components/Locations';
@@ -19,8 +20,6 @@ import Chart1 from '../components/charts/Chart1';
 import CountriesChart from '../components/charts/CountriesChart';
 import Timeline from '../components/Timeline';
 import DemographicsCharts from '../components/charts/DemographicsCharts';
-
-// defaults.global.maintainAspectRatio = false;
 
 const Dashboard = () => {
   const [caseData, setCaseData] = useState({
@@ -55,6 +54,8 @@ const Dashboard = () => {
 
   return (
     <div>
+      <SideBar pageWrapId={'page-wrap'} outerContainerId={'App'} />
+
       {caseData.confirmed && caseData.deaths && caseData.timeline ? (
         <Navbar lastUpdated={caseData.confirmed.last_updated} />
       ) : (
@@ -66,7 +67,7 @@ const Dashboard = () => {
       caseData.usData &&
       caseData.timeline ? (
         <div>
-          <section className='container grid-3-top section-1'>
+          <section className='container grid-3-top section-1' id='top'>
             <div className='card'>
               {/* <ConfirmedCases confirmedCases={caseData.confirmed} /> */}
               <Locations locations={caseData.locations} />
@@ -87,6 +88,7 @@ const Dashboard = () => {
               </div>
               <div
                 className='map leaflet-container'
+                id='map'
                 style={{
                   marginTop: '0.7rem',
                   zIndex: '0'
@@ -99,21 +101,21 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <div className='card'>
+            <div className='card' id='tweets'>
               <Tweets />
             </div>
           </section>
-          <div className='container grid-2'>
-            <div className='card'>
-              <CasesByCountryChart confirmedCases={caseData.confirmed} />
-            </div>
+          <section className='container grid-2' id='confirmed-cases'>
             <div className='card'>
               <Chart1
                 confirmedCases={caseData.confirmed}
                 deathCount={caseData.deaths}
               />
             </div>
-          </div>
+            <div className='card'>
+              <CasesByCountryChart confirmedCases={caseData.confirmed} />
+            </div>
+          </section>
           <div className='container grid-2'>
             <div>
               <CountriesChart
@@ -121,15 +123,17 @@ const Dashboard = () => {
                 deathCount={caseData.deaths}
               />
             </div>
-            <div className='card'>
+            <div className='card' id='timeline'>
               <Timeline timeline={caseData.timeline} />
             </div>
           </div>
-          <div className='container'>
-            {caseData.demographics && (
-              <DemographicsCharts demographicsData={caseData.demographics} />
-            )}
-          </div>
+          <section id='demographics'>
+            <div className='container'>
+              {caseData.demographics && (
+                <DemographicsCharts demographicsData={caseData.demographics} />
+              )}
+            </div>
+          </section>
         </div>
       ) : (
         <Spinner />

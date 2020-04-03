@@ -49,7 +49,7 @@ const Chart1 = ({ confirmedCases, deathCount }) => {
     const generateDatesArray = () => {
       const today = moment().format('M/D/YY');
       const arr = [];
-      for (let i = 1; i < 60; i++) {
+      for (let i = 1; i < 45; i++) {
         const date = moment()
           .subtract(i, 'days')
           .format('M/D/YY');

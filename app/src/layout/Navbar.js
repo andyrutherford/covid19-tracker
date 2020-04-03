@@ -23,23 +23,22 @@ const Navbar = ({ title, lastUpdated }) => {
             <i className='fas fa-globe-americas fa-lg'></i> {title}
           </a>
         </h2>
+      </div>
+      <ul>
         {lastUpdated && (
-          <p className='navbar-subtext small'>
+          <li className='navbar-subtext small'>
             Last updated{' '}
             <Moment local format='HH:mm MMM DD YYYY '>
               {lastUpdated}
             </Moment>{' '}
-          </p>
+          </li>
         )}
-      </div>
-      <ul>
-        {' '}
-        <li>
+        {/* <li className='nav-link'>
           <a href='https://github.com/andyrutherford/covid19-tracker'>
             <i className='fab fa-github-alt fa-lg'></i>
           </a>
-        </li>
-        <li>
+      </li> 
+        <li className='nav-link'>
           <a href='#' onClick={onShowModal}>
             <i className='fas fa-question fa-lg'></i>
           </a>
@@ -93,7 +92,7 @@ const Navbar = ({ title, lastUpdated }) => {
               </p>
             </div>
           </Rodal>
-        </li>
+        </li>*/}
       </ul>
     </div>
   );

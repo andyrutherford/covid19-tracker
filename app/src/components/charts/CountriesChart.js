@@ -9,7 +9,8 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
     'Italy',
     'Korea, South',
     'Iran',
-    'Spain'
+    'Spain',
+    'China'
   ];
 
   const chartColors = [
@@ -18,7 +19,8 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
     '#955196',
     '#dd5182',
     '#ff6e54',
-    '#ffa600'
+    '#ffa600',
+    'red'
   ];
 
   const [confirmedData, setConfirmedData] = useState(null);
@@ -193,7 +195,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
           </div>
         )}
       </div>
-      <div className='card'>
+      <div className='card' id='deaths'>
         {' '}
         <h2 className='text-primary'>Deaths</h2>{' '}
         {deathsChartData && (

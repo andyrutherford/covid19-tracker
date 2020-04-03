@@ -62,7 +62,7 @@ const Locations = ({ locations }) => {
                   start={0}
                   end={parseInt(locationList.latestConfirmed)}
                   delay={0}
-                  duration={2.5}
+                  duration={2}
                 >
                   {({ countUpRef }) => (
                     <div>
@@ -71,9 +71,7 @@ const Locations = ({ locations }) => {
                   )}
                 </CountUp>
               </h1>
-              <p className='text-center small' style={{ margin: '0 ' }}>
-                Confirmed Cases
-              </p>
+              <p className='text-center small'>Confirmed Cases</p>
             </div>
             <div>
               <h1 className='text-primary text-center large'>
@@ -90,9 +88,7 @@ const Locations = ({ locations }) => {
                   )}
                 </CountUp>
               </h1>
-              <p className='text-center small' style={{ margin: '0 ' }}>
-                Deaths
-              </p>
+              <p className='text-center small'>Deaths</p>
             </div>
           </div>
           <div className='stat-list-container'>
@@ -102,8 +98,12 @@ const Locations = ({ locations }) => {
                   <li key={i}>
                     <div className='grid-2-stats '>
                       <div className='small'>
-                        <div className='text-danger'>{c.confirmed}</div>{' '}
-                        <div className='text-primary'>{c.deaths}</div>{' '}
+                        <div className='text-danger text-right'>
+                          {c.confirmed}
+                        </div>{' '}
+                        <div className='text-primary text-right'>
+                          {c.deaths}
+                        </div>{' '}
                       </div>
                       <div>
                         <p className='medium'>{c.country}</p>
