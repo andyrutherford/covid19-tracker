@@ -1,5 +1,6 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import CountUp from 'react-countup';
+import FlagIcon from '../components/FlagIcon';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
@@ -12,7 +13,16 @@ const Locations = ({ locations }) => {
 
   const formatData = () => {
     const data = locations.locations.map(location => ({
-      country: location.country === 'US' ? 'United States' : location.country,
+      country:
+        location.country === 'US'
+          ? 'United States'
+          : location.country === 'Korea, South'
+          ? 'South Korea'
+          : location.country,
+      country_code:
+        location.country_code === 'XK' || location.country_code === 'XX'
+          ? 'un'
+          : location.country_code.toLowerCase(),
       confirmed: location.latest.confirmed,
       deaths: location.latest.deaths
     }));
@@ -63,6 +73,7 @@ const Locations = ({ locations }) => {
                   end={parseInt(locationList.latestConfirmed)}
                   delay={0}
                   duration={2}
+                  separator={','}
                 >
                   {({ countUpRef }) => (
                     <div>
@@ -80,6 +91,7 @@ const Locations = ({ locations }) => {
                   end={parseInt(locationList.latestDeaths)}
                   delay={0}
                   duration={2}
+                  separator={','}
                 >
                   {({ countUpRef }) => (
                     <div>
@@ -96,17 +108,23 @@ const Locations = ({ locations }) => {
               <ul>
                 {locationList.locations.map((c, i) => (
                   <li key={i}>
-                    <div className='grid-2-stats '>
+                    <div className='grid-2-stats'>
                       <div className='small'>
                         <div className='text-danger text-right'>
-                          {c.confirmed}
+                          {c.confirmed.toLocaleString()}
                         </div>{' '}
                         <div className='text-primary text-right'>
-                          {c.deaths}
+                          {c.deaths.toLocaleString()}
                         </div>{' '}
                       </div>
                       <div>
-                        <p className='medium'>{c.country}</p>
+                        <FlagIcon code={c.country_code} />{' '}
+                        <p
+                          className='medium'
+                          style={{ display: 'inline-block' }}
+                        >
+                          {c.country}
+                        </p>
                       </div>
                     </div>
                   </li>

@@ -138,7 +138,12 @@ const Map = ({ confirmedCases, usData }) => {
   };
 
   return (
-    <LeafletMap center={[28, 0]} zoom={2} onZoomEnd={e => zoomChange(e)}>
+    <LeafletMap
+      center={[28, 0]}
+      zoom={2}
+      minZoom={2}
+      onZoomEnd={e => zoomChange(e)}
+    >
       <TileLayer
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'

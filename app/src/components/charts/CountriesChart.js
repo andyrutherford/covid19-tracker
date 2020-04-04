@@ -20,7 +20,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
     '#dd5182',
     '#ff6e54',
     '#ffa600',
-    'red'
+    'maroon'
   ];
 
   const [confirmedData, setConfirmedData] = useState(null);

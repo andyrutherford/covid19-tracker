@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Chart2 from './Chart2';
 
 const CasesByCountryChart = ({ confirmedCases }) => {
-  const [chartDataExclChina, setChartDataExclChina] = useState(null);
+  const [chartData, setChartData] = useState(null);
 
-  const formatDataExclChina = () => {
+  const formatData = () => {
     const countries = confirmedCases.locations.map(place => {
       return {
         country: place.country,
@@ -27,14 +27,14 @@ const CasesByCountryChart = ({ confirmedCases }) => {
     });
 
     //Find total cases for China
-    let chinaTotal;
-    result.forEach(element => {
-      for (let e in element) {
-        if (e === 'China') {
-          chinaTotal = element[e];
-        }
-      }
-    });
+    // let chinaTotal;
+    // result.forEach(element => {
+    //   for (let e in element) {
+    //     if (e === 'China') {
+    //       chinaTotal = element[e];
+    //     }
+    //   }
+    // });
 
     // Sort in descending order, and trim
     const duplicatesRemoved = result.map(b => {
@@ -48,7 +48,7 @@ const CasesByCountryChart = ({ confirmedCases }) => {
       .sort(function(a, b) {
         return parseFloat(b.latest) - parseFloat(a.latest);
       })
-      .slice(0, 10);
+      .slice(0, 9);
 
     const generateCountriesList = formattedArray => {
       const arr = [];
@@ -65,27 +65,26 @@ const CasesByCountryChart = ({ confirmedCases }) => {
     const countriesList = generateCountriesList(formattedArray);
     const countriesCases = generateCountriesCases(formattedArray);
 
-    const chinaIndex = countriesList.indexOf('China');
-    const countriesListExclChina = countriesList.filter(
-      element => element !== 'China'
-    );
-    countriesListExclChina.push('Rest of World');
+    // const chinaIndex = countriesList.indexOf('China');
+    // const countriesListExclChina = countriesList.filter(
+    //   element => element !== 'China'
+    // );
+    // countriesListExclChina.push('Rest of World');
 
-    const countriesDataExclChina = countriesCases.filter(
-      (element, index) => index !== chinaIndex
-    );
+    // const countriesDataExclChina = countriesCases.filter(
+    //   (element, index) => index !== chinaIndex
+    // );
+
+    countriesList.push('Rest of World');
 
     const restOfWorldData =
       confirmedCases.latest -
-      chinaTotal -
-      countriesDataExclChina.reduce(
-        (prev, cur) => parseInt(prev) + parseInt(cur)
-      );
+      countriesCases.reduce((prev, cur) => parseInt(prev) + parseInt(cur));
 
-    countriesDataExclChina.push(restOfWorldData.toString());
+    countriesCases.push(restOfWorldData.toString());
 
     const chartData = {
-      labels: countriesListExclChina,
+      labels: countriesList,
       datasets: [
         {
           label: 'Confirmed Cases',
@@ -102,26 +101,26 @@ const CasesByCountryChart = ({ confirmedCases }) => {
             '#D6EAF8',
             '#EBF5FB'
           ],
-          data: countriesDataExclChina.slice(0, 10)
+          data: countriesCases.slice(0, 10)
         }
       ]
     };
 
-    setChartDataExclChina(chartData);
+    setChartData(chartData);
   };
 
   useEffect(() => {
-    formatDataExclChina();
+    formatData();
     //eslint-disable-next-line
   }, []);
 
   return (
     <div>
       <div>
-        {chartDataExclChina && (
+        {chartData && (
           <Chart2
-            chartData={chartDataExclChina}
-            title={'Cases outside of China'}
+            chartData={chartData}
+            title={'Percent of Confirmed Cases by Country'}
             showLegend={true}
           />
         )}

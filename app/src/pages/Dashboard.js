@@ -128,6 +128,7 @@ const Dashboard = () => {
           </div>
           <section id='demographics'>
             <div className='container'>
+              <h1>Demographics</h1>
               {caseData.demographics && (
                 <DemographicsCharts demographicsData={caseData.demographics} />
               )}
