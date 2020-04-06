@@ -120,12 +120,7 @@ const Locations = ({ locations, newCases }) => {
                       </div>
                       <div>
                         <FlagIcon code={c.country_code} />{' '}
-                        <p
-                          className='medium'
-                          style={{ display: 'inline-block' }}
-                        >
-                          {c.country}
-                        </p>
+                        <p style={{ display: 'inline-block' }}>{c.country}</p>
                       </div>
                     </div>
                   </li>

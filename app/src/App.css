@@ -568,7 +568,11 @@ table th {
   }
 
   .stat-list-container {
-    display: none;
+    border: 1px solid black;
+
+    line-height: 2.5;
+    margin: 1rem;
+    padding: 0.5rem 0 0 1rem;
   }
 
   .search-box {
@@ -629,7 +633,7 @@ table th {
 
 /* Map */
 .leaflet-container {
-  height: 520px;
+  height: 600px;
   width: auto;
 }
 

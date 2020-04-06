@@ -10,7 +10,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
     'Korea, South',
     'Iran',
     'Spain',
-    'China',
+    'United Kingdom',
   ];
 
   const chartColors = [
@@ -161,7 +161,14 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
       confData.labels = confirmedData.dates;
       for (let [index, set] of confirmedData.dataset.entries()) {
         confData.datasets.push({
-          label: set.country === 'US' ? 'United States' : set.country,
+          label:
+            set.country === 'US'
+              ? 'USA'
+              : set.country === 'United Kingdom'
+              ? 'UK'
+              : set.country === 'Korea, South'
+              ? 'S. Korea'
+              : set.country,
           fill: false,
           backgroundColor: 'rgb(169, 169, 169)',
           borderColor: chartColors[index],
@@ -173,7 +180,14 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
       newConfData.labels = confirmedData.dates;
       for (let [index, set] of confirmedData.dataset.entries()) {
         newConfData.datasets.push({
-          label: set.country === 'US' ? 'United States' : set.country,
+          label:
+            set.country === 'US'
+              ? 'USA'
+              : set.country === 'United Kingdom'
+              ? 'UK'
+              : set.country === 'Korea, South'
+              ? 'S. Korea'
+              : set.country,
           fill: false,
           backgroundColor: 'rgb(169, 169, 169)',
           borderColor: chartColors[index],
@@ -192,7 +206,14 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
       detData.labels = deathsData.dates;
       for (let [index, set] of deathsData.dataset.entries()) {
         detData.datasets.push({
-          label: set.country === 'US' ? 'United States' : set.country,
+          label:
+            set.country === 'US'
+              ? 'USA'
+              : set.country === 'United Kingdom'
+              ? 'UK'
+              : set.country === 'Korea, South'
+              ? 'S. Korea'
+              : set.country,
           fill: false,
           backgroundColor: 'rgb(169, 169, 169)',
           borderColor: chartColors[index],
@@ -204,7 +225,14 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
       newDetData.labels = deathsData.dates;
       for (let [index, set] of deathsData.dataset.entries()) {
         newDetData.datasets.push({
-          label: set.country === 'US' ? 'United States' : set.country,
+          label:
+            set.country === 'US'
+              ? 'USA'
+              : set.country === 'United Kingdom'
+              ? 'UK'
+              : set.country === 'Korea, South'
+              ? 'S. Korea'
+              : set.country,
           fill: false,
           backgroundColor: 'rgb(169, 169, 169)',
           borderColor: chartColors[index],

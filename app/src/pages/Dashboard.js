@@ -141,12 +141,12 @@ const Dashboard = () => {
               <Timeline timeline={caseData.timeline} />
               </div> */}
           </div>
-          <section id='united-states'>
+          {/* <section id='united-states'>
             <div className='container grid-2'>
               <div className='card'>chart1</div>
               <div className='card'>chart2</div>
             </div>
-          </section>
+            </section> */}
           <section id='demographics'>
             <div className='container'>
               <h1>Demographics</h1>
