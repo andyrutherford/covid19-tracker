@@ -131,16 +131,15 @@ const Dashboard = () => {
               <NewDeathsChart deathCount={caseData.deaths} />
             </div>
           </section>
-          <div className='container grid-2'>
-            <div>
-              <CountriesChart
-                confirmedCases={caseData.confirmed}
-                deathCount={caseData.deaths}
-              />
-            </div>
-            <div className='card' id='timeline'>
+          <div className='container'>
+            <CountriesChart
+              confirmedCases={caseData.confirmed}
+              deathCount={caseData.deaths}
+            />
+
+            {/* <div className='card' id='timeline'>
               <Timeline timeline={caseData.timeline} />
-            </div>
+              </div> */}
           </div>
           <section id='united-states'>
             <div className='container grid-2'>
