@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import {
   getLocations,
+  getNewCases,
   getConfirmed,
   getDeaths,
-  getUS
+  getUS,
 } from '../utils/fetchData';
 import { getTimeline } from '../utils/fetchTimeline';
 import { getDemographics } from '../utils/fetchDemographics';
@@ -11,9 +12,12 @@ import SideBar from '../layout/Sidebar';
 import Navbar from '../layout/Navbar';
 import Spinner from '../layout/Spinner';
 import Locations from '../components/Locations';
+import Stats from '../components/Stats';
 import Tweets from '../components/Tweets';
 import Search from '../components/Search';
 import Map from '../components/Map';
+import NewCasesChart from '../components/charts/NewCasesChart';
+import NewDeathsChart from '../components/charts/NewDeathsChart';
 import CasesByCountryChart from '../components/charts/CasesByCountryChart';
 import Chart1 from '../components/charts/Chart1';
 import CountriesChart from '../components/charts/CountriesChart';
@@ -22,32 +26,36 @@ import DemographicsCharts from '../components/charts/DemographicsCharts';
 
 const Dashboard = () => {
   const [caseData, setCaseData] = useState({
+    newCases: null,
     locations: null,
     confirmed: null,
     deaths: null,
     usData: null,
     timeline: null,
-    demographics: null
+    demographics: null,
   });
 
   useEffect(() => {
-    getLocations().then(response =>
-      setCaseData(prevState => ({ ...prevState, locations: response }))
+    getLocations().then((response) =>
+      setCaseData((prevState) => ({ ...prevState, locations: response }))
     );
-    getConfirmed().then(response =>
-      setCaseData(prevState => ({ ...prevState, confirmed: response }))
+    getNewCases().then((response) =>
+      setCaseData((prevState) => ({ ...prevState, newCases: response }))
     );
-    getDeaths().then(response =>
-      setCaseData(prevState => ({ ...prevState, deaths: response }))
+    getConfirmed().then((response) =>
+      setCaseData((prevState) => ({ ...prevState, confirmed: response }))
     );
-    getUS().then(response =>
-      setCaseData(prevState => ({ ...prevState, usData: response }))
+    getDeaths().then((response) =>
+      setCaseData((prevState) => ({ ...prevState, deaths: response }))
     );
-    getTimeline().then(response =>
-      setCaseData(prevState => ({ ...prevState, timeline: response }))
+    getUS().then((response) =>
+      setCaseData((prevState) => ({ ...prevState, usData: response }))
     );
-    getDemographics().then(response =>
-      setCaseData(prevState => ({ ...prevState, demographics: response }))
+    getTimeline().then((response) =>
+      setCaseData((prevState) => ({ ...prevState, timeline: response }))
+    );
+    getDemographics().then((response) =>
+      setCaseData((prevState) => ({ ...prevState, demographics: response }))
     );
   }, []);
 
@@ -61,6 +69,7 @@ const Dashboard = () => {
         <Navbar />
       )}
       {caseData.locations &&
+      caseData.newCases &&
       caseData.confirmed &&
       caseData.deaths &&
       caseData.usData &&
@@ -69,28 +78,31 @@ const Dashboard = () => {
           <section className='container grid-3-top section-1' id='top'>
             <div className='card'>
               {/* <ConfirmedCases confirmedCases={caseData.confirmed} /> */}
-              <Locations locations={caseData.locations} />
+              <Locations
+                locations={caseData.locations}
+                newCases={caseData.newCases}
+              />
             </div>
             <div style={{ zIndex: '0' }}>
-              <div
+              {/* <div
                 className='search-box'
                 style={{
                   zIndex: '9000',
                   position: 'relative',
-                  marginTop: '0.7rem'
+                  marginTop: '0.7rem',
                 }}
               >
-                <Search
-                  confirmedCases={caseData.confirmed}
-                  deathCount={caseData.deaths}
+                <Stats
+                  locations={caseData.locations}
+                  newCases={caseData.newCases}
                 />
-              </div>
+              </div> */}
               <div
                 className='map leaflet-container'
                 id='map'
                 style={{
                   marginTop: '0.7rem',
-                  zIndex: '0'
+                  zIndex: '0',
                 }}
               >
                 <Map
@@ -104,7 +116,7 @@ const Dashboard = () => {
               <Tweets />
             </div>
           </section>
-          <section className='container grid-2' id='confirmed-cases'>
+          <section className='container grid-3' id='confirmed-cases'>
             <div className='card'>
               <Chart1
                 confirmedCases={caseData.confirmed}
@@ -112,7 +124,11 @@ const Dashboard = () => {
               />
             </div>
             <div className='card'>
-              <CasesByCountryChart confirmedCases={caseData.confirmed} />
+              {/* <CasesByCountryChart confirmedCases={caseData.confirmed} /> */}
+              <NewCasesChart confirmedCases={caseData.confirmed} />
+            </div>
+            <div className='card'>
+              <NewDeathsChart deathCount={caseData.deaths} />
             </div>
           </section>
           <div className='container grid-2'>
@@ -126,6 +142,12 @@ const Dashboard = () => {
               <Timeline timeline={caseData.timeline} />
             </div>
           </div>
+          <section id='united-states'>
+            <div className='container grid-2'>
+              <div className='card'>chart1</div>
+              <div className='card'>chart2</div>
+            </div>
+          </section>
           <section id='demographics'>
             <div className='container'>
               <h1>Demographics</h1>

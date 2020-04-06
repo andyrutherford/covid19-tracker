@@ -57,6 +57,15 @@ export const getLocations = async () => {
   }
 };
 
+export const getNewCases = async () => {
+  try {
+    const res = await axios.get('/api/locations/new');
+    return res.data;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 export const getConfirmed = async () => {
   try {
     const res = await axios.get('/api/cases/confirmed');

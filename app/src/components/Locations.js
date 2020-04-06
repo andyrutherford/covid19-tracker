@@ -4,15 +4,15 @@ import FlagIcon from '../components/FlagIcon';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
-const Locations = ({ locations }) => {
+const Locations = ({ locations, newCases }) => {
   const [locationList, setLocationList] = useState({
     latestConfirmed: null,
     latestDeaths: null,
-    locations: null
+    locations: null,
   });
 
   const formatData = () => {
-    const data = locations.locations.map(location => ({
+    const data = locations.locations.map((location) => ({
       country:
         location.country === 'US'
           ? 'United States'
@@ -24,13 +24,13 @@ const Locations = ({ locations }) => {
           ? 'un'
           : location.country_code.toLowerCase(),
       confirmed: location.latest.confirmed,
-      deaths: location.latest.deaths
+      deaths: location.latest.deaths,
     }));
 
     // Consolidate duplicates
-    var output = data.reduce(function(accumulator, cur) {
+    var output = data.reduce(function (accumulator, cur) {
       var country = cur.country,
-        found = accumulator.find(function(elem) {
+        found = accumulator.find(function (elem) {
           return elem.country === country;
         });
       if (found) {
@@ -43,13 +43,13 @@ const Locations = ({ locations }) => {
     // Sort and remove any countries with less than 100 cases
     const final = output
       .sort((a, b) => b.confirmed - a.confirmed)
-      .filter(element => element.confirmed > 100);
+      .filter((element) => element.confirmed > 100);
 
     setLocationList({
       ...locationList,
       latestConfirmed: locations.latest.confirmed,
       latestDeaths: locations.latest.deaths,
-      locations: final
+      locations: final,
     });
   };
 
@@ -67,6 +67,7 @@ const Locations = ({ locations }) => {
             style={{ marginLeft: '-1rem' }}
           >
             <div>
+              {' '}
               <h1 className='text-danger text-center large'>
                 <CountUp
                   start={0}
