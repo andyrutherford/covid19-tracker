@@ -7,7 +7,7 @@ const DemographicsCharts = ({ demographicsData }) => {
   const [demographics, setDemographics] = useState({
     age: null,
     sex: null,
-    preexistingConditions: null
+    preexistingConditions: null,
   });
 
   const { age, sex, preexistingConditions } = demographicsData;
@@ -16,25 +16,24 @@ const DemographicsCharts = ({ demographicsData }) => {
     setDemographics({
       age,
       sex,
-      preexistingConditions
+      preexistingConditions,
     });
     //eslint-disable-next-line
   }, []);
 
   return (
-    <div className='grid-3'>
-      <div className='card'>
-        {demographics.age && <AgeChart ageData={demographics.age} />}
-      </div>
-      <div className='card'>
-        {demographics.sex && <SexChart sexData={demographics.sex} />}
-      </div>
-      <div className='card'>
-        {demographics.preexistingConditions && (
-          <PreexistingConditionsChart
-            preexistingConditionsData={demographics.preexistingConditions}
-          />
-        )}
+    <div className='card'>
+      <h1 className='text-primary'>Demographics</h1>
+      <div className='grid-3'>
+        <div>{demographics.age && <AgeChart ageData={demographics.age} />}</div>
+        <div>{demographics.sex && <SexChart sexData={demographics.sex} />}</div>
+        <div>
+          {demographics.preexistingConditions && (
+            <PreexistingConditionsChart
+              preexistingConditionsData={demographics.preexistingConditions}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

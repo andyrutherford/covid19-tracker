@@ -40,6 +40,10 @@ img {
   width: 100%;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
 /* Utilities */
 .container {
   max-width: 100vw;
@@ -575,9 +579,7 @@ table th {
     padding: 0.5rem 0 0 1rem;
   }
 
-  .search-box {
-    display: none;
-  }
+
 
   .chart-container {
     height: 260px;
@@ -660,4 +662,9 @@ table th {
 .timeline-container {
   height: 730px;
   overflow-y: auto;
+}
+
+/* Search Box */
+.search-box {
+  padding: 0 2rem 1rem 0;
 }

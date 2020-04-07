@@ -83,7 +83,7 @@ const NewDeathsChart = ({ deathCount }) => {
 
   return (
     <div>
-      <h2 className='text-primary'>New Deaths Per Day</h2>
+      <h2 className='text-primary'>Deaths Per Day</h2>
       {chartDeathsData && chartDates && (
         <div className='chart-container'>
           <Bar data={data} options={options} />

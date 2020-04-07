@@ -1,0 +1,1089 @@
+[{
+    "date": "7 April",
+    "time": [{
+        "time_and_description": "06:23: 73 new cases in Ghana.",
+        "source": "https://www.ghanahealthservice.org/covid19/"
+    }, {
+        "time_and_description": "05:51: 232 new cases and 55 new deaths in Italy. This includes 122 new cases and 33 new deaths in Piedmont Region and 110 new cases and 22 new deaths in Veneto. NOTE: These cases and deaths will be part of Tuesday’s national update. (Source 1, Source 2)",
+        "source": "https://www.regione.piemonte.it/web/pinforma/notizie/coronavirus-gli-aggiornamenti-dalla-regione-piemonte"
+    }, {
+        "time_and_description": "05:29: 586 new cases and 4 new deaths in Pakistan.",
+        "source": "http://covid.gov.pk/"
+    }, {
+        "time_and_description": "05:28: 280 new cases and 9 new deaths in Peru.",
+        "source": "https://covid19.minsa.gob.pe/sala_situacional.asp"
+    }, {
+        "time_and_description": "05:28: 87 new cases in the Czech Republic.",
+        "source": "https://onemocneni-aktualne.mzcr.cz/covid-19"
+    }, {
+        "time_and_description": "05:21: 105 new cases and 6 new deaths in Norway.",
+        "source": "https://www.vg.no/spesial/2020/corona/"
+    }, {
+        "time_and_description": "05:20: 255 new cases and 1 new death in Israel.",
+        "source": "https://www.ynetnews.com/article/NLQULTUEU"
+    }, {
+        "time_and_description": "05:19: 95 new cases and 5 new deaths in Australia, including 49 new cases and 3 new deaths in New South Wales."
+    }, {
+        "time_and_description": "05:18: 894 new cases and 46 new deaths in Germany.",
+        "source": "https://dts-nachrichtenagentur.de/corona-fallzahlen"
+    }, {
+        "time_and_description": "05:13: 1,643 new cases and 172 new deaths in Spain.",
+        "source": "https://www.rtve.es/noticias/20200406/mapa-del-coronavirus-espana/2004681.shtml"
+    }, {
+        "time_and_description": "05:01: 231 new cases and 2 new deaths in Japan.",
+        "source": "https://www3.nhk.or.jp/news/html/20200407/k10012371921000.html?utm_int=word_contents_list-items_016&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9"
+    }, {
+        "time_and_description": "04:00: 60 new cases, including 30 asymptomatic cases, in mainland China. There were no new deaths and no new cases in Hubei province. Two cases which were previously classified as asymptomatic were converted to symptomatic cases.",
+        "source": "http://www.nhc.gov.cn/yjb/s7860/202004/4c63d42ef61142d6a3d827b9f9fd2fe9.shtml"
+    }, {
+        "time_and_description": "03:31: 12 new deaths in Nevada, United States.",
+        "source": "https://app.powerbigov.us/view?r=eyJrIjoiMjA2ZThiOWUtM2FlNS00MGY5LWFmYjUtNmQwNTQ3Nzg5N2I2IiwidCI6ImU0YTM0MGU2LWI4OWUtNGU2OC04ZWFhLTE1NDRkMjcwMzk4MCJ9"
+    }, {
+        "time_and_description": "03:30: 349 new cases and 7 new deaths in California, United States.",
+        "source": "https://www.latimes.com/projects/california-coronavirus-cases-tracking-outbreak/"
+    }, {
+        "time_and_description": "02:00: 54 new cases in New Zealand.",
+        "source": "https://www.health.govt.nz/news-media/media-releases/54-new-cases-covid-19"
+    }, {
+        "time_and_description": "00:55: 296 new cases and 31 new deaths in Mexico.",
+        "source": "https://twitter.com/HLGatell/status/1247319484509143041"
+    }, {
+        "time_and_description": "00:48: 112 new cases and 1 new death in Panama.",
+        "source": "https://geosocial.maps.arcgis.com/apps/opsdashboard/index.html#/2c6e932c690d467b85375af52b614472"
+    }, {
+        "time_and_description": "00:42: 74 new cases and 5 new deaths in Argentina.",
+        "source": "https://www.lanacion.com.ar/sociedad/parte-casos-infectados-lunes-6-abril-nid2351475?utm_source=dlvr.it&utm_medium=twitter"
+    }, {
+        "time_and_description": "00:39: 69 new cases and 3 new deaths in Idaho, United States.",
+        "source": "https://coronavirus.idaho.gov/"
+    }, {
+        "time_and_description": "00:38: 79 new cases in Alabama, United States.",
+        "source": "https://alpublichealth.maps.arcgis.com/apps/opsdashboard/index.html#/6d2771faa9da4a2786a509d82c8cf0f7"
+    }, {
+        "time_and_description": "00:35: 138 new cases and 6 new deaths in North Carolina, United States.",
+        "source": "https://www.newsobserver.com/news/local/article241168731.html"
+    }, {
+        "time_and_description": "00:27: 170 new cases and 6 new deaths in California, United States.",
+        "source": "https://www.latimes.com/projects/california-coronavirus-cases-tracking-outbreak/"
+    }, {
+        "time_and_description": "00:15: 726 new cases and 5 new deaths in Texas, United States.",
+        "source": "https://www.houstonchronicle.com/coronavirus/article/texas-coronavirus-map-cases-houston-covid-19-15137466.php"
+    }]
+}, {
+    "date": "6 April",
+    "time": [{
+        "time_and_description": "23:59: 244 new cases and 65 new deaths in Georgia state, United States.",
+        "source": "https://dph.georgia.gov/covid-19-daily-status-report"
+    }, {
+        "time_and_description": "23:14: 840 new cases and 39 new deaths in Washington state, United States. NOTE: Because of delayed reporting from the Washington state Department of Health, these figures were collected from 11 counties and covers multiple days."
+    }, {
+        "time_and_description": "22:54: First death in the U.S. Virgin Islands, United States.",
+        "source": "https://doh.vi.gov/news/health-department-announces-first-confirmed-covid-19-death-st-thomas"
+    }, {
+        "time_and_description": "22:53: 110 new cases and 1 new death in Delaware, United States.",
+        "source": "https://coronavirus.delaware.gov/"
+    }, {
+        "time_and_description": "22:51: 160 new cases and 2 new deaths in Rhode Island, United States.",
+        "source": "https://health.ri.gov/data/covid-19/"
+    }, {
+        "time_and_description": "22:48: 183 new cases and 4 new deaths in South Carolina, United States.",
+        "source": "https://scdhec.gov/infectious-diseases/viruses/coronavirus-disease-2019-covid-19/testing-sc-data-covid-19"
+    }, {
+        "time_and_description": "22:40: 299 new cases and 8 new deaths in Missouri, United States.",
+        "source": "https://www.kshb.com/news/coronavirus/covid-19-case-tracker-where-we-stand-in-mo-ks-nationwide"
+    }, {
+        "time_and_description": "22:29: 71 new cases and 4 new deaths in Texas, United States.",
+        "source": "https://www.nbcdfw.com/news/coronavirus/what-we-know-about-coronavirus-cases-in-north-texas-around-the-state/2335449/"
+    }, {
+        "time_and_description": "22:20: 169 new cases and 21 new deaths in Tennessee, United States.",
+        "source": "https://www.tn.gov/health/cedep/ncov.html"
+    }, {
+        "time_and_description": "22:17: 115 new cases in Uzbekistan.",
+        "source": "https://t.me/s/ssvuz"
+    }, {
+        "time_and_description": "22:15: 305 new cases and 18 new deaths in Florida, United States.",
+        "source": "https://experience.arcgis.com/experience/96dd742462124fa0b38ddedb9b25e429"
+    }, {
+        "time_and_description": "22:00: 62 new cases in New Mexico, United States.",
+        "source": "https://cv.nmhealth.org/"
+    }, {
+        "time_and_description": "21:44: 53 new cases and 14 new deaths in Kentucky, United States.",
+        "source": "https://govstatus.egov.com/kycovid19"
+    }, {
+        "time_and_description": "21:43: 142 new cases in Saudi Arabia.",
+        "source": "https://covid19.cdc.gov.sa/daily-updates/"
+    }, {
+        "time_and_description": "21:29: 64 new cases and 2 new deaths in Oregon, United States.",
+        "source": "https://govstatus.egov.com/OR-OHA-COVID-19"
+    }, {
+        "time_and_description": "21:14: 9 new deaths in Romania.",
+        "source": "http://www.ms.ro/2020/04/06/deces-169-176/"
+    }, {
+        "time_and_description": "20:53: 103 new cases and 21 new deaths in Algeria.",
+        "source": "http://www.aps.dz/sante-science-technologie/103791-coronavirus-103-nouveaux-cas-confirmes-et-21-nouveaux-deces-en-algerie"
+    }, {
+        "time_and_description": "20:45: 63 new cases and 1 new death in British Columbia, Canada.",
+        "source": "https://twitter.com/richardzussman/status/1247263630543835137"
+    }, {
+        "time_and_description": "20:40: 203 new cases and 10 new deaths in Brazil.",
+        "source": "https://g1.globo.com/bemestar/coronavirus/noticia/2020/04/06/casos-de-coronavirus-no-brasil-em-6-de-abril.ghtml"
+    }, {
+        "time_and_description": "20:36: 1,231 new cases and 17 new deaths in Connecticut, United States.",
+        "source": "https://portal.ct.gov/-/media/Coronavirus/CTDPHCOVID19summary4062020.pdf?la=en"
+    }, {
+        "time_and_description": "20:34: 405 new cases and 15 new deaths in Los Angeles County, California, United States.",
+        "source": "http://publichealth.lacounty.gov/phcommon/public/media/mediapubhpdetail.cfm?prid=2298"
+    }, {
+        "time_and_description": "20:30: 163 new cases and 6 new deaths in California, United States.",
+        "source": "https://www.latimes.com/projects/california-coronavirus-cases-tracking-outbreak/"
+    }, {
+        "time_and_description": "20:15: 70 new cases and 5 new deaths in Utah, United States.",
+        "source": "https://coronavirus.utah.gov/case-counts/"
+    }, {
+        "time_and_description": "20:12: 7 new cases and 9 new deaths in Morocco.",
+        "source": "http://www.covidmaroc.ma/Pages/AccueilAR.aspx"
+    }, {
+        "time_and_description": "20:10: 222 new cases and 8 new deaths in Colorado, United States.",
+        "source": "https://twitter.com/JoeStGeorge/status/1247254653105995777"
+    }, {
+        "time_and_description": "20:07: 149 new cases and 7 new deaths in Egypt.",
+        "source": "https://www.facebook.com/EgyMohpSpokes/posts/1141772786159889?__tn__=K-R"
+    }, {
+        "time_and_description": "19:58: 1,337 new cases and 29 new deaths in Massachusetts, United States.",
+        "source": "https://www.mass.gov/doc/covid-19-cases-in-massachusetts-as-of-april-6-2020/download"
+    }, {
+        "time_and_description": "19:18: 1,006 new cases and 33 new deaths in Illinois, United States.",
+        "source": "http://www.dph.illinois.gov/topics-services/diseases-and-conditions/diseases-a-z-list/coronavirus"
+    }, {
+        "time_and_description": "19:03: 1,503 new cases and 110 new deaths in Michigan, United States.",
+        "source": "https://www.michigan.gov/coronavirus"
+    }, {
+        "time_and_description": "18:28: 173 new cases and 9 new deaths in Wisconsin, United States.",
+        "source": "https://www.dhs.wisconsin.gov/outbreaks/index.htm"
+    }, {
+        "time_and_description": "18:16: 407 new cases and 23 new deaths in Ohio, United States.",
+        "source": "https://coronavirus.ohio.gov/wps/portal/gov/covid-19/home"
+    }, {
+        "time_and_description": "18:15: 3,585 new cases and 86 new deaths in New Jersey, United States.",
+        "source": "https://www.nj.gov/health/cd/topics/covid2019_dashboard.shtml"
+    }, {
+        "time_and_description": "18:12: 5,171 new cases and 833 new deaths in France. This includes 220 additional deaths in nursing homes which were previously not included in the death toll. It also includes 1,259 confirmed and suspected cases at nursing homes, but a breakdown for confirmed and suspected cases has not been released.",
+        "source": "https://news.trust.org/item/20200406182338-qqk9s"
+    }, {
+        "time_and_description": "18:11: 1,808 new cases and 187 new deaths in Germany.",
+        "source": "https://dts-nachrichtenagentur.de/corona-fallzahlen"
+    }, {
+        "time_and_description": "18:10: 114 new deaths in Spain.",
+        "source": "https://www.rtve.es/noticias/20200406/mapa-del-coronavirus-espana/2004681.shtml"
+    }, {
+        "time_and_description": "18:08: 381 new cases and 40 new deaths in Switzerland.",
+        "source": "https://rsalzer.github.io/COVID_19_CH/"
+    }, {
+        "time_and_description": "18:03: 228 new cases in Austria.",
+        "source": "https://info.gesundheitsministerium.at/"
+    }, {
+        "time_and_description": "17:55: 370 new cases and 16 new deaths in Ireland.",
+        "source": "https://www.gov.ie/en/press-release/ec2aa4-statement-from-the-national-public-health-emergency-team-monday-6-ap/"
+    }, {
+        "time_and_description": "17:54: 86 new cases and 1 new death in Alabama, United States.",
+        "source": "https://alpublichealth.maps.arcgis.com/apps/opsdashboard/index.html#/6d2771faa9da4a2786a509d82c8cf0f7"
+    }, {
+        "time_and_description": "17:53: 117 new cases in Nevada, United States.",
+        "source": "https://app.powerbigov.us/view?r=eyJrIjoiMjA2ZThiOWUtM2FlNS00MGY5LWFmYjUtNmQwNTQ3Nzg5N2I2IiwidCI6ImU0YTM0MGU2LWI4OWUtNGU2OC04ZWFhLTE1NDRkMjcwMzk4MCJ9"
+    }, {
+        "time_and_description": "17:52: 436 new cases and 24 new deaths in Maryland, United States.",
+        "source": "https://coronavirus.maryland.gov/"
+    }, {
+        "time_and_description": "17:48: 1,533 new cases and 12 new deaths in Pennsylvania, United States. (Source 1, Source 2)",
+        "source": "https://www.health.pa.gov/topics/disease/coronavirus/Pages/Cases.aspx"
+    }, {
+        "time_and_description": "17:43: 636 new cases and 27 new deaths in Quebec, Canada.",
+        "source": "https://twitter.com/sante_qc/status/1247214551814352901"
+    }, {
+        "time_and_description": "17:42: 464 new cases and 13 new deaths in Texas, United States.",
+        "source": "https://txdshs.maps.arcgis.com/apps/opsdashboard/index.html#/ed483ecd702b4298ab01e8b9cafc8b83"
+    }, {
+        "time_and_description": "17:30: 224 new cases and 3 new deaths in North Carolina, United States.",
+        "source": "https://www.newsobserver.com/news/local/article241168731.html"
+    }, {
+        "time_and_description": "17:26: 10 new deaths in Romania. (Source 1, Source 2)",
+        "source": "http://www.ms.ro/2020/04/06/deces-158-162/"
+    }, {
+        "time_and_description": "17:23: 292 new cases and 7 new deaths in Serbia.",
+        "source": "https://covid19.rs/information-about-coronavirus-covid-19-06-04-2020-at-1500/"
+    }, {
+        "time_and_description": "17:22: 411 new cases and 14 new deaths in India.",
+        "source": "https://www.covid19india.org/"
+    }, {
+        "time_and_description": "17:21: 144 new cases and 6 new deaths in the Czech Republic.",
+        "source": "https://onemocneni-aktualne.mzcr.cz/covid-19"
+    }, {
+        "time_and_description": "17:16: 237 new cases and 19 new deaths in Brazil.",
+        "source": "https://g1.globo.com/bemestar/coronavirus/noticia/2020/04/06/casos-de-coronavirus-no-brasil-em-6-de-abril.ghtml"
+    }, {
+        "time_and_description": "17:15: 38 new cases and 5 new deaths in Israel.",
+        "source": "https://www.ynetnews.com/article/NLQULTUEU"
+    }, {
+        "time_and_description": "17:03: 3,148 new cases and 75 new deaths in Turkey.",
+        "source": "https://covid19.saglik.gov.tr/"
+    }, {
+        "time_and_description": "17:00: 1,857 new cases and 35 new deaths in Louisiana, United States.",
+        "source": "http://ldh.la.gov/coronavirus/"
+    }, {
+        "time_and_description": "17:00: 187 new cases and 1 new death in Arizona, United States.",
+        "source": "https://www.azdhs.gov/preparedness/epidemiology-disease-control/infectious-disease-epidemiology/index.php#novel-coronavirus-home"
+    }, {
+        "time_and_description": "17:00: 78 new cases and 3 new deaths in Iowa, United States.",
+        "source": "https://idph.iowa.gov/News/ArtMID/646/ArticleID/158327/Additional-COVID-19-cases-in-Iowa-Additional-Deaths-Confirmed-4620"
+    }, {
+        "time_and_description": "16:59: 241 new cases and 2 new deaths in Virginia, United States.",
+        "source": "http://www.vdh.virginia.gov/coronavirus/"
+    }, {
+        "time_and_description": "16:55: 572 new cases and 10 new deaths in Georgia, United States.",
+        "source": "https://dph.georgia.gov/covid-19-daily-status-report"
+    }, {
+        "time_and_description": "16:35: 99 new cases and 2 new deaths in Washington, District of Columbia, United States.",
+        "source": "https://coronavirus.dc.gov/page/coronavirus-data"
+    }, {
+        "time_and_description": "16:14: 228 new cases in Qatar.",
+        "source": "https://twitter.com/MOPHQatar/status/1247196061384531968"
+    }, {
+        "time_and_description": "16:13: 101 new cases and 11 new deaths in Ecuador.",
+        "source": "https://twitter.com/Salud_Ec/status/1247193354343002112"
+    }, {
+        "time_and_description": "16:05: 3,599 new cases and 636 new deaths in Italy.",
+        "source": "https://pbs.twimg.com/media/EU7s5c9XYAEAysp?format=jpg&name=medium"
+    }, {
+        "time_and_description": "16:01: 974 new cases and 15 new deaths in Florida, United States.",
+        "source": "https://experience.arcgis.com/experience/96dd742462124fa0b38ddedb9b25e429"
+    }, {
+        "time_and_description": "16:00: 100 new cases and 8 new deaths in Mississippi, United States.",
+        "source": "https://msdh.ms.gov/msdhsite/_static/14,21882,420,873.html"
+    }, {
+        "time_and_description": "16:00: 89 new cases and 3 new deaths in Kansas, United States.",
+        "source": "https://public.tableau.com/profile/kdhe.epidemiology#!/vizhome/COVID-19Data_15851817634470/KSCOVID-19CaseData"
+    }, {
+        "time_and_description": "16:00: 277 new cases and 1 new death in the United Arab Emirates.",
+        "source": "https://twitter.com/DHA_Dubai/status/1247154991883677704"
+    }, {
+        "time_and_description": "15:58: 8,658 new cases and 599 new deaths in New York state, United States.",
+        "source": "https://twitter.com/NYGovCuomo/status/1247191855407566848"
+    }, {
+        "time_and_description": "15:38: 212 new cases and 9 new deaths in Poland.",
+        "source": "https://twitter.com/MZ_GOV_PL/status/1247186933878489091"
+    }, {
+        "time_and_description": "15:31: 3,802 new cases and 439 new deaths in the United Kingdom.",
+        "source": "https://twitter.com/DHSCgovuk/status/1247185091517911040"
+    }, {
+        "time_and_description": "15:08: 83 new cases and 4 new deaths in the Dominican Republic.",
+        "source": "https://twitter.com/SaludPublicaRD/status/1247179349306093569"
+    }, {
+        "time_and_description": "15:00: 309 new cases and 13 new deaths in Ontario, Canada.",
+        "source": "https://www.ontario.ca/page/2019-novel-coronavirus"
+    }, {
+        "time_and_description": "14:52: 344 new cases and 3 new deaths in Chile.",
+        "source": "https://www.gob.cl/coronavirus/cifrasoficiales/"
+    }, {
+        "time_and_description": "14:25: 70 new cases and 3 new deaths in Iraq.",
+        "source": "https://www.facebook.com/MOH.GOV.IQ/photos/a.860171854037214/2853557261365320/?type=3&__xts__%5B0%5D=68.ARDR5J8VEdCgEpGfT9fweRUIiut8SWJMEvV2MuVBcxOESrU-NzSr04eGS2RyRW3RjeXMj247HDagfBQLlTKWcxSvdM6EYsRJ3FpaLXu7g6aRW4ipp97epiUWqMKg9XmxKjC7HrHu-FHe6vzJm74yjqjhALTC8On2CuQ8nMOJrS3n3W6CAQ_VAnpewnFDPf2WE5jRSYyEa5utw0xlnFJ6_fF9d5BHsKSsKYSrVYB9O4j69u4T0N8ohla2OyySJKhGei0L-ca14f712gK73uQ3OYbg79mJGXFTLBUJkHNGrgk_2sQIwz7YRnqIg-tyuhS8uZSAMjiB84toIcc7BXepyBP-mA&__tn__=-R"
+    }, {
+        "time_and_description": "14:20: 533 new cases and 12 new deaths in Indiana, United States.",
+        "source": "https://twitter.com/StateHealthIN/status/1247167247904366592"
+    }, {
+        "time_and_description": "13:30: 376 new cases and 76 new deaths in Sweden.",
+        "source": "https://experience.arcgis.com/experience/09f821667ce64bf7be6f9f87457ed9aa"
+    }, {
+        "time_and_description": "13:18: 66 new cases in Singapore.",
+        "source": "https://www.moh.gov.sg/news-highlights/details/24-more-cases-discharged-66-new-cases-of-covid-19-infection-confirmed"
+    }, {
+        "time_and_description": "13:00: 452 new cases and 16 new deaths in Portugal.",
+        "source": "https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/"
+    }, {
+        "time_and_description": "11:50: 952 new cases and 101 new deaths in the Netherlands.",
+        "source": "https://www.rivm.nl/actuele-informatie-over-coronavirus"
+    }, {
+        "time_and_description": "10:06: 193 new cases and 6 new deaths in Romania.",
+        "source": "https://www.facebook.com/departamenturgente/posts/1507867826041550?__tn__=K-R"
+    }, {
+        "time_and_description": "10:05: 2,274 new cases and 136 new deaths in Iran.",
+        "source": "https://twitter.com/AbasAslani/status/1247100328325140485"
+    }, {
+        "time_and_description": "10:01: 83 new cases in Germany.",
+        "source": "https://dts-nachrichtenagentur.de/corona-fallzahlen"
+    }, {
+        "time_and_description": "09:52: 131 new cases and 1 new death in Malaysia.",
+        "source": "https://twitter.com/KKMPutrajaya/status/1247094833279143937"
+    }, {
+        "time_and_description": "09:49: 3,386 new cases and 414 new deaths in Spain. Compared to the same time yesterday, there were 4,273 new cases and 637 new deaths.",
+        "source": "https://twitter.com/SaludPublicaEs/status/1247097105426022400"
+    }, {
+        "time_and_description": "09:29: 69 new cases and 2 new deaths in Kyrgyzstan.",
+        "source": "http://www.med.kg/ru/informatsii/883-epidsituatsiya-po-koronavirusu-v-kyrgyzstane-na-6-aprelya.html"
+    }, {
+        "time_and_description": "09:17: 109 new cases in Kuwait.",
+        "source": "https://twitter.com/KUWAIT_MOH/status/1247089201025335296"
+    }, {
+        "time_and_description": "09:15: 1,123 new cases and 185 new deaths in Belgium.",
+        "source": "https://www.youtube.com/watch?v=WM26twyn8Oc"
+    }, {
+        "time_and_description": "09:08: 138 new cases and 5 new deaths in Belarus.",
+        "source": "https://t.me/s/onlinerby"
+    }, {
+        "time_and_description": "08:55: 218 new cases and 11 new deaths in Indonesia.",
+        "source": "https://www.cnnindonesia.com/nasional/20200406141046-20-490780/update-corona-6-april-2491-kasus-209-meninggal-192-sembuh"
+    }, {
+        "time_and_description": "08:47: 414 new cases and 11 new deaths in the Philippines.",
+        "source": "https://twitter.com/ABSCBNNews/status/1247083263635542017"
+    }, {
+        "time_and_description": "08:45: 222 new cases in Germany.",
+        "source": "https://dts-nachrichtenagentur.de/corona-fallzahlen"
+    }, {
+        "time_and_description": "08:44: 122 new cases and 3 new deaths in Pakistan.",
+        "source": "http://covid.gov.pk/"
+    }, {
+        "time_and_description": "08:40: 6 new deaths in Romania. (Source 1, Source 2)",
+        "source": "http://www.ms.ro/2020/04/06/deces-157/"
+    }, {
+        "time_and_description": "08:39: 95 new cases and 16 new deaths in Austria. (Source 1, Source 2)",
+        "source": "https://info.gesundheitsministerium.at/"
+    }, {
+        "time_and_description": "08:38: 99 new cases and 4 new deaths in Poland.",
+        "source": "https://twitter.com/MZ_GOV_PL/status/1247072067813597184"
+    }, {
+        "time_and_description": "08:37: 280 new cases in Denmark, including 2 new cases in the Faroe Islands.",
+        "source": "https://www.sst.dk/da/corona/tal-og-overvaagning"
+    }, {
+        "time_and_description": "08:30: 93 new cases and 10 new deaths in Switzerland.",
+        "source": "https://rsalzer.github.io/COVID_19_CH/"
+    }, {
+        "time_and_description": "08:26: 73 new cases in Norway.",
+        "source": "https://www.vg.no/spesial/2020/corona/"
+    }, {
+        "time_and_description": "08:25: 64 new cases and 3 new deaths in India.",
+        "source": "https://www.covid19india.org/"
+    }, {
+        "time_and_description": "08:20: 106 new cases and 5 new deaths in Australia. This includes 57 new cases and 2 new deaths in New South Wales, 23 new cases and 2 new deaths in Victoria, 14 new cases in Queensland, and 7 new cases and 1 new death in Western Australia."
+    }, {
+        "time_and_description": "08:22: 249 new cases in Finland.",
+        "source": "https://yle.fi/uutiset/3-11212596"
+    }, {
+        "time_and_description": "08:16: 954 new cases and 2 new deaths in Russia.",
+        "source": "https://www.interfax.ru/russia/702722"
+    }, {
+        "time_and_description": "08:10: 48 new cases and 5 new deaths in the Czech Republic.",
+        "source": "https://onemocneni-aktualne.mzcr.cz/covid-19"
+    }, {
+        "time_and_description": "08:07: 181 new cases and 2 new deaths in Israel.",
+        "source": "https://www.ynetnews.com/article/142LHN4RE"
+    }, {
+        "time_and_description": "08:00: 51 new cases and 3 new deaths in Thailand.",
+        "source": "https://www.thaienquirer.com/10674/thailand-confirms-51-new-coronavirus-cases-government-considers-stepping-up-lockdown-measures/"
+    }, {
+        "time_and_description": "07:46: 61 new cases in Saudi Arabia.",
+        "source": "https://www.spa.gov.sa/viewfullstory.php?lang=en&newsid=2070727#2070727"
+    }, {
+        "time_and_description": "07:13: 92 new cases and 1 new death in Morocco.",
+        "source": "http://www.covidmaroc.ma/Pages/AccueilAR.aspx"
+    }, {
+        "time_and_description": "05:45: 720 new cases and 29 new deaths in India.",
+        "source": "https://www.covid19india.org/"
+    }, {
+        "time_and_description": "05:41: 792 new cases and 123 new deaths in Spain.",
+        "source": "https://www.rtve.es/noticias/20200405/mapa-del-coronavirus-espana/2004681.shtml"
+    }, {
+        "time_and_description": "05:29: 905 new cases and 26 new deaths in Germany.",
+        "source": "https://dts-nachrichtenagentur.de/corona-fallzahlen"
+    }, {
+        "time_and_description": "04:00: 112 new cases and 2 new deaths in China, including 78 asymptomatic cases. Five of the symptomatic cases were previously asymptomatic.",
+        "source": "http://www.nhc.gov.cn/yjb/s7860/202004/bbaa7ee15b214fef9b6d2c90d75e8547.shtml"
+    }, {
+        "time_and_description": "01:29: 67 new cases in New Zealand.",
+        "source": "https://www.nzherald.co.nz/nz/news/article.cfm?c_id=1&objectid=12322752"
+    }, {
+        "time_and_description": "01:20: 47 new cases and 3 new deaths in South Korea.",
+        "source": "http://ncov.mohw.go.kr/tcmBoardView.do?brdId=&brdGubun=&dataGubun=&ncvContSeq=353936&contSeq=353936&board_id=&gubun=ALL"
+    }, {
+        "time_and_description": "01:17: 253 new cases and 15 new deaths in Mexico.",
+        "source": "https://twitter.com/HLGatell/status/1246956916208795657"
+    }, {
+        "time_and_description": "00:55: 103 new cases and 4 new deaths in Argentina.",
+        "source": "https://www.clarin.com/sociedad/coronavirus-argentina-registran-nuevas-muertes-103-nuevos-casos_0_TlWtAJ0nC.html"
+    }, {
+        "time_and_description": "00:31: 110 new cases and 2 new deaths in Arkansas, United States.",
+        "source": "https://adem.maps.arcgis.com/apps/opsdashboard/index.html#/f533ac8a8b6040e5896b05b47b17a647"
+    }, {
+        "time_and_description": "00:28: 654 new cases and 27 new deaths in Brazil.",
+        "source": "https://g1.globo.com/bemestar/coronavirus/noticia/2020/04/05/casos-de-coronavirus-no-brasil-em-5-de-abril.ghtml"
+    }]
+}, {
+    "date": "5 April",
+    "time": [{
+        "time_and_description": "23:55: 360 new cases and 28 new deaths in Washington state, United States.",
+        "source": "https://www.doh.wa.gov/Emergencies/Coronavirus"
+    }, {
+        "time_and_description": "23:48: 177 new cases in Utah, United States.",
+        "source": "https://coronavirus.utah.gov/case-counts/"
+    }, {
+        "time_and_description": "23:44: 187 new cases and 8 new deaths in Panama.",
+        "source": "https://www.tvn-2.com/nacionales/coronavirus-en-panama_0_5549445053.html"
+    }, {
+        "time_and_description": "23:22: 855 new cases and 16 new deaths in California, United States.",
+        "source": "https://www.latimes.com/projects/california-coronavirus-cases-tracking-outbreak/"
+    }, {
+        "time_and_description": "22:55: 93 new cases and 4 new deaths in Oklahoma, United States.",
+        "source": "https://coronavirus.health.ok.gov/"
+    }, {
+        "time_and_description": "22:45: 69 new cases and 3 new deaths in Alberta, Canada.",
+        "source": "https://www.alberta.ca/coronavirus-info-for-albertans.aspx"
+    }, {
+        "time_and_description": "22:29: 199 new cases and 3 new deaths in Florida, United States.",
+        "source": "https://experience.arcgis.com/experience/96dd742462124fa0b38ddedb9b25e429"
+    }, {
+        "time_and_description": "21:45: First death in Barbados.",
+        "source": "https://gisbarbados.gov.bb/blog/barbados-records-first-covid-19-death/"
+    }, {
+        "time_and_description": "21:23: 132 new cases and 4 new deaths in South Carolina, United States.",
+        "source": "https://scdhec.gov/infectious-diseases/viruses/coronavirus-disease-2019-covid-19/testing-sc-data-covid-19"
+    }, {
+        "time_and_description": "21:14: 69 new cases and 1 new death in Oregon, United States.",
+        "source": "https://govstatus.egov.com/OR-OHA-COVID-19"
+    }, {
+        "time_and_description": "21:00: 62 new cases and 5 new deaths in Greece.",
+        "source": "https://www.moh.gov.gr/articles/ministry/grafeio-typoy/press-releases/7040-anakoinwsh-gia-thn-ekseliksh-ths-nosoy-covid-19-sth-xwra-mas"
+    }, {
+        "time_and_description": "21:00: First death in Haiti.",
+        "source": "https://lenouvelliste.com/article/214480/premier-deces-lie-officiellement-au-covid-19-enregistre-en-haiti-ce-dimanche-5-avril"
+    }, {
+        "time_and_description": "20:59: 764 new cases and 15 new deaths in Massachusetts, United States.",
+        "source": "https://www.mass.gov/doc/covid-19-cases-in-massachusetts-as-of-april-5-2020/download"
+    }, {
+        "time_and_description": "20:46: 156 new cases and 8 new deaths in California, United States.",
+        "source": "https://www.latimes.com/projects/california-coronavirus-cases-tracking-outbreak/"
+    }, {
+        "time_and_description": "20:39: The Bronx Zoo in New York says Nadia, a 4-year-old Malaysian tiger, has tested positive for coronavirus. Her sister, 2 Amur tigers, and 3 African lions have developed a dry cough as well. All are expected to recover. This is one of only a few known cases in the world in which an animal has caught COVID-19.",
+        "source": "https://newsroom.wcs.org/News-Releases/articleType/ArticleView/articleId/14010/A-Tiger-at-Bronx-Zoo-Tests-Positive-for-COVID-19-The-Tiger-and-the-Zoos-Other-Cats-Are-Doing-Well-at-This-Time.aspx"
+    }, {
+        "time_and_description": "20:32: 95 new cases and 100 new deaths in Spain.",
+        "source": "https://www.rtve.es/noticias/20200405/mapa-del-coronavirus-espana/2004681.shtml"
+    }, {
+        "time_and_description": "20:28: 276 new cases and 2 new deaths in Pakistan.",
+        "source": "https://www.dawn.com/live-blog/"
+    }, {
+        "time_and_description": "20:14: British Prime Minister Boris Johnson, who is suffering from coronavirus, has been admitted to hospital as a precaution. A Downing Street spokesperson says the prime minister continues to have “persistent symptoms,” including a high temperature."
+    }, {
+        "time_and_description": "20:12: 200 new cases and 12 new deaths in India.",
+        "source": "https://www.indiatoday.in/coronavirus"
+    }, {
+        "time_and_description": "20:09: 57 new cases and 5 new deaths in Ukraine.",
+        "source": "https://t.me/s/COVID19_Ukraine"
+    }, {
+        "time_and_description": "20:07: 139 new cases and 5 new deaths in Alabama, United States.",
+        "source": "https://alpublichealth.maps.arcgis.com/apps/opsdashboard/index.html#/6d2771faa9da4a2786a509d82c8cf0f7"
+    }, {
+        "time_and_description": "20:03: 141 new cases in Cameroon.",
+        "source": "https://twitter.com/DrManaouda/status/1246889512069971974"
+    }, {
+        "time_and_description": "19:54: 70 new cases and 2 new deaths in South Africa.",
+        "source": "https://www.health24.com/Medical/Infectious-diseases/Coronavirus/coronavirus-in-sa-all-the-confirmed-cases-20200312"
+    }, {
+        "time_and_description": "19:52: 535 new cases and 10 new deaths in Peru.",
+        "source": "https://www.gob.pe/institucion/minsa/noticias/111888-minsa-casos-confirmados-por-coronavirus-covid-19-ascienden-a-2281-en-el-peru-comunicado-n-55"
+    }, {
+        "time_and_description": "19:52: First case in South Sudan. The 29-year-old woman arrived in the country from Ethiopia on February 28.",
+        "source": "https://uk.reuters.com/article/healthcare-coronavirus-southsudan/south-sudan-confirms-first-case-of-coronavirus-idUKL8N2BT05N"
+    }, {
+        "time_and_description": "19:51: 96 new cases and 1 new death in Washington, District of Columbia, United States.",
+        "source": "https://coronavirus.dc.gov/page/coronavirus-data"
+    }, {
+        "time_and_description": "19:50: 250 new cases and 12 new deaths in Arizona, United States.",
+        "source": "https://www.azdhs.gov/preparedness/epidemiology-disease-control/infectious-disease-epidemiology/index.php#novel-coronavirus-home"
+    }, {
+        "time_and_description": "19:48: 155 new cases and 12 new deaths in Wisconsin, United States.",
+        "source": "https://www.dhs.wisconsin.gov/outbreaks/index.htm"
+    }, {
+        "time_and_description": "19:47: 104 new cases and 3 new deaths in Missouri, United States.",
+        "source": "https://www.kshb.com/news/coronavirus/covid-19-case-tracker-where-we-stand-in-mo-ks-nationwide"
+    }, {
+        "time_and_description": "19:46: 230 new cases in Virginia, United States.",
+        "source": "http://www.vdh.virginia.gov/coronavirus/"
+    }, {
+        "time_and_description": "19:44: 312 new cases and 1 new death in Tennessee, United States.",
+        "source": "https://www.tn.gov/health/cedep/ncov.html"
+    }, {
+        "time_and_description": "19:42: 899 new cases and 31 new deaths in Illinois, United States.",
+        "source": "http://www.dph.illinois.gov/topics-services/diseases-and-conditions/diseases-a-z-list/coronavirus"
+    }, {
+        "time_and_description": "19:39: 1,149 new cases and 14 new deaths in Pennsylvania, United States. (Source 1, Source 2)",
+        "source": "https://public.flourish.studio/visualisation/1658682/?utm_source=embed&utm_campaign=visualisation/1658682"
+    }, {
+        "time_and_description": "19:25: 1,493 new cases and 77 new deaths in Michigan, United States.",
+        "source": "https://www.michigan.gov/coronavirus"
+    }, {
+        "time_and_description": "19:14: 349 new cases and 29 new deaths in Brazil.",
+        "source": "https://g1.globo.com/bemestar/coronavirus/noticia/2020/04/05/casos-de-coronavirus-no-brasil-em-5-de-abril.ghtml"
+    }, {
+        "time_and_description": "19:02: 137 new cases and 9 new deaths in Norway.",
+        "source": "https://www.vg.no/spesial/2020/corona/"
+    }, {
+        "time_and_description": "18:50: 374 new cases and 18 new deaths in Austria. (Source 1, Source 2)",
+        "source": "https://info.gesundheitsministerium.at/"
+    }, {
+        "time_and_description": "18:45: 51 new cases and 2 new deaths in Vermont, United States.",
+        "source": "https://www.healthvermont.gov/response/infectious-disease/2019-novel-coronavirus"
+    }, {
+        "time_and_description": "18:44: 294 new cases in the United Arab Emirates.",
+        "source": "https://twitter.com/DHA_Dubai/status/1246869623468941318"
+    }, {
+        "time_and_description": "18:42: 304 new cases and 17 new deaths in Ohio, United States.",
+        "source": "https://coronavirus.ohio.gov/wps/portal/gov/covid-19/home"
+    }, {
+        "time_and_description": "18:35: 3,030 new cases and 113 new deaths in Germany.",
+        "source": "https://dts-nachrichtenagentur.de/corona-fallzahlen"
+    }, {
+        "time_and_description": "18:21: 412 new cases and 3 new deaths in Israel.",
+        "source": "https://www.ynetnews.com/article/HRZF8HGYS"
+    }, {
+        "time_and_description": "18:20: 390 new cases and 21 new deaths in Ireland.",
+        "source": "https://www.gov.ie/en/press-release/d809ea-statement-from-the-national-public-health-emergency-team-sunday-5-ap/"
+    }, {
+        "time_and_description": "18:16: 94 new cases and 1 new death in Nevada, United States.",
+        "source": "https://app.powerbigov.us/view?r=eyJrIjoiMjA2ZThiOWUtM2FlNS00MGY5LWFmYjUtNmQwNTQ3Nzg5N2I2IiwidCI6ImU0YTM0MGU2LWI4OWUtNGU2OC04ZWFhLTE1NDRkMjcwMzk4MCJ9"
+    }, {
+        "time_and_description": "18:11: 1,873 new cases and 518 new deaths in France. This includes 161 deaths in nursing homes which were previously not included in the death toll. The total number of deaths in nursing homes has risen to 2,189.",
+        "source": "https://www.gouvernement.fr/info-coronavirus/carte-et-donnees"
+    }, {
+        "time_and_description": "18:08: 292 new cases and 18 new deaths in Denmark.",
+        "source": "https://www.sst.dk/da/corona/tal-og-overvaagning"
+    }, {
+        "time_and_description": "18:07: 350 new cases and 9 new deaths in Japan.",
+        "source": "https://www3.nhk.or.jp/news/html/20200404/k10012368271000.html?utm_int=word_contents_list-items_006&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9"
+    }, {
+        "time_and_description": "18:05: 112 new cases and 3 new deaths in Moldova.",
+        "source": "https://gismoldova.maps.arcgis.com/apps/opsdashboard/index.html#/d274da857ed345efa66e1fbc959b021b"
+    }, {
+        "time_and_description": "18:03: 279 new cases and 1 new death in Qatar.",
+        "source": "https://twitter.com/MOPHQatar/status/1246857650438123520"
+    }, {
+        "time_and_description": "18:00: 3,135 new cases and 73 new deaths in Turkey.",
+        "source": "https://covid19.saglik.gov.tr/"
+    }, {
+        "time_and_description": "17:58: 107 new cases and 11 new deaths in Morocco.",
+        "source": "http://www.covidmaroc.ma/Pages/AccueilAR.aspx"
+    }, {
+        "time_and_description": "17:49: 90 new cases and 1 new death in North Carolina, United States.",
+        "source": "https://www.newsobserver.com/news/local/article241168731.html"
+    }, {
+        "time_and_description": "17:45: 251 new cases and 5 new deaths in Romania. (Source 1, Source 2)",
+        "source": "http://www.ms.ro/2020/04/05/buletin-informativ-05-04-2020-2/"
+    }, {
+        "time_and_description": "17:34: 69 new cases and 22 new deaths in Algeria.",
+        "source": "http://www.aps.dz/sante-science-technologie/103755-coronavirus-69-nouveaux-cas-confirmes-et-22-nouveaux-deces-en-algerie"
+    }, {
+        "time_and_description": "17:27: 71 new cases and 8 new deaths in the Czech Republic.",
+        "source": "https://onemocneni-aktualne.mzcr.cz/covid-19"
+    }, {
+        "time_and_description": "17:23: 78 new cases and 1 new death in California, United States.",
+        "source": "https://www.latimes.com/projects/california-coronavirus-cases-tracking-outbreak/"
+    }, {
+        "time_and_description": "17:05: 947 new cases and 19 new deaths in Quebec, Canada.",
+        "source": "https://twitter.com/sante_qc/status/1246846401721532417"
+    }, {
+        "time_and_description": "17:02: 3,381 new cases and 71 new deaths in New Jersey, United States.",
+        "source": "https://twitter.com/GovMurphy/status/1246845706482180097"
+    }, {
+        "time_and_description": "17:00: 50 new cases and 3 new deaths in Texas, United States.",
+        "source": "https://txdshs.maps.arcgis.com/apps/opsdashboard/index.html#/ed483ecd702b4298ab01e8b9cafc8b83"
+    }, {
+        "time_and_description": "17:00: 514 new cases and 68 new deaths in Louisiana, United States.",
+        "source": "http://ldh.la.gov/coronavirus/"
+    }, {
+        "time_and_description": "16:35: 4,064 new cases and 492 new deaths in Italy. Compared with the same time yesterday, there were 4,316 new cases and 525 new deaths. This is the lowest number of daily new deaths in Italy in more than 2 weeks.",
+        "source": "https://pbs.twimg.com/media/EU2d48-X0AE0YQl?format=jpg&name=medium"
+    }, {
+        "time_and_description": "16:05: 181 new cases and 8 new deaths in Ecuador.",
+        "source": "https://twitter.com/Salud_Ec/status/1246831328861061120"
+    }, {
+        "time_and_description": "16:05: 264 new cases and 3 new deaths in Georgia, United States.",
+        "source": "https://dph.georgia.gov/covid-19-daily-status-report"
+    }, {
+        "time_and_description": "16:00: 75 new cases and 5 new deaths in Luxembourg.",
+        "source": "https://gouvernement.lu/fr/dossiers.gouv_msan+fr+dossiers+2020+corona-virus.html"
+    }, {
+        "time_and_description": "15:50: 268 new cases and 10 new deaths in Poland.",
+        "source": "https://twitter.com/MZ_GOV_PL/status/1246823086172897281"
+    }, {
+        "time_and_description": "15:45: 606 new cases and 23 new deaths in Florida, United States.",
+        "source": "https://experience.arcgis.com/experience/96dd742462124fa0b38ddedb9b25e429"
+    }, {
+        "time_and_description": "15:35: 83 new cases and 5 new deaths in Iraq.",
+        "source": "https://www.facebook.com/MOH.GOV.IQ/photos/a.860171854037214/2851324791588567/?type=3&__xts__%5B0%5D=68.ARDEbR5C28XJ62BzGDTkVSRUMcRS_D2P5eK6i7HFrObvtFkjCdpt3VUTcDB65SaZIdZMPWU1XHfn59zH0rMkEUtS95itVi-xXFttnxTxY1ylyw69bVvgJaGEBlPQDKbsgWZtq8tnt_8c129P_A0DuJS9qhzYDi0xz6KIM_y3o0nwjp4qiVgiMWL6_OP14tO28nO-PlSR2v5w4zMQcmAI0N4U08FtZ9LPtPPuvrQFbWjrgXT8wsD72zWxCr226-88g_6q_ASM2rNojqhHeOjRP9zpBaJkeTDvFTPJgZncJmon6B5JmgSSpER4w7z81qemD9I7TyLpaRFegLmdvnkA6Pj7Tg&__tn__=-R"
+    }, {
+        "time_and_description": "15:31: 310 new cases and 7 new deaths in Chile.",
+        "source": "https://twitter.com/ministeriosalud/status/1246822878412234754"
+    }, {
+        "time_and_description": "15:16: 120 new cases in Singapore.",
+        "source": "https://www.moh.gov.sg/news-highlights/details/23-more-cases-discharged-120-new-cases-of-covid-19-infection-confirmed"
+    }, {
+        "time_and_description": "15:00: 408 new cases and 25 new deaths in Ontario, Canada.",
+        "source": "https://www.ontario.ca/page/2019-novel-coronavirus"
+    }, {
+        "time_and_description": "14:44: 167 new cases and 5 new deaths in the Dominican Republic.",
+        "source": "https://twitter.com/SaludPublicaRD/status/1246810963736739840"
+    }, {
+        "time_and_description": "14:34: 458 new cases and 11 new deaths in Indiana, United States.",
+        "source": "https://twitter.com/StateHealthIN/status/1246808420293980160"
+    }, {
+        "time_and_description": "14:00: 181 new cases and 7 new deaths in Indonesia.",
+        "source": "https://infeksiemerging.kemkes.go.id/"
+    }, {
+        "time_and_description": "14:00: 387 new cases and 28 new deaths in Sweden.",
+        "source": "https://experience.arcgis.com/experience/09f821667ce64bf7be6f9f87457ed9aa"
+    }, {
+        "time_and_description": "13:44: 72 new cases and 1 new death in North Macedonia.",
+        "source": "https://twitter.com/ZdravstvoMK/status/1246433518990905345"
+    }, {
+        "time_and_description": "13:26: 5,903 new cases and 621 new deaths in the United Kingdom.",
+        "source": "https://twitter.com/DHSCgovuk/status/1246791324231176193"
+    }, {
+        "time_and_description": "13:00: 754 new cases and 29 new deaths in Portugal.",
+        "source": "https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/"
+    }, {
+        "time_and_description": "12:56: 206 new cases and 5 new deaths in Saudi Arabia.",
+        "source": "https://twitter.com/SaudiMOH/status/1246783826812194816"
+    }, {
+        "time_and_description": "12:15: 1,224 new cases and 115 new deaths in the Netherlands.",
+        "source": "https://www.rivm.nl/actuele-informatie-over-coronavirus"
+    }, {
+        "time_and_description": "11:00: 658 new cases and 2 new deaths in Russia.",
+        "source": "https://xn--80aesfpebagmfblc0a.xn--p1ai/#operational-data"
+    }, {
+        "time_and_description": "11:00: 284 new cases and 7 new deaths in Serbia.",
+        "source": "http://www.politika.rs/scc/clanak/451607/Jos-284-osobe-obolele-od-koronavirusa-sedam-preminulo"
+    }, {
+        "time_and_description": "09:46: 2,483 new cases and 151 new deaths in Iran.",
+        "source": "https://twitter.com/AbasAslani/status/1246736055400837126"
+    }, {
+        "time_and_description": "09:35: 4,591 new cases and 471 new deaths in Spain. Compared to yesterday at the same time, there were 6,023 new cases and 674 new deaths.",
+        "source": "https://twitter.com/SaludPublicaEs/status/1246733306978320385"
+    }, {
+        "time_and_description": "09:13: 77 new cases in Kuwait.",
+        "source": "https://twitter.com/KUWAIT_MOH/status/1246727565500350464"
+    }, {
+        "time_and_description": "09:05: 1,260 new cases and 164 new deaths in Belgium.",
+        "source": "https://www.info-coronavirus.be/nl/news/1260-nieuwe-besmettingen-met-coronavirus-covid-19/"
+    }, {
+        "time_and_description": "09:03: 179 new cases and 4 new deaths in Malaysia.",
+        "source": "https://twitter.com/KKMPutrajaya/status/1246725228287451140"
+    }, {
+        "time_and_description": "08:20: 152 new cases and 8 new deaths in the Philippines.",
+        "source": "https://www.doh.gov.ph/2019-nCoV"
+    }, {
+        "time_and_description": "08:00: 207 new cases and 5 new deaths in Poland.",
+        "source": "https://twitter.com/MZ_GOV_PL/status/1246709295561027586"
+    }, {
+        "time_and_description": "07:01: 155 new cases and 4 new deaths in Ukraine.",
+        "source": "https://t.me/s/COVID19_Ukraine"
+    }, {
+        "time_and_description": "05:44: 429 new cases and 3 new deaths in Israel.",
+        "source": "https://www.timesofisrael.com/liveblog_entry/virus-cases-in-israel-top-8000-with-127-in-serious-condition/"
+    }, {
+        "time_and_description": "05:27: 55 new cases and 2 new deaths in Hungary.",
+        "source": "https://koronavirus.gov.hu/#aktualis"
+    }, {
+        "time_and_description": "05:22: 4 new cases and 7 new deaths in Honduras.",
+        "source": "https://covid19honduras.org/"
+    }, {
+        "time_and_description": "05:15: 156 new cases and 5 new deaths in Pakistan.",
+        "source": "http://covid.gov.pk/"
+    }, {
+        "time_and_description": "05:12: 302 new cases in India.",
+        "source": "https://www.indiatoday.in/coronavirus"
+    }, {
+        "time_and_description": "05:01: 252 new cases and 33 new deaths in Italy. This includes 130 new cases and 16 new deaths in Piedmont Region and 122 new cases and 17 new deaths in Veneto. NOTE: These cases will be part of Sunday’s national update. (Source 1, Source 2)",
+        "source": "https://www.regione.piemonte.it/web/pinforma/notizie/coronavirus-gli-aggiornamenti-dalla-regione-piemonte"
+    }, {
+        "time_and_description": "04:53: 110 new cases in the Czech Republic.",
+        "source": "https://onemocneni-aktualne.mzcr.cz/covid-19"
+    }, {
+        "time_and_description": "04:52: 102 new cases and 3 new deaths in Thailand.",
+        "source": "https://www.thaienquirer.com/10626/thailand-confirms-102-new-cases-of-coronavirus-3-more-fatalities/"
+    }, {
+        "time_and_description": "04:48: 699 new cases in Germany.",
+        "source": "https://dts-nachrichtenagentur.de/corona-fallzahlen"
+    }, {
+        "time_and_description": "04:00: 119 new cases and 5 new deaths in Austria. This includes 87 new cases and 4 new deaths in New South Wales, 20 new cases in Victoria, 7 new cases in Queensland, 3 new cases in Canberra, and 2 new cases in Tasmania."
+    }, {
+        "time_and_description": "04:00: 202 new cases and 19 new deaths in Mexico.",
+        "source": "https://twitter.com/HLGatell/status/1246611865851113474"
+    }, {
+        "time_and_description": "04:00: 81 new cases and 6 new deaths in South Korea.",
+        "source": "http://ncov.mohw.go.kr/tcmBoardView.do?brdId=&brdGubun=&dataGubun=&ncvContSeq=353925&contSeq=353925&board_id=&gubun=ALL"
+    }, {
+        "time_and_description": "04:00: Saturday’s coronavirus summary:– USA: +33,557 cases, +1,410 deaths– Spain: +6,969 cases, +749 deaths– Germany: +5,171 cases, +140 deaths– Italy: +4,805 cases, +681 deaths– France: +4,267 cases, +1,053 deaths– UK: +3,735 cases, +708 deaths– Worldwide: +79,516 cases, +5,824"
+    }, {
+        "time_and_description": "03:45: 196 new cases and 19 new deaths in Wisconsin, United States.",
+        "source": "https://www.dhs.wisconsin.gov/outbreaks/index.htm"
+    }, {
+        "time_and_description": "03:44: 217 new cases and 5 new deaths in Missouri, United States.",
+        "source": "https://www.kshb.com/news/coronavirus/covid-19-case-tracker-where-we-stand-in-mo-ks-nationwide"
+    }, {
+        "time_and_description": "03:35: 104 new cases and 5 new deaths in North Carolina, United States.",
+        "source": "https://www.newsobserver.com/news/local/article241168731.html"
+    }, {
+        "time_and_description": "03:33: 526 new cases and 16 new deaths in Texas, United States.",
+        "source": "https://www.houstonchronicle.com/coronavirus/article/texas-coronavirus-map-cases-houston-covid-19-15137466.php"
+    }, {
+        "time_and_description": "03:30: 398 new cases in Pennsylvania, United States.",
+        "source": "https://whyy.org/articles/trump-declares-major-disaster-in-pa-penn-to-pay-laid-off-dining-workers/"
+    }, {
+        "time_and_description": "03:25: 366 new cases and 4 new deaths in California, United States.",
+        "source": "https://www.latimes.com/projects/california-coronavirus-cases-tracking-outbreak/"
+    }, {
+        "time_and_description": "02:00: 86 new cases and 3 new deaths in Kentucky, United States.",
+        "source": "https://govstatus.egov.com/kycovid19"
+    }, {
+        "time_and_description": "02:00: 182 new cases and 1 new death in Utah, United States.",
+        "source": "https://coronavirus.utah.gov/case-counts/"
+    }, {
+        "time_and_description": "02:00: 76 new cases and 2 new deaths in Minnesota, United States.",
+        "source": "https://www.health.state.mn.us/diseases/coronavirus/situation.html"
+    }, {
+        "time_and_description": "02:00: 143 new cases in Delaware, United States.",
+        "source": "https://coronavirus.delaware.gov/"
+    }, {
+        "time_and_description": "02:00: 95 new cases and 3 new deaths in Rhode Island, United States.",
+        "source": "https://health.ri.gov/data/covid-19/"
+    }, {
+        "time_and_description": "01:29: 98 new cases and 1 new death in Argentina.",
+        "source": "https://www.clarin.com/sociedad/coronavirus-argentina-reportaron-98-nuevos-contagios-muerte_0_VHra136of.html"
+    }]
+}, {
+    "date": "4 April",
+    "time": [{
+        "time_and_description": "23:58: 53 new cases in Alabama, United States.",
+        "source": "https://alpublichealth.maps.arcgis.com/apps/opsdashboard/index.html#/6d2771faa9da4a2786a509d82c8cf0f7"
+    }, {
+        "time_and_description": "23:55: 81 new cases and 2 new deaths in New Jersey, United States.",
+        "source": "https://www.nh.gov/covid19/"
+    }, {
+        "time_and_description": "23:28: 90 new cases and 9 new deaths in the Dominican Republic.",
+        "source": "https://twitter.com/SaludPublicaRD/status/1246579671602528256"
+    }, {
+        "time_and_description": "23:14: 100 new cases and 4 new deaths in Oregon, United States.",
+        "source": "https://www.oregon.gov/oha/PH/DISEASESCONDITIONS/DISEASESAZ/Pages/emerging-respiratory-infections.aspx"
+    }, {
+        "time_and_description": "23:02: 223 new cases and 7 new deaths in Georgia, United States.",
+        "source": "https://dph.georgia.gov/covid-19-daily-status-report"
+    }, {
+        "time_and_description": "22:56: 333 new cases and 12 new deaths in Washington state, United States. (Source 1, Source 2)",
+        "source": "https://www.doh.wa.gov/Emergencies/Coronavirus"
+    }, {
+        "time_and_description": "22:49: 349 new deaths in New York City, New York state, United States.",
+        "source": "https://www1.nyc.gov/site/doh/covid/covid-19-data.page"
+    }, {
+        "time_and_description": "22:20: 711 new cases and 28 new deaths in Los Angeles County, California, United States.",
+        "source": "https://twitter.com/lapublichealth/status/1246555883997253633"
+    }, {
+        "time_and_description": "22:14: 1,432 new cases and 133 new deaths in Spain.",
+        "source": "https://www.rtve.es/noticias/20200404/mapa-del-coronavirus-espana/2004681.shtml"
+    }, {
+        "time_and_description": "22:07: 1,913 new cases and 81 new deaths in Germany.",
+        "source": "https://dts-nachrichtenagentur.de/corona-fallzahlen"
+    }, {
+        "time_and_description": "22:01: 111 new cases and 14 new deaths in King County, Washington state, United States.",
+        "source": "https://kingcounty.gov/depts/health/communicable-diseases/disease-control/novel-coronavirus.aspx"
+    }, {
+        "time_and_description": "21:53: 392 new cases and 15 new deaths in Colorado, United States.",
+        "source": "https://covid19.colorado.gov/case-data"
+    }, {
+        "time_and_description": "21:46: 254 new cases and 6 new deaths in Tennessee, United States.",
+        "source": "https://www.tn.gov/health/cedep/ncov.html"
+    }, {
+        "time_and_description": "21:42: 434 new cases and 4 new deaths in Florida, United States.",
+        "source": "https://experience.arcgis.com/experience/96dd742462124fa0b38ddedb9b25e429"
+    }, {
+        "time_and_description": "21:35: 139 new cases and 7 new deaths in Colombia.",
+        "source": "https://coronaviruscolombia.gov.co/Covid19/index.html"
+    }, {
+        "time_and_description": "21:24: 151 new cases and 12 new deaths in Peru.",
+        "source": "https://covid19.minsa.gob.pe/sala_situacional.asp"
+    }, {
+        "time_and_description": "21:20: 80 new cases and 2 new deaths in South Africa.",
+        "source": "https://www.health24.com/Medical/Infectious-diseases/Coronavirus/coronavirus-in-sa-all-the-confirmed-cases-20200312"
+    }, {
+        "time_and_description": "21:06: 85 new cases and 5 new deaths in Egypt.",
+        "source": "https://www.facebook.com/EgyMohpSpokes/photos/a.353628178307691/1140076929662808/?type=3&__xts__%5B0%5D=68.ARATfyW_bo9w1rRgNakRE983T4Z00AZuBubHyPy3IMukFTG4svvXMWsq3DA7r8X7dl2tVPzAhDdLkSXC2ADT5BTVUBcv-c_Kmi2b8CtCW5-NFliiHeRJsZ4rW41ujYiGd5rbwY_NpmM70SKSguA4eNuCgJLjaUGXWYzYod1UFIU4GXD0NmVMlnTZ468mcSqtmg3JjKVJWH5nuDH6fGYdz7bJ6eaMrCKrkiMXofvBObv82Zg-hMNj-MbBt5zdkWf0cwAUvgyRHA6lGx6DGzt-Dq2ga47KF7KbxHG98MMW31adJCB1moF6TREaHjJfuneIQiZOLEwYbfu0GkLOmry85G3Kwg&__tn__=-R"
+    }, {
+        "time_and_description": "21:05: 168 new cases and 3 new deaths in the Czech Republic.",
+        "source": "https://onemocneni-aktualne.mzcr.cz/covid-19"
+    }, {
+        "time_and_description": "20:59: 126 new cases and 3 new deaths in Texas, United States.",
+        "source": "https://www.nbcdfw.com/news/coronavirus/what-we-know-about-coronavirus-cases-in-north-texas-around-the-state/2335449/"
+    }, {
+        "time_and_description": "20:51: 361 new cases and 33 new deaths in Connecticut, United States.",
+        "source": "https://portal.ct.gov/-/media/Coronavirus/CTDPHCOVID19summary4042020.pdf?la=en"
+    }, {
+        "time_and_description": "20:45: 1,334 new cases and 24 new deaths in Massachusetts, United States.",
+        "source": "https://www.mass.gov/doc/covid-19-cases-in-massachusetts-as-of-april-4-2020/download"
+    }, {
+        "time_and_description": "20:29: 211 new cases and 4 new deaths in California, United States.",
+        "source": "https://www.latimes.com/projects/california-coronavirus-cases-tracking-outbreak/"
+    }, {
+        "time_and_description": "20:15: 1,062 new cases and 66 new deaths in Brazil.",
+        "source": "https://twitter.com/minsaude/status/1246526718707408898"
+    }, {
+        "time_and_description": "20:12: 217 new cases and 6 new deaths in South Carolina, United States.",
+        "source": "https://scdhec.gov/infectious-diseases/viruses/coronavirus-disease-2019-covid-19/testing-sc-data-covid-19"
+    }, {
+        "time_and_description": "19:39: 1,481 new cases and 61 new deaths in Michigan, United States"
+    }, {
+        "time_and_description": "19:39: 1,453 new cases and 33 new deaths in Illinois, United States"
+    }, {
+        "time_and_description": "17:53: 331 new cases and 17 new deaths in Ireland.",
+        "source": "https://www.gov.ie/en/press-release/384784-statement-from-the-national-public-health-emergency-team-saturday-4-/"
+    }, {
+        "time_and_description": "16:41: 97 new cases and 27 new deaths in Ecuador.",
+        "source": "https://twitter.com/Salud_Ec/status/1246471071328538624"
+    }, {
+        "time_and_description": "16:23: 161 new cases and 4 new deaths in Moldova.",
+        "source": "https://gismoldova.maps.arcgis.com/apps/opsdashboard/index.html#/d274da857ed345efa66e1fbc959b021b"
+    }, {
+        "time_and_description": "16:20: 80 new cases and 25 new deaths in Algeria.",
+        "source": "http://www.aps.dz/algerie/103719-coronavirus-80-nouveaux-cas-confirmes-et-25-nouveaux-deces-en-algerie"
+    }, {
+        "time_and_description": "16:19: 4,259 new cases and 601 new deaths in Italy. Compared to yesterday at the same time, there were 4,805 new cases and 681 new deaths.",
+        "source": "https://pbs.twimg.com/media/EUxaZpJXgAEe4M7?format=jpg&name=medium"
+    }, {
+        "time_and_description": "16:18: 171 new cases and 4 new deaths in Oklahoma, United States.",
+        "source": "https://coronavirus.health.ok.gov/"
+    }, {
+        "time_and_description": "16:10: 1,451 new cases and 34 new deaths in Pennsylvania, United States.",
+        "source": "https://www.health.pa.gov/topics/disease/coronavirus/Pages/Cases.aspx"
+    }, {
+        "time_and_description": "16:08: 250 new cases and 11 new deaths in Arizona, United States.",
+        "source": "https://www.azdhs.gov/preparedness/epidemiology-disease-control/infectious-disease-epidemiology/index.php#novel-coronavirus-home"
+    }, {
+        "time_and_description": "16:07: 110 new cases in North Carolina, United States.",
+        "source": "https://www.newsobserver.com/news/local/article241168731.html"
+    }, {
+        "time_and_description": "16:02: 424 new cases and 5 new deaths in Chile.",
+        "source": "https://www.minsal.cl/nuevo-coronavirus-2019-ncov/casos-confirmados-en-chile-covid-19/"
+    }, {
+        "time_and_description": "16:01: 117 new cases in Luxembourg.",
+        "source": "https://gouvernement.lu/fr/dossiers.gouv_msan+fr+dossiers+2020+corona-virus.html"
+    }, {
+        "time_and_description": "15:58: 193 new cases and 3 new deaths in Georgia, United States.",
+        "source": "https://dph.georgia.gov/covid-19-daily-status-report"
+    }, {
+        "time_and_description": "15:47: 124 new cases and 6 new deaths in Poland.",
+        "source": "https://twitter.com/MZ_GOV_PL/status/1246460787364900865"
+    }, {
+        "time_and_description": "15:45: 843 new cases and 21 new deaths in Florida, United States.",
+        "source": "https://experience.arcgis.com/experience/96dd742462124fa0b38ddedb9b25e429"
+    }, {
+        "time_and_description": "15:44: 60 new cases and 9 new deaths in Greece.",
+        "source": "https://www.tanea.gr/2020/04/04/greece/koronaios-stous-68-oi-nekroi-stin-ellada-9-nekroi-se-24-ores/"
+    }, {
+        "time_and_description": "15:41: 1,442 new cases and 43 new deaths in Germany.",
+        "source": "https://dts-nachrichtenagentur.de/corona-fallzahlen"
+    }, {
+        "time_and_description": "15:35: 97 new cases and 6 new deaths in Mississippi, United States.",
+        "source": "https://msdh.ms.gov/msdhsite/_static/14,21882,420,873.html"
+    }, {
+        "time_and_description": "15:34: 375 new cases and 30 new deaths in Quebec, Canada.",
+        "source": "https://www.ontario.ca/page/2019-novel-coronavirus"
+    }, {
+        "time_and_description": "15:31: 228 new cases in Nevada, United States.",
+        "source": "https://app.powerbigov.us/view?r=eyJrIjoiMjA2ZThiOWUtM2FlNS00MGY5LWFmYjUtNmQwNTQ3Nzg5N2I2IiwidCI6ImU0YTM0MGU2LWI4OWUtNGU2OC04ZWFhLTE1NDRkMjcwMzk4MCJ9"
+    }, {
+        "time_and_description": "15:19: 10,841 new cases and 347 new deaths in New York state, United States.",
+        "source": "https://alpublichealth.maps.arcgis.com/apps/opsdashboard/index.html#/6d2771faa9da4a2786a509d82c8cf0f7"
+    }, {
+        "time_and_description": "15:00: 368 new cases and 7 new deaths in Japan.",
+        "source": "https://www3.nhk.or.jp/news/html/20200404/k10012368271000.html?utm_int=word_contents_list-items_005&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9"
+    }, {
+        "time_and_description": "14:32: 8 new cases and 5 new deaths in Alabama, United States.",
+        "source": "https://alpublichealth.maps.arcgis.com/apps/opsdashboard/index.html#/6d2771faa9da4a2786a509d82c8cf0f7"
+    }, {
+        "time_and_description": "14:30: 395 new cases and 6 new deaths in Virginia, United States.",
+        "source": "http://www.vdh.virginia.gov/coronavirus/"
+    }, {
+        "time_and_description": "14:27: 145 new cases and 6 new deaths in Washington, District of Columbia, United States.",
+        "source": "https://coronavirus.dc.gov/page/coronavirus-data"
+    }, {
+        "time_and_description": "14:16: 367 new cases and 11 new death in Maryland, United States.",
+        "source": "https://coronavirus.maryland.gov/"
+    }, {
+        "time_and_description": "14:12: 166 new cases in India.",
+        "source": "https://www.mohfw.gov.in/"
+    }, {
+        "time_and_description": "14:05: 516 new cases and 14 new deaths in Indiana, United States.",
+        "source": "https://coronavirus.in.gov/"
+    }, {
+        "time_and_description": "13:55: 53 new cases and 5 new deaths in North Macedonia.",
+        "source": "https://twitter.com/ZdravstvoMK/status/1246433518990905345"
+    }, {
+        "time_and_description": "13:48: 241 new cases and 1 new death in the United Arab Emirates.",
+        "source": "https://twitter.com/DHA_Dubai/status/1246430455194431489"
+    }, {
+        "time_and_description": "13:35: 322 new cases and 22 new deaths in Denmark, including 2 new cases in the Faroe Islands.",
+        "source": "https://www.sst.dk/da/corona/tal-og-overvaagning"
+    }, {
+        "time_and_description": "13:30: 148 new cases and 5 new deaths in Serbia.",
+        "source": "http://www.politika.rs/scc/clanak/451545/Jos-pet-osoba-preminulo-od-koronavirusa-148-novozarazenih"
+    }, {
+        "time_and_description": "13:22: 74 new cases and 3 new deaths in Puerto Rico, United States.",
+        "source": "https://twitter.com/DeptSaludPR/status/1246408168852328450"
+    }, {
+        "time_and_description": "13:20: 106 new cases and 10 new deaths in Indonesia.",
+        "source": "https://news.trust.org/item/20200404105855-fcvms"
+    }, {
+        "time_and_description": "13:14: 53 new cases in Iceland.",
+        "source": "https://www.covid.is/tolulegar-upplysingar"
+    }, {
+        "time_and_description": "13:11: 140 new cases and 4 new deaths in Saudi Arabia.",
+        "source": "https://twitter.com/SaudiMOH/status/1246421871546990594"
+    }, {
+        "time_and_description": "13:04: 3,735 new cases and 708 new deaths in the United Kingdom.",
+        "source": "https://twitter.com/DHSCgovuk/status/1246422545840119810"
+    }, {
+        "time_and_description": "12:58: 365 new cases and 40 new deaths in Sweden.",
+        "source": "https://experience.arcgis.com/experience/09f821667ce64bf7be6f9f87457ed9aa"
+    }, {
+        "time_and_description": "12:57: 638 new cases and 20 new deaths in Portugal.",
+        "source": "https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/"
+    }, {
+        "time_and_description": "12:56: 57 new cases and 18 new deaths in Austria. (Source 1, Source 2)",
+        "source": "https://info.gesundheitsministerium.at/"
+    }, {
+        "time_and_description": "12:54: 527 new cases and 16 new deaths in Germany. (Source 1, Source 2)",
+        "source": "https://www.zeit.de/wissen/gesundheit/coronavirus-echtzeit-karte-deutschland-landkreise-infektionen-ausbreitung"
+    }, {
+        "time_and_description": "12:51: 70 new deaths in Spain.",
+        "source": "https://www.rtve.es/noticias/20200404/mapa-del-coronavirus-espana/2004681.shtml"
+    }, {
+        "time_and_description": "12:40: 546 new cases and 80 new deaths in Italy. This includes 360 new cases and 35 new deaths in Veneto and 186 new cases and 45 new deaths in Piedmont Region. NOTE: These cases and deaths will be part of Saturday’s national update. (Source 1, Source 2)",
+        "source": "https://www.ansa.it/veneto/notizie/2020/04/04/coronavirus-6-decessi-243-nuovi-casi_fcd97d12-358d-415d-b593-a8badab9d923.html"
+    }, {
+        "time_and_description": "12:28: 241 new cases and 28 new deaths in Switzerland.",
+        "source": "https://www.24heures.ch/monde/direct-nouveau-cas-coronavirus-suisse/story/24581768"
+    }, {
+        "time_and_description": "11:15: 904 new cases and 164 new deaths in the Netherlands.",
+        "source": "https://www.rivm.nl/actuele-informatie-over-coronavirus"
+    }, {
+        "time_and_description": "10:40: First death and 62 new cases in Kuwait.",
+        "source": "https://twitter.com/KUWAIT_MOH/status/1246385424924381184"
+    }, {
+        "time_and_description": "10:25: 150 new cases and 4 new deaths in Malaysia.",
+        "source": "https://twitter.com/KKMPutrajaya/status/1246362789020459009"
+    }, {
+        "time_and_description": "09:50: 2,560 new cases and 158 new deaths in Iran.",
+        "source": "https://twitter.com/AbasAslani/status/1246372956491710466"
+    }, {
+        "time_and_description": "09:39: 5,537 new cases and 546 new deaths in Spain. Compared to yesterday at the same time, there were 7,026 new cases and 809 new deaths.",
+        "source": "https://covid19.isciii.es/"
+    }, {
+        "time_and_description": "09:35: 1,661 new cases and 140 new deaths in Belgium.",
+        "source": "https://www.info-coronavirus.be/nl/news/1661-nieuwe-besmettingen-met-coronavirus-covid-19/"
+    }, {
+        "time_and_description": "09:28: First death in Georgia.",
+        "source": "https://stopcov.ge/en"
+    }, {
+        "time_and_description": "09:15: 55 new cases and 6 new deaths in Hungary.",
+        "source": "https://koronavirus.gov.hu/elhunytak"
+    }, {
+        "time_and_description": "08:11: 75 new cases in Lithuania.",
+        "source": "http://sam.lrv.lt/koronavirusas"
+    }, {
+        "time_and_description": "08:44: 103 new cases and 3 new deaths in the Czech Republic.",
+        "source": "https://onemocneni-aktualne.mzcr.cz/covid-19"
+    }, {
+        "time_and_description": "08:43: 120 new cases and 2 new deaths in Poland.",
+        "source": "https://twitter.com/MZ_GOV_PL/status/1246346972199628803"
+    }, {
+        "time_and_description": "08:40: 267 new cases and 1 new death in Finland.",
+        "source": "https://yle.fi/uutiset/3-11212596"
+    }, {
+        "time_and_description": "08:36: 76 new cases and 8 new deaths in the Philippines.",
+        "source": "https://www.doh.gov.ph/2019-nCoV"
+    }, {
+        "time_and_description": "08:34: 582 new cases and 9 new deaths in Russia.",
+        "source": "https://www.interfax.ru/russia/702535"
+    }, {
+        "time_and_description": "08:26: 316 new cases and 6 new deaths in India.",
+        "source": "https://www.indiatoday.in/coronavirus"
+    }, {
+        "time_and_description": "08:20: 83 new cases and 3 new deaths in Morocco.",
+        "source": "http://www.covidmaroc.ma/Pages/AccueilAR.aspx"
+    }, {
+        "time_and_description": "08:17: 148 new cases and 1 new death in Norway.",
+        "source": "https://www.vg.no/spesial/2020/corona/"
+    }, {
+        "time_and_description": "08:16: 161 new cases and 2 new deaths in Israel.",
+        "source": "https://www.ynetnews.com/article/BR3CIXTRC"
+    }, {
+        "time_and_description": "08:11: 73 new cases in Austria.",
+        "source": "https://info.gesundheitsministerium.at"
+    }, {
+        "time_and_description": "07:09: 1,289 new cases in Germany.",
+        "source": "https://dts-nachrichtenagentur.de/corona-fallzahlen"
+    }, {
+        "time_and_description": "06:44: 89 new cases and 1 new death in Thailand. (Source 1, Source 2)",
+        "source": "https://www.thaienquirer.com/10606/thailand-confirms-89-new-coronavirus-patients-manhunt-underway-for-thais-escaping-quarantine/"
+    }, {
+        "time_and_description": "05:20: 188 new cases and 2 new deaths in Australia. This includes 104 new cases in New South Wales, 30 new cases and 1 new death in Victoria, 27 new cases in Queensland, 14 new cases in Western Australia, 11 new cases in South Australia, and 2 new cases and 1 new death in Canberra."
+    }, {
+        "time_and_description": "04:40: 160 new cases and 6 new deaths in Brazil.",
+        "source": "https://g1.globo.com/bemestar/coronavirus/noticia/2020/04/03/casos-de-coronavirus-no-brasil-em-3-de-abril.ghtml"
+    }, {
+        "time_and_description": "04:35: Bob Glanzer, a member of the South Dakota House of Representatives, has died after testing positive for coronavirus.",
+        "source": "https://twitter.com/mgeheren/status/1246293900857413633"
+    }, {
+        "time_and_description": "04:00: First death in Suriname.",
+        "source": "https://covid-19.sr/president-bouterse-condoleert-familie-covid-19-overledene/"
+    }, {
+        "time_and_description": "04:00: 88 new cases and 5 new deaths in Argentina.",
+        "source": "https://www.clarin.com/sociedad/coronavirus-argentina-reportaron-88-contagios-muertes-ultimas-24-horas_0_1ku4wCTXA.html"
+    }, {
+        "time_and_description": "04:00: 178 new cases and 10 new deaths in Mexico.",
+        "source": "https://twitter.com/HLGatell/status/1246250331333419008"
+    }, {
+        "time_and_description": "04:00: 82 new cases in New Zealand.",
+        "source": "https://www.health.govt.nz/news-media/media-releases/82-new-cases-covid-19"
+    }, {
+        "time_and_description": "04:00: 94 new cases and 3 new deaths in South Korea.",
+        "source": "http://ncov.mohw.go.kr/tcmBoardView.do?brdId=&brdGubun=&dataGubun=&ncvContSeq=353916&contSeq=353916&board_id=&gubun=ALL"
+    }, {
+        "time_and_description": "04:00: 80 new cases, including 64 asymptomatic cases, and 4 new deaths in mainland China. All four deaths and one symptomatic case was recorded in Hubei province.",
+        "source": "http://www.nhc.gov.cn/yjb/s7860/202004/185a308e4c66426190da0c4f2f9ab026.shtml"
+    }, {
+        "time_and_description": "04:00: Friday’s coronavirus summary:– USA: +32,850 cases, +1,320 deaths– Spain: +7,134 cases, +850 deaths– Germany: +6,081 cases, +199 deaths– France: +5,233 cases, +1,120 deaths– Italy: +4,585 cases, +766 deaths– UK: +4,450 cases, +684 deaths– Turkey: +2,786 cases, +69 deaths– Global: +83,827 cases, +6,009 deaths"
+    }, {
+        "time_and_description": "03:03: 104 new cases and 3 new deaths in Washington, District of Columbia, United States.",
+        "source": "https://coronavirus.dc.gov/page/coronavirus-data"
+    }, {
+        "time_and_description": "03:02: 109 new cases and 4 new deaths in Oklahoma, United States.",
+        "source": "https://coronavirus.health.ok.gov/"
+    }, {
+        "time_and_description": "03:01: 171 new cases and 9 new deaths in Arizona, United States.",
+        "source": "https://www.azdhs.gov/preparedness/epidemiology-disease-control/infectious-disease-epidemiology/index.php#novel-coronavirus-home"
+    }, {
+        "time_and_description": "03:00: 306 new cases and 5 new deaths in Virginia, United States.",
+        "source": "http://www.vdh.virginia.gov/coronavirus/"
+    }, {
+        "time_and_description": "02:52: 62 new cases and 29 new deaths in Missouri, United States.",
+        "source": "https://www.kshb.com/news/coronavirus/covid-19-case-tracker-where-we-stand-in-mo-ks-nationwide"
+    }, {
+        "time_and_description": "02:08: 222 new cases and 5 new deaths in Tennessee, United States.",
+        "source": "https://www.tn.gov/health/cedep/ncov.html"
+    }, {
+        "time_and_description": "01:49: 306 new cases and 10 new deaths in California, United States.",
+        "source": "https://www.latimes.com/projects/california-coronavirus-cases-tracking-outbreak/"
+    }, {
+        "time_and_description": "00:37: 720 new cases and 10 new deaths in Texas, United States.",
+        "source": "https://www.houstonchronicle.com/coronavirus/article/texas-coronavirus-map-cases-houston-covid-19-15137466.php"
+    }, {
+        "time_and_description": "00:23: 281 new cases and 6 new deaths in California, United States.",
+        "source": "https://www.latimes.com/projects/california-coronavirus-cases-tracking-outbreak/"
+    }]
+}]

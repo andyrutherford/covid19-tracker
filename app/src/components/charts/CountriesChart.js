@@ -287,15 +287,24 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
   }, [addedCountry]);
 
   return (
-    <div>
-      <Search
-        confirmedCases={confirmedCases}
-        addCountry={addCountry}
-        defaults={defaults}
-      />
+    <div className='card'>
       <div className='grid-2'>
         <div>
-          <div className='card'>
+          <h1 className='text-primary'>Infection Rates by Country</h1>
+        </div>
+        <div className='search-box'>
+          <Search
+            confirmedCases={confirmedCases}
+            addCountry={addCountry}
+            defaults={defaults}
+          />
+        </div>
+      </div>
+
+      <div className='grid-2'>
+        <div>
+          {' '}
+          <div>
             {' '}
             <h2 className='text-primary'>Confirmed Cases</h2>{' '}
             {chartData.confirmed.totals && (
@@ -313,7 +322,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
         </div>
         <div>
           {' '}
-          <div className='card'>
+          <div>
             {' '}
             <h2 className='text-primary'>New Cases</h2>{' '}
             {chartData.confirmed.new && (

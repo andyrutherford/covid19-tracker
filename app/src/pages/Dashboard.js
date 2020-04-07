@@ -116,19 +116,26 @@ const Dashboard = () => {
               <Tweets />
             </div>
           </section>
-          <section className='container grid-3' id='confirmed-cases'>
-            <div className='card'>
-              <Chart1
-                confirmedCases={caseData.confirmed}
-                deathCount={caseData.deaths}
-              />
-            </div>
-            <div className='card'>
-              {/* <CasesByCountryChart confirmedCases={caseData.confirmed} /> */}
-              <NewCasesChart confirmedCases={caseData.confirmed} />
-            </div>
-            <div className='card'>
-              <NewDeathsChart deathCount={caseData.deaths} />
+          <section id='confirmed-cases'>
+            <div className='container'>
+              <div className='card'>
+                <h1 className='text-primary'>Worldwide Infections</h1>
+                <div className='grid-3'>
+                  <div>
+                    <Chart1
+                      confirmedCases={caseData.confirmed}
+                      deathCount={caseData.deaths}
+                    />
+                  </div>
+                  <div>
+                    {/* <CasesByCountryChart confirmedCases={caseData.confirmed} /> */}
+                    <NewCasesChart confirmedCases={caseData.confirmed} />
+                  </div>
+                  <div>
+                    <NewDeathsChart deathCount={caseData.deaths} />
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
           <div className='container'>
@@ -149,7 +156,6 @@ const Dashboard = () => {
             </section> */}
           <section id='demographics'>
             <div className='container'>
-              <h1>Demographics</h1>
               {caseData.demographics && (
                 <DemographicsCharts demographicsData={caseData.demographics} />
               )}

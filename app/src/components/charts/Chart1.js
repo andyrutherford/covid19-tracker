@@ -80,7 +80,7 @@ const Chart1 = ({ confirmedCases, deathCount }) => {
         label: 'Confirmed Cases',
         fill: false,
         backgroundColor: 'rgb(169, 169, 169)',
-        borderColor: 'rgb(105, 105, 105)',
+        borderColor: '#1B4F72',
         data: chartConfirmedData,
       },
       {
@@ -121,7 +121,7 @@ const Chart1 = ({ confirmedCases, deathCount }) => {
 
   return (
     <div>
-      <h2 className='text-primary'>Worldwide Cases and Deaths</h2>
+      <h2 className='text-primary'>Confirmed Cases and Deaths</h2>
       {chartConfirmedData && chartDeathsData && chartDates && (
         <div className='chart-container'>
           <Line data={data} options={options} />

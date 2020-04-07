@@ -1,11 +1,10 @@
 import axios from 'axios';
-import mockConfirmed from './mockdata/mockConfirmed.json';
-import mockDeaths from './mockdata/mockDeaths.json';
-import mockRecovered from './mockdata/mockRecovered.json';
-
-const url = 'https://coronavirus-tracker-api.herokuapp.com';
-
-const mockData = false;
+import { MOCK_DATA } from '../utils/config';
+import mockLocations from './mockdata/mockLocations';
+import mockNewCases from './mockdata/mockNewCases';
+import mockConfirmed from './mockdata/mockConfirmed';
+import mockDeaths from './mockdata/mockDeaths';
+import mockUS from './mockdata/mockUS';
 
 // export const getConfirmed = async () => {
 //   if (!mockData) {
@@ -49,46 +48,62 @@ const mockData = false;
 // };
 
 export const getLocations = async () => {
-  try {
-    const res = await axios.get('/api/locations');
-    return res.data;
-  } catch (err) {
-    console.error(err);
+  if (!MOCK_DATA) {
+    try {
+      const res = await axios.get('/api/locations');
+      return res.data;
+    } catch (err) {
+      console.error(err);
+    }
   }
+  console.log('using mock data!');
+  return mockLocations;
 };
 
 export const getNewCases = async () => {
-  try {
-    const res = await axios.get('/api/locations/new');
-    return res.data;
-  } catch (err) {
-    console.error(err);
+  if (!MOCK_DATA) {
+    try {
+      const res = await axios.get('/api/locations/new');
+      return res.data;
+    } catch (err) {
+      console.error(err);
+    }
   }
+  return mockNewCases;
 };
 
 export const getConfirmed = async () => {
-  try {
-    const res = await axios.get('/api/cases/confirmed');
-    return res.data;
-  } catch (err) {
-    console.error(err);
+  if (!MOCK_DATA) {
+    try {
+      const res = await axios.get('/api/cases/confirmed');
+      return res.data;
+    } catch (err) {
+      console.error(err);
+    }
   }
+  return mockConfirmed;
 };
 
 export const getDeaths = async () => {
-  try {
-    const res = await axios.get('/api/cases/deaths');
-    return res.data;
-  } catch (err) {
-    console.error(err);
+  if (!MOCK_DATA) {
+    try {
+      const res = await axios.get('/api/cases/deaths');
+      return res.data;
+    } catch (err) {
+      console.error(err);
+    }
   }
+  return mockDeaths;
 };
 
 export const getUS = async () => {
-  try {
-    const res = await axios.get('/api/cases/usa');
-    return res.data;
-  } catch (err) {
-    console.error(err);
+  if (!MOCK_DATA) {
+    try {
+      const res = await axios.get('/api/cases/usa');
+      return res.data;
+    } catch (err) {
+      console.error(err);
+    }
   }
+  return mockUS;
 };

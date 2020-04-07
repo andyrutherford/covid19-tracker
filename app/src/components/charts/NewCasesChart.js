@@ -49,8 +49,7 @@ const NewCasesChart = ({ confirmedCases }) => {
       {
         label: 'Confirmed Cases',
         fill: false,
-        backgroundColor: 'rgb(169, 169, 169)',
-        borderColor: 'rgb(105, 105, 105)',
+        backgroundColor: '#1B4F72',
         data: chartConfirmedData,
       },
     ],
@@ -83,7 +82,7 @@ const NewCasesChart = ({ confirmedCases }) => {
 
   return (
     <div>
-      <h2 className='text-primary'>New Cases Per Day</h2>
+      <h2 className='text-primary'>Confirmed Cases Per Day</h2>
       {chartConfirmedData && chartDates && (
         <div className='chart-container'>
           <Bar data={data} options={options} />
