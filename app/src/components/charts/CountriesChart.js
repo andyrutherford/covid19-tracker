@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
+import Search from '../Search';
 var moment = require('moment');
 
 const CountriesChart = ({ confirmedCases, deathCount }) => {
-  const selectedCountries = [
-    'US',
-    'Germany',
-    'Italy',
-    'Korea, South',
-    'Iran',
-    'Spain',
-    'United Kingdom',
-  ];
+  const countries = ['Italy', 'Germany', 'Spain', 'United Kingdom'];
+
+  const defaults = countries.map((c) => ({ label: c, value: c }));
 
   const chartColors = [
     '#003f5c',
@@ -21,11 +16,12 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
     '#ff6e54',
     '#ffa600',
     'maroon',
+    'black',
   ];
 
+  const [selectedCountries, setSelectedCountries] = useState(null);
   const [confirmedData, setConfirmedData] = useState(null);
   const [deathsData, setDeathsData] = useState(null);
-
   const [chartData, setChartData] = useState({
     confirmed: {
       totals: null,
@@ -33,6 +29,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
     },
     deaths: { totals: null, new: null },
   });
+  const [addedCountry, setAddedCountry] = useState('');
 
   const formatData = (selectedCountries, selectedDataset, key) => {
     const locations = selectedDataset.locations;
@@ -247,12 +244,26 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
     }
   };
 
+  const addCountry = (c) => {
+    setAddedCountry(c);
+  };
+
+  // Put countries object into state
   useEffect(() => {
-    formatData(selectedCountries, confirmedCases, 'confirmed');
-    formatData(selectedCountries, deathCount, 'deaths');
+    setSelectedCountries(countries);
     //eslint-disable-next-line
   }, []);
 
+  // Format data on countries in state
+  useEffect(() => {
+    if (selectedCountries) {
+      formatData(selectedCountries, confirmedCases, 'confirmed');
+      formatData(selectedCountries, deathCount, 'deaths');
+    }
+    //eslint-disable-next-line
+  }, [selectedCountries]);
+
+  // Generate chart data with confirmed data
   useEffect(() => {
     if (confirmedData) {
       generateChartData('confirmed');
@@ -260,6 +271,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
     //eslint-disable-next-line
   }, [confirmedData]);
 
+  // Generate chart data with deaths data
   useEffect(() => {
     if (deathsData) {
       generateChartData('deaths');
@@ -267,41 +279,55 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
     //eslint-disable-next-line
   }, [deathsData]);
 
+  // Push user input added country onto country object in state
+  useEffect(() => {
+    if (addedCountry) {
+      setSelectedCountries(addedCountry.map((c) => c.label));
+    }
+  }, [addedCountry]);
+
   return (
-    <div className='grid-2'>
-      <div>
-        <div className='card'>
-          {' '}
-          <h2 className='text-primary'>Confirmed Cases</h2>{' '}
-          {chartData.confirmed.totals && (
-            <div className='chart-container'>
-              <Line data={chartData.confirmed.totals} options={options} />
-            </div>
-          )}{' '}
-          <h2 className='text-primary'>Deaths</h2>{' '}
-          {chartData.deaths.totals && (
-            <div className='chart-container'>
-              <Line data={chartData.deaths.totals} options={options} />
-            </div>
-          )}
+    <div>
+      <Search
+        confirmedCases={confirmedCases}
+        addCountry={addCountry}
+        defaults={defaults}
+      />
+      <div className='grid-2'>
+        <div>
+          <div className='card'>
+            {' '}
+            <h2 className='text-primary'>Confirmed Cases</h2>{' '}
+            {chartData.confirmed.totals && (
+              <div className='chart-container'>
+                <Line data={chartData.confirmed.totals} options={options} />
+              </div>
+            )}{' '}
+            <h2 className='text-primary'>Deaths</h2>{' '}
+            {chartData.deaths.totals && (
+              <div className='chart-container'>
+                <Line data={chartData.deaths.totals} options={options} />
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-      <div>
-        {' '}
-        <div className='card'>
+        <div>
           {' '}
-          <h2 className='text-primary'>New Cases</h2>{' '}
-          {chartData.confirmed.new && (
-            <div className='chart-container'>
-              <Line data={chartData.confirmed.new} options={options} />
-            </div>
-          )}{' '}
-          <h2 className='text-primary'>New Deaths</h2>{' '}
-          {chartData.deaths.new && (
-            <div className='chart-container'>
-              <Line data={chartData.deaths.new} options={options} />
-            </div>
-          )}
+          <div className='card'>
+            {' '}
+            <h2 className='text-primary'>New Cases</h2>{' '}
+            {chartData.confirmed.new && (
+              <div className='chart-container'>
+                <Line data={chartData.confirmed.new} options={options} />
+              </div>
+            )}{' '}
+            <h2 className='text-primary'>New Deaths</h2>{' '}
+            {chartData.deaths.new && (
+              <div className='chart-container'>
+                <Line data={chartData.deaths.new} options={options} />
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
