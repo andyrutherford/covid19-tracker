@@ -5,19 +5,19 @@ const CasesByCountryChart = ({ confirmedCases }) => {
   const [chartData, setChartData] = useState(null);
 
   const formatData = () => {
-    const countries = confirmedCases.locations.map(place => {
+    const countries = confirmedCases.locations.map((place) => {
       return {
         country: place.country,
-        latest: place.latest
+        latest: place.latest,
       };
     });
 
     // Remove duplicate country entries
     const result = [];
-    Array.from(new Set(countries.map(x => x.country))).forEach(x => {
+    Array.from(new Set(countries.map((x) => x.country))).forEach((x) => {
       result.push(
         countries
-          .filter(y => y.country === x)
+          .filter((y) => y.country === x)
           .reduce((output, item) => {
             let val = output[x] === undefined ? 0 : output[x];
             output[x] = item.latest + val;
@@ -26,54 +26,34 @@ const CasesByCountryChart = ({ confirmedCases }) => {
       );
     });
 
-    //Find total cases for China
-    // let chinaTotal;
-    // result.forEach(element => {
-    //   for (let e in element) {
-    //     if (e === 'China') {
-    //       chinaTotal = element[e];
-    //     }
-    //   }
-    // });
-
     // Sort in descending order, and trim
-    const duplicatesRemoved = result.map(b => {
+    const duplicatesRemoved = result.map((b) => {
       return {
         country: Object.keys(b).toString(),
-        latest: Object.values(b).toString()
+        latest: Object.values(b).toString(),
       };
     });
 
     const formattedArray = duplicatesRemoved
-      .sort(function(a, b) {
+      .sort(function (a, b) {
         return parseFloat(b.latest) - parseFloat(a.latest);
       })
       .slice(0, 9);
 
-    const generateCountriesList = formattedArray => {
+    const generateCountriesList = (formattedArray) => {
       const arr = [];
-      formattedArray.map(c => arr.push(c.country));
+      formattedArray.map((c) => arr.push(c.country));
       return arr;
     };
 
-    const generateCountriesCases = formattedArray => {
+    const generateCountriesCases = (formattedArray) => {
       const arr = [];
-      formattedArray.map(c => arr.push(c.latest));
+      formattedArray.map((c) => arr.push(c.latest));
       return arr;
     };
 
     const countriesList = generateCountriesList(formattedArray);
     const countriesCases = generateCountriesCases(formattedArray);
-
-    // const chinaIndex = countriesList.indexOf('China');
-    // const countriesListExclChina = countriesList.filter(
-    //   element => element !== 'China'
-    // );
-    // countriesListExclChina.push('Rest of World');
-
-    // const countriesDataExclChina = countriesCases.filter(
-    //   (element, index) => index !== chinaIndex
-    // );
 
     countriesList.push('Rest of World');
 
@@ -99,11 +79,11 @@ const CasesByCountryChart = ({ confirmedCases }) => {
             '#85C1E9',
             '#AED6F1',
             '#D6EAF8',
-            '#EBF5FB'
+            '#EBF5FB',
           ],
-          data: countriesCases.slice(0, 10)
-        }
-      ]
+          data: countriesCases.slice(0, 10),
+        },
+      ],
     };
 
     setChartData(chartData);

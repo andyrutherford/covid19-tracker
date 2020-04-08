@@ -3,11 +3,11 @@ import {
   Map as LeafletMap,
   TileLayer,
   CircleMarker,
-  Popup
+  Popup,
 } from 'react-leaflet';
 
 const MyPopupMarker = ({ content, position, latest, zoomLevel }) => {
-  const generateRadius = latest => {
+  const generateRadius = (latest) => {
     // Minimum radius size is 5
     // Maximum radius size is ~50
 
@@ -46,23 +46,23 @@ const Map = ({ confirmedCases, usData }) => {
   const [zoom, setZoom] = useState(3);
 
   let data = {
-    markers: []
+    markers: [],
   };
 
   const formatData = () => {
     // Get data with valid country names
     const a = confirmedCases.locations
-      .filter(element => element.country !== undefined)
-      .filter(element => element.latest > 0)
-      .filter(element => element.country !== 'US');
+      .filter((element) => element.country !== undefined)
+      .filter((element) => element.latest > 0)
+      .filter((element) => element.country !== 'US');
 
     // Map data to retrieve coordinates, latest, country, province
-    const c = a.map(element => {
+    const c = a.map((element) => {
       return {
         coords: element.coordinates,
         latest: element.latest,
         country: element.country,
-        province: element.province
+        province: element.province,
       };
     });
 
@@ -77,7 +77,7 @@ const Map = ({ confirmedCases, usData }) => {
         key: `US_${index}`,
         latest: key.latest,
         position: [parseFloat(key.coords.lat), parseFloat(key.coords.long)],
-        content
+        content,
       });
     }
     data.markers.push(...newMarkers);
@@ -85,20 +85,20 @@ const Map = ({ confirmedCases, usData }) => {
 
   const formatUSData = () => {
     const arr = usData.locations.filter(
-      element => element.country !== undefined
+      (element) => element.country !== undefined
     );
 
     // Map data to retrieve coordinates, latest, country, province
-    const c = arr.map(element => {
+    const c = arr.map((element) => {
       return {
         coords: {
           lat: element.coordinates.latitude,
-          long: element.coordinates.longitude
+          long: element.coordinates.longitude,
         },
         latest: element.latest.confirmed,
         country: element.country,
         province: element.province,
-        county: element.county
+        county: element.county,
       };
     });
     const newMarkers = [];
@@ -114,7 +114,7 @@ const Map = ({ confirmedCases, usData }) => {
         key: index,
         latest: key.latest,
         position: [parseFloat(key.coords.lat), parseFloat(key.coords.long)],
-        content
+        content,
       });
     }
     data.markers.push(...newMarkers);
@@ -133,7 +133,7 @@ const Map = ({ confirmedCases, usData }) => {
     //eslint-disable-next-line
   }, [formatData, formatUSData]);
 
-  const zoomChange = e => {
+  const zoomChange = (e) => {
     setZoom(e.target._zoom);
   };
 
@@ -142,7 +142,7 @@ const Map = ({ confirmedCases, usData }) => {
       center={[28, 0]}
       zoom={2}
       minZoom={2}
-      onZoomEnd={e => zoomChange(e)}
+      onZoomEnd={(e) => zoomChange(e)}
     >
       <TileLayer
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 const timelineUrl =
-  'https://api.allorigins.win/raw?url=https://bnonews.com/index.php/2020/02/the-latest-coronavirus-cases/';
+  'https://bnonews.com/index.php/2020/02/the-latest-coronavirus-cases/';
 
 // @route       GET api/timeline
 // @desc        Get timeline
@@ -19,22 +19,18 @@ router.get('/', async (req, res) => {
       .each((idx, el) => {
         if (el.name === 'h4') {
           const obj = {
-            date: $(el)
-              .text()
-              .trim(),
+            date: $(el).text().trim(),
             time: $(el)
               .next()
               .children('li')
               .toArray()
-              .map(li => ({
+              .map((li) => ({
                 time_and_description: $(li)
                   .text()
                   .trim()
                   .replace(' (Source)', ''),
-                source: $(li)
-                  .find('a')
-                  .attr('href')
-              }))
+                source: $(li).find('a').attr('href'),
+              })),
           };
 
           data.push(obj);

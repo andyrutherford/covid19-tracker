@@ -12,9 +12,7 @@ import SideBar from '../layout/Sidebar';
 import Navbar from '../layout/Navbar';
 import Spinner from '../layout/Spinner';
 import Locations from '../components/Locations';
-import Stats from '../components/Stats';
 import Tweets from '../components/Tweets';
-import Search from '../components/Search';
 import Map from '../components/Map';
 import NewCasesChart from '../components/charts/NewCasesChart';
 import NewDeathsChart from '../components/charts/NewDeathsChart';
@@ -62,7 +60,6 @@ const Dashboard = () => {
   return (
     <div>
       <SideBar pageWrapId={'page-wrap'} outerContainerId={'App'} />
-
       {caseData.confirmed && caseData.deaths && caseData.timeline ? (
         <Navbar lastUpdated={caseData.confirmed.last_updated} />
       ) : (
@@ -77,26 +74,12 @@ const Dashboard = () => {
         <div>
           <section className='container grid-3-top section-1' id='top'>
             <div className='card'>
-              {/* <ConfirmedCases confirmedCases={caseData.confirmed} /> */}
               <Locations
                 locations={caseData.locations}
                 newCases={caseData.newCases}
               />
             </div>
             <div style={{ zIndex: '0' }}>
-              {/* <div
-                className='search-box'
-                style={{
-                  zIndex: '9000',
-                  position: 'relative',
-                  marginTop: '0.7rem',
-                }}
-              >
-                <Stats
-                  locations={caseData.locations}
-                  newCases={caseData.newCases}
-                />
-              </div> */}
               <div
                 className='map leaflet-container'
                 id='map'
@@ -111,12 +94,11 @@ const Dashboard = () => {
                 />
               </div>
             </div>
-
             <div className='card' id='tweets'>
               <Tweets />
             </div>
           </section>
-          <section id='confirmed-cases'>
+          <section id='worldwide-infections'>
             <div className='container'>
               <div className='card'>
                 <h1 className='text-primary'>Worldwide Infections</h1>
@@ -138,22 +120,18 @@ const Dashboard = () => {
               </div>
             </div>
           </section>
-          <div className='container'>
-            <CountriesChart
-              confirmedCases={caseData.confirmed}
-              deathCount={caseData.deaths}
-            />
+          <section id='countrywide-infections'>
+            <div className='container'>
+              <CountriesChart
+                confirmedCases={caseData.confirmed}
+                deathCount={caseData.deaths}
+              />
 
-            {/* <div className='card' id='timeline'>
+              {/* <div className='card' id='timeline'>
               <Timeline timeline={caseData.timeline} />
               </div> */}
-          </div>
-          {/* <section id='united-states'>
-            <div className='container grid-2'>
-              <div className='card'>chart1</div>
-              <div className='card'>chart2</div>
             </div>
-            </section> */}
+          </section>
           <section id='demographics'>
             <div className='container'>
               {caseData.demographics && (

@@ -4,7 +4,7 @@ import Search from '../Search';
 var moment = require('moment');
 
 const CountriesChart = ({ confirmedCases, deathCount }) => {
-  const countries = ['Italy', 'Germany', 'Spain', 'United Kingdom'];
+  const countries = ['US', 'Italy', 'Germany', 'Spain', 'United Kingdom'];
 
   const defaults = countries.map((c) => ({ label: c, value: c }));
 
@@ -158,14 +158,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
       confData.labels = confirmedData.dates;
       for (let [index, set] of confirmedData.dataset.entries()) {
         confData.datasets.push({
-          label:
-            set.country === 'US'
-              ? 'USA'
-              : set.country === 'United Kingdom'
-              ? 'UK'
-              : set.country === 'Korea, South'
-              ? 'S. Korea'
-              : set.country,
+          label: set.country,
           fill: false,
           backgroundColor: 'rgb(169, 169, 169)',
           borderColor: chartColors[index],
@@ -203,14 +196,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
       detData.labels = deathsData.dates;
       for (let [index, set] of deathsData.dataset.entries()) {
         detData.datasets.push({
-          label:
-            set.country === 'US'
-              ? 'USA'
-              : set.country === 'United Kingdom'
-              ? 'UK'
-              : set.country === 'Korea, South'
-              ? 'S. Korea'
-              : set.country,
+          label: set.country,
           fill: false,
           backgroundColor: 'rgb(169, 169, 169)',
           borderColor: chartColors[index],
@@ -222,14 +208,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
       newDetData.labels = deathsData.dates;
       for (let [index, set] of deathsData.dataset.entries()) {
         newDetData.datasets.push({
-          label:
-            set.country === 'US'
-              ? 'USA'
-              : set.country === 'United Kingdom'
-              ? 'UK'
-              : set.country === 'Korea, South'
-              ? 'S. Korea'
-              : set.country,
+          label: set.country,
           fill: false,
           backgroundColor: 'rgb(169, 169, 169)',
           borderColor: chartColors[index],
@@ -268,7 +247,6 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
     if (confirmedData) {
       generateChartData('confirmed');
     }
-    //eslint-disable-next-line
   }, [confirmedData]);
 
   // Generate chart data with deaths data
@@ -303,16 +281,14 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
 
       <div className='grid-2'>
         <div>
-          {' '}
           <div>
-            {' '}
-            <h2 className='text-primary'>Confirmed Cases</h2>{' '}
+            <h2 className='text-primary'>Confirmed Cases</h2>
             {chartData.confirmed.totals && (
               <div className='chart-container'>
                 <Line data={chartData.confirmed.totals} options={options} />
               </div>
-            )}{' '}
-            <h2 className='text-primary'>Deaths</h2>{' '}
+            )}
+            <h2 className='text-primary'>Deaths</h2>
             {chartData.deaths.totals && (
               <div className='chart-container'>
                 <Line data={chartData.deaths.totals} options={options} />
@@ -321,16 +297,14 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
           </div>
         </div>
         <div>
-          {' '}
           <div>
-            {' '}
-            <h2 className='text-primary'>New Cases</h2>{' '}
+            <h2 className='text-primary'>New Cases</h2>
             {chartData.confirmed.new && (
               <div className='chart-container'>
                 <Line data={chartData.confirmed.new} options={options} />
               </div>
-            )}{' '}
-            <h2 className='text-primary'>New Deaths</h2>{' '}
+            )}
+            <h2 className='text-primary'>New Deaths</h2>
             {chartData.deaths.new && (
               <div className='chart-container'>
                 <Line data={chartData.deaths.new} options={options} />

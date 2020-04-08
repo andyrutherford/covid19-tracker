@@ -99,7 +99,7 @@ const Navbar = ({ title, lastUpdated }) => {
 };
 
 Navbar.defaultProps = {
-  title: 'COVID-19 Tracker'
+  title: 'COVID-19 Tracker',
 };
 
 export default Navbar;

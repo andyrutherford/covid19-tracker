@@ -1,7 +1,7 @@
 import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
 
-export default props => {
+export default (props) => {
   return (
     <Menu>
       <a className='menu-item medium' href='#top'>
@@ -9,7 +9,7 @@ export default props => {
           <div>
             <i className='fas fa-home'></i>
           </div>
-          <div> Home</div>
+          <div> Top</div>
         </div>
       </a>
 
@@ -24,28 +24,6 @@ export default props => {
         </div>
       </a>
 
-      <a className='menu-item medium' href='#confirmed-cases'>
-        {' '}
-        <div className='grid-2-sidebar'>
-          {' '}
-          <div>
-            <i className='fas fa-head-side-cough'></i>
-          </div>{' '}
-          <div>Confirmed Cases</div>
-        </div>
-      </a>
-
-      <a className='menu-item medium' href='#deaths'>
-        {' '}
-        <div className='grid-2-sidebar'>
-          {' '}
-          <div>
-            <i className='fas fa-skull-crossbones'></i>{' '}
-          </div>{' '}
-          <div>Deaths</div>
-        </div>
-      </a>
-
       <a className='menu-item medium' href='#tweets'>
         {' '}
         <div className='grid-2-sidebar'>
@@ -53,11 +31,32 @@ export default props => {
           <div>
             <i className='fab fa-twitter'></i>{' '}
           </div>{' '}
-          <div>Latest Tweets</div>
+          <div>World Health Organization</div>
         </div>
       </a>
 
-      <a className='menu-item medium' href='#timeline'>
+      <a className='menu-item medium' href='#worldwide-infections'>
+        {' '}
+        <div className='grid-2-sidebar'>
+          <div>
+            <i class='fas fa-globe'></i>
+          </div>{' '}
+          <div>Worldwide Infections</div>
+        </div>
+      </a>
+
+      <a className='menu-item medium' href='#countrywide-infections'>
+        {' '}
+        <div className='grid-2-sidebar'>
+          {' '}
+          <div>
+            <i class='fas fa-flag-usa'></i>
+          </div>{' '}
+          <div>Countrywide Infections</div>
+        </div>
+      </a>
+
+      {/* <a className='menu-item medium' href='#timeline'>
         {' '}
         <div className='grid-2-sidebar'>
           {' '}
@@ -66,7 +65,7 @@ export default props => {
           </div>{' '}
           <div>Timeline</div>
         </div>
-      </a>
+  </a> */}
 
       <a className='menu-item medium' href='#demographics'>
         {' '}
