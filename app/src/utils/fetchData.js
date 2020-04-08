@@ -6,47 +6,6 @@ import mockConfirmed from './mockdata/mockConfirmed';
 import mockDeaths from './mockdata/mockDeaths';
 import mockUS from './mockdata/mockUS';
 
-// export const getConfirmed = async () => {
-//   if (!mockData) {
-//     try {
-//       const res = await axios.get(`${url}/confirmed`);
-//       return res.data;
-//     } catch (err) {
-//       console.error(err.message);
-//     }
-//   }
-//   console.log('using mock data!');
-//   console.log(mockConfirmed);
-//   return mockConfirmed;
-// };
-
-// export const getDeaths = async () => {
-//   if (!mockData) {
-//     try {
-//       const res = await axios.get(`${url}/deaths`);
-//       return res.data;
-//     } catch (err) {
-//       console.error(err.message);
-//     }
-//   }
-//   console.log('using mock data!');
-//   return mockDeaths;
-// };
-
-// export const getRecovered = async () => {
-//   if (!mockData) {
-//     try {
-//       const res = await axios.get(`${url}/recovered`);
-
-//       return res.data;
-//     } catch (err) {
-//       console.error(err.message);
-//     }
-//   }
-//   console.log('using mock data!');
-//   return mockRecovered;
-// };
-
 export const getLocations = async () => {
   if (!MOCK_DATA) {
     try {

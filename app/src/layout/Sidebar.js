@@ -39,7 +39,7 @@ export default (props) => {
         {' '}
         <div className='grid-2-sidebar'>
           <div>
-            <i class='fas fa-globe'></i>
+            <i className='fas fa-globe'></i>
           </div>{' '}
           <div>Worldwide Infections</div>
         </div>
@@ -50,7 +50,7 @@ export default (props) => {
         <div className='grid-2-sidebar'>
           {' '}
           <div>
-            <i class='fas fa-flag-usa'></i>
+            <i className='fas fa-flag-usa'></i>
           </div>{' '}
           <div>Countrywide Infections</div>
         </div>
