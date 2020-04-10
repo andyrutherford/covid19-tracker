@@ -6,6 +6,7 @@ import {
   getDeaths,
   getUS,
 } from '../utils/fetchData';
+import { formatCountryLocations } from '../utils/formatLocations';
 import { getTimeline } from '../utils/fetchTimeline';
 import { getDemographics } from '../utils/fetchDemographics';
 import SideBar from '../layout/Sidebar';
@@ -22,49 +23,25 @@ import CountriesChart from '../components/charts/CountriesChart';
 import Timeline from '../components/Timeline';
 import DemographicsCharts from '../components/charts/DemographicsCharts';
 
-const Dashboard = () => {
-  const [caseData, setCaseData] = useState({
-    newCases: null,
-    locations: null,
-    confirmed: null,
-    deaths: null,
-    usData: null,
-    timeline: null,
-    demographics: null,
-  });
+const Dashboard = ({ caseData }) => {
+  const [locations, setLocations] = useState(null);
 
   useEffect(() => {
-    getLocations().then((response) =>
-      setCaseData((prevState) => ({ ...prevState, locations: response }))
-    );
-    getNewCases().then((response) =>
-      setCaseData((prevState) => ({ ...prevState, newCases: response }))
-    );
-    getConfirmed().then((response) =>
-      setCaseData((prevState) => ({ ...prevState, confirmed: response }))
-    );
-    getDeaths().then((response) =>
-      setCaseData((prevState) => ({ ...prevState, deaths: response }))
-    );
-    getUS().then((response) =>
-      setCaseData((prevState) => ({ ...prevState, usData: response }))
-    );
-    getTimeline().then((response) =>
-      setCaseData((prevState) => ({ ...prevState, timeline: response }))
-    );
-    getDemographics().then((response) =>
-      setCaseData((prevState) => ({ ...prevState, demographics: response }))
-    );
+    if (caseData) {
+      console.log(caseData);
+      const locations = formatCountryLocations(caseData.locations);
+      setLocations(locations);
+    }
   }, []);
 
   return (
     <div>
       <SideBar pageWrapId={'page-wrap'} outerContainerId={'App'} />
-      {caseData.confirmed && caseData.deaths && caseData.timeline ? (
+      {/* caseData.confirmed && caseData.deaths && caseData.timeline ? (
         <Navbar lastUpdated={caseData.confirmed.last_updated} />
       ) : (
         <Navbar />
-      )}
+      ) */}
       {caseData.locations &&
       caseData.newCases &&
       caseData.confirmed &&
@@ -74,10 +51,7 @@ const Dashboard = () => {
         <div>
           <section className='container grid-3-top section-1' id='top'>
             <div className='card'>
-              <Locations
-                locations={caseData.locations}
-                newCases={caseData.newCases}
-              />
+              {locations && <Locations locations={locations} />}
             </div>
             <div style={{ zIndex: '0' }}>
               <div
@@ -95,7 +69,7 @@ const Dashboard = () => {
               </div>
             </div>
             <div className='card' id='tweets'>
-              <Tweets />
+              <Tweets source='who' />
             </div>
           </section>
           <section id='worldwide-infections'>

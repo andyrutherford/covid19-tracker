@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Rodal from 'rodal';
+import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 
 import 'rodal/lib/rodal.css';
@@ -33,12 +33,13 @@ const Navbar = ({ title, lastUpdated }) => {
             </Moment>{' '}
           </li>
         )}
-        {/* <li className='nav-link'>
-          <a href='https://github.com/andyrutherford/covid19-tracker'>
-            <i className='fab fa-github-alt fa-lg'></i>
-          </a>
-      </li> 
         <li className='nav-link'>
+          <Link to='/'>World</Link>
+        </li>
+        <li className='nav-link'>
+          <Link to='/united-states'>USA</Link>
+        </li>
+        {/* <li className='nav-link'>
           <a href='#' onClick={onShowModal}>
             <i className='fas fa-question fa-lg'></i>
           </a>

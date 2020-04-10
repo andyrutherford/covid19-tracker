@@ -84,9 +84,9 @@ const Map = ({ confirmedCases, usData }) => {
   };
 
   const formatUSData = () => {
-    const arr = usData.locations.filter(
-      (element) => element.country !== undefined
-    );
+    const arr = usData.locations
+      .filter((element) => element.country !== undefined)
+      .filter((element) => element.latest.confirmed > 0);
 
     // Map data to retrieve coordinates, latest, country, province
     const c = arr.map((element) => {

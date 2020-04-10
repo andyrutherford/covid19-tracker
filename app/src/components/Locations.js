@@ -4,63 +4,10 @@ import FlagIcon from '../components/FlagIcon';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
-const Locations = ({ locations, newCases }) => {
-  const [locationList, setLocationList] = useState({
-    latestConfirmed: null,
-    latestDeaths: null,
-    locations: null,
-  });
-
-  const formatData = () => {
-    const data = locations.locations.map((location) => ({
-      country:
-        location.country === 'US'
-          ? 'United States'
-          : location.country === 'Korea, South'
-          ? 'South Korea'
-          : location.country,
-      country_code:
-        location.country_code === 'XK' || location.country_code === 'XX'
-          ? 'un'
-          : location.country_code.toLowerCase(),
-      confirmed: location.latest.confirmed,
-      deaths: location.latest.deaths,
-    }));
-
-    // Consolidate duplicates
-    var output = data.reduce(function (accumulator, cur) {
-      var country = cur.country,
-        found = accumulator.find(function (elem) {
-          return elem.country === country;
-        });
-      if (found) {
-        found.confirmed += cur.confirmed;
-        found.deaths += cur.deaths;
-      } else accumulator.push(cur);
-      return accumulator;
-    }, []);
-
-    // Sort and remove any countries with less than 100 cases
-    const final = output
-      .sort((a, b) => b.confirmed - a.confirmed)
-      .filter((element) => element.confirmed > 100);
-
-    setLocationList({
-      ...locationList,
-      latestConfirmed: locations.latest.confirmed,
-      latestDeaths: locations.latest.deaths,
-      locations: final,
-    });
-  };
-
-  useEffect(() => {
-    formatData();
-    //eslint-disable-next-line
-  }, []);
-
+const Locations = ({ locations }) => {
   return (
     <div>
-      {locationList.locations && (
+      {locations && (
         <Fragment>
           <div
             className='container case-totals'
@@ -71,7 +18,7 @@ const Locations = ({ locations, newCases }) => {
               <h1 className='text-danger text-center large'>
                 <CountUp
                   start={0}
-                  end={parseInt(locationList.latestConfirmed)}
+                  end={parseInt(locations.latestConfirmed)}
                   delay={0}
                   duration={2}
                   separator={','}
@@ -89,7 +36,7 @@ const Locations = ({ locations, newCases }) => {
               <h1 className='text-primary text-center large'>
                 <CountUp
                   start={0}
-                  end={parseInt(locationList.latestDeaths)}
+                  end={parseInt(locations.latestDeaths)}
                   delay={0}
                   duration={2}
                   separator={','}
@@ -107,7 +54,7 @@ const Locations = ({ locations, newCases }) => {
           <div className='stat-list-container'>
             <PerfectScrollbar>
               <ul>
-                {locationList.locations.map((c, i) => (
+                {locations.locations.map((c, i) => (
                   <li key={i}>
                     <div className='grid-2-stats'>
                       <div className='small'>
@@ -119,8 +66,8 @@ const Locations = ({ locations, newCases }) => {
                         </div>{' '}
                       </div>
                       <div>
-                        <FlagIcon code={c.country_code} />{' '}
-                        <p style={{ display: 'inline-block' }}>{c.country}</p>
+                        <FlagIcon code={c.loc_code} />{' '}
+                        <p style={{ display: 'inline-block' }}>{c.loc}</p>
                       </div>
                     </div>
                   </li>
