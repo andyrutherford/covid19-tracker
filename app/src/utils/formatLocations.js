@@ -1,5 +1,4 @@
 export const formatCountryLocations = (locations) => {
-  console.log(locations);
   const data = locations.locations.map((location) => ({
     loc:
       location.country === 'US'
@@ -36,7 +35,6 @@ export const formatCountryLocations = (locations) => {
     latestDeaths: locations.latest.deaths,
     locations: final,
   };
-  console.log(formatted);
   return formatted;
 };
 

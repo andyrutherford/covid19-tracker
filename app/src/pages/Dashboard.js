@@ -7,6 +7,7 @@ import {
   getUS,
 } from '../utils/fetchData';
 import { formatCountryLocations } from '../utils/formatLocations';
+import { formatWorldMap, formatUSMap } from '../utils/formatMap';
 import { getTimeline } from '../utils/fetchTimeline';
 import { getDemographics } from '../utils/fetchDemographics';
 import SideBar from '../layout/Sidebar';
@@ -25,12 +26,16 @@ import DemographicsCharts from '../components/charts/DemographicsCharts';
 
 const Dashboard = ({ caseData }) => {
   const [locations, setLocations] = useState(null);
+  const [mapData, setMapData] = useState(null);
 
   useEffect(() => {
     if (caseData) {
-      console.log(caseData);
       const locations = formatCountryLocations(caseData.locations);
       setLocations(locations);
+
+      const map = formatWorldMap(caseData.confirmed, caseData.usData);
+      const USmap = formatUSMap(caseData.usData);
+      setMapData(map);
     }
   }, []);
 
@@ -62,10 +67,11 @@ const Dashboard = ({ caseData }) => {
                   zIndex: '0',
                 }}
               >
-                <Map
+                {/* <Map
                   confirmedCases={caseData.confirmed}
                   usData={caseData.usData}
-                />
+                /> */}
+                <Map mapData={mapData} center={[28, 0]} zoom={2} />
               </div>
             </div>
             <div className='card' id='tweets'>

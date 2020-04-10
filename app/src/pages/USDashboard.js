@@ -3,23 +3,27 @@ import Locations from '../components/Locations';
 import Map from '../components/Map';
 import Tweets from '../components/Tweets';
 import { formatStateLocations } from '../utils/formatLocations';
+import { formatUSMap } from '../utils/formatMap';
 
-const USDashboard = ({ caseData }) => {
+const USDashboard = ({ caseData, orig }) => {
   const [data, setData] = useState(null);
   const [locations, setLocations] = useState(null);
+  const [mapData, setMapData] = useState(null);
 
   useEffect(() => {
     if (caseData) {
       console.log(caseData);
       const locations = formatStateLocations(caseData);
       setLocations(locations);
+      const map = formatUSMap(caseData);
+      setMapData(map);
     }
   }, []);
 
   return (
     <div>
       {' '}
-      <section className='container grid-3-top section-1' id='top'>
+      <section className='container grid-3-top-us section-1' id='top'>
         {locations && (
           <div className='card'>
             <Locations locations={locations} />
@@ -34,7 +38,7 @@ const USDashboard = ({ caseData }) => {
               zIndex: '0',
             }}
           >
-            Map Component
+            <Map mapData={mapData} center={[40, -100]} zoom={5} />
           </div>
         </div>
         <div className='card' id='tweets'>

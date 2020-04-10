@@ -77,15 +77,25 @@ function App() {
                 render={(props) => <Dashboard {...props} caseData={caseData} />}
               />
             )}
-          {caseData.usData && (
-            <Route
-              exact
-              path='/united-states'
-              render={(props) => (
-                <USDashboard {...props} caseData={caseData.usData} />
-              )}
-            />
-          )}
+          {newCases &&
+            locations &&
+            confirmed &&
+            deaths &&
+            usData &&
+            timeline &&
+            demographics && (
+              <Route
+                exact
+                path='/united-states'
+                render={(props) => (
+                  <USDashboard
+                    {...props}
+                    caseData={caseData.usData}
+                    orig={caseData}
+                  />
+                )}
+              />
+            )}
           )}
         </Switch>
       </div>
