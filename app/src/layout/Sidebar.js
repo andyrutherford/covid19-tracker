@@ -31,7 +31,7 @@ export default (props) => {
           <div>
             <i className='fab fa-twitter'></i>{' '}
           </div>{' '}
-          <div>World Health Organization</div>
+          <div>WHO</div>
         </div>
       </a>
 

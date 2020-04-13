@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { formatCountryLocations } from '../utils/formatLocations';
 import { formatWorldMap } from '../utils/formatMap';
-import SideBar from '../layout/Sidebar';
 import Spinner from '../layout/Spinner';
 import Locations from '../components/Locations';
 import Tweets from '../components/Tweets';
@@ -33,8 +32,6 @@ const Dashboard = ({ caseData }) => {
 
   return (
     <div>
-      <SideBar pageWrapId={'page-wrap'} outerContainerId={'App'} />
-
       {caseData.locations &&
       caseData.newCases &&
       caseData.confirmed &&

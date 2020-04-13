@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
+import ReactTooltip from 'react-tooltip';
 import SideBar from '../layout/Sidebar';
 
 const Navbar = ({ title, lastUpdated }) => {
@@ -26,14 +27,16 @@ const Navbar = ({ title, lastUpdated }) => {
             </li>
           )}
           <li className='nav-link'>
-            <Link to='/'>
+            <Link to='/' data-tip='Worldwide'>
               <i className='fas fa-globe'></i>
             </Link>
+            <ReactTooltip place='left' type='dark' effect='solid' />
           </li>
           <li className='nav-link'>
-            <Link to='/united-states'>
+            <Link to='/united-states' data-tip='United States'>
               <i className='fas fa-flag-usa'></i>
             </Link>
+            <ReactTooltip place='left' type='dark' effect='solid' />
           </li>
           {/* <li className='nav-link'>
           <a href='#' onClick={onShowModal}>
