@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
 import {
   Map as LeafletMap,
   TileLayer,
@@ -40,98 +40,8 @@ const MyMarkersList = ({ markers, zoomLevel }) => {
 };
 
 const Map = ({ mapData, center, zoom }) => {
-  // const [mapData, setMapData] = useState({ markers: [] });
-
   //This value must be set to the same value of the default zoom prop in Map component
   const [zoomLevel, setZoomLevel] = useState(3);
-
-  // let data = {
-  //   markers: [],
-  // };
-
-  // const formatData = () => {
-  //   // Get data with valid country names
-  //   const a = confirmedCases.locations
-  //     .filter((element) => element.country !== undefined)
-  //     .filter((element) => element.latest > 0)
-  //     .filter((element) => element.country !== 'US');
-
-  //   // Map data to retrieve coordinates, latest, country, province
-  //   const c = a.map((element) => {
-  //     return {
-  //       coords: element.coordinates,
-  //       latest: element.latest,
-  //       country: element.country,
-  //       province: element.province,
-  //     };
-  //   });
-
-  //   // Create and format new markers data
-  //   const newMarkers = [];
-  //   for (let [index, key] of c.entries()) {
-  //     const content =
-  //       key.province === ''
-  //         ? `${key.country}: ${key.latest} Confirmed Cases`
-  //         : `${key.province}, ${key.country}: ${key.latest} Confirmed Cases`;
-  //     newMarkers.push({
-  //       key: `US_${index}`,
-  //       latest: key.latest,
-  //       position: [parseFloat(key.coords.lat), parseFloat(key.coords.long)],
-  //       content,
-  //     });
-  //   }
-  //   data.markers.push(...newMarkers);
-  // };
-
-  // const formatUSData = () => {
-  //   const arr = usData.locations
-  //     .filter((element) => element.country !== undefined)
-  //     .filter((element) => element.latest.confirmed > 1000);
-
-  //   // Map data to retrieve coordinates, latest, country, province
-  //   const c = arr.map((element) => {
-  //     return {
-  //       coords: {
-  //         lat: element.coordinates.latitude,
-  //         long: element.coordinates.longitude,
-  //       },
-  //       latest: element.latest.confirmed,
-  //       country: element.country,
-  //       province: element.province,
-  //       county: element.county,
-  //     };
-  //   });
-  //   const newMarkers = [];
-  //   for (let [index, key] of c.entries()) {
-  //     const content =
-  //       key.county === ''
-  //         ? key.province === ''
-  //           ? `${key.country}: ${key.latest} Confirmed Cases`
-  //           : `${key.province}, ${key.country}: ${key.latest} Confirmed Cases`
-  //         : `${key.county}, ${key.province}, ${key.country}: ${key.latest} Confirmed Cases`;
-
-  //     newMarkers.push({
-  //       key: index,
-  //       latest: key.latest,
-  //       position: [parseFloat(key.coords.lat), parseFloat(key.coords.long)],
-  //       content,
-  //     });
-  //   }
-  //   data.markers.push(...newMarkers);
-  // };
-
-  // useEffect(() => {
-  //   formatData();
-  //   formatUSData();
-  //   //eslint-disable-next-line
-  // }, []);
-
-  // useEffect(() => {
-  //   if (data.markers.length > 0) {
-  //     setMapData(data);
-  //   }
-  //   //eslint-disable-next-line
-  // }, [formatData, formatUSData]);
 
   const zoomChange = (e) => {
     setZoomLevel(e.target._zoom);

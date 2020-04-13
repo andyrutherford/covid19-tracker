@@ -1,10 +1,10 @@
-import React, { useEffect, useState, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import CountUp from 'react-countup';
 import FlagIcon from '../components/FlagIcon';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
-const Locations = ({ locations }) => {
+const Locations = ({ locations, showFlags }) => {
   return (
     <div>
       {locations && (
@@ -66,7 +66,7 @@ const Locations = ({ locations }) => {
                         </div>{' '}
                       </div>
                       <div>
-                        <FlagIcon code={c.loc_code} />{' '}
+                        {showFlags && <FlagIcon code={c.loc_code} />}{' '}
                         <p style={{ display: 'inline-block' }}>{c.loc}</p>
                       </div>
                     </div>
@@ -79,6 +79,10 @@ const Locations = ({ locations }) => {
       )}
     </div>
   );
+};
+
+Locations.defaultProps = {
+  showFlags: true,
 };
 
 export default Locations;

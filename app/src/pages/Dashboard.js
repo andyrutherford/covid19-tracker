@@ -1,28 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import {
-  getLocations,
-  getNewCases,
-  getConfirmed,
-  getDeaths,
-  getUS,
-} from '../utils/fetchData';
 import { formatCountryLocations } from '../utils/formatLocations';
-import { formatWorldMap, formatUSMap } from '../utils/formatMap';
-import { getTimeline } from '../utils/fetchTimeline';
-import { getDemographics } from '../utils/fetchDemographics';
+import { formatWorldMap } from '../utils/formatMap';
 import SideBar from '../layout/Sidebar';
-import Navbar from '../layout/Navbar';
 import Spinner from '../layout/Spinner';
 import Locations from '../components/Locations';
 import Tweets from '../components/Tweets';
 import Map from '../components/Map';
 import NewCasesChart from '../components/charts/NewCasesChart';
 import NewDeathsChart from '../components/charts/NewDeathsChart';
-import CasesByCountryChart from '../components/charts/CasesByCountryChart';
 import Chart1 from '../components/charts/Chart1';
 import CountriesChart from '../components/charts/CountriesChart';
-import Timeline from '../components/Timeline';
 import DemographicsCharts from '../components/charts/DemographicsCharts';
+
+/* Disabled Components */
+// import { getTimeline } from '../utils/fetchTimeline';
+// import Timeline from '../components/Timeline';
+// import CasesByCountryChart from '../components/charts/CasesByCountryChart';
 
 const Dashboard = ({ caseData }) => {
   const [locations, setLocations] = useState(null);
@@ -32,21 +25,16 @@ const Dashboard = ({ caseData }) => {
     if (caseData) {
       const locations = formatCountryLocations(caseData.locations);
       setLocations(locations);
-
       const map = formatWorldMap(caseData.confirmed, caseData.usData);
-      const USmap = formatUSMap(caseData.usData);
       setMapData(map);
     }
+    //eslint-disable-next-line
   }, []);
 
   return (
     <div>
       <SideBar pageWrapId={'page-wrap'} outerContainerId={'App'} />
-      {/* caseData.confirmed && caseData.deaths && caseData.timeline ? (
-        <Navbar lastUpdated={caseData.confirmed.last_updated} />
-      ) : (
-        <Navbar />
-      ) */}
+
       {caseData.locations &&
       caseData.newCases &&
       caseData.confirmed &&

@@ -1,45 +1,41 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
-
-import 'rodal/lib/rodal.css';
+import SideBar from '../layout/Sidebar';
 
 const Navbar = ({ title, lastUpdated }) => {
-  const [showModal, setShowModal] = useState(false);
-
-  const onShowModal = () => {
-    setShowModal(true);
-  };
-
-  const onHideModal = () => {
-    setShowModal(false);
-  };
-
   return (
-    <div className='navbar bg-primary'>
-      <div>
-        <h2 className='navbar-title'>
-          <a href='/'>
-            <i className='fas fa-globe-americas fa-lg'></i> {title}
-          </a>
-        </h2>
-      </div>
-      <ul>
-        {lastUpdated && (
-          <li className='navbar-subtext small'>
-            Last updated{' '}
-            <Moment local format='HH:mm MMM DD YYYY '>
-              {lastUpdated}
-            </Moment>{' '}
+    <div>
+      <SideBar pageWrapId={'page-wrap'} outerContainerId={'App'} />
+
+      <div className='navbar bg-primary'>
+        <div>
+          <h2 className='navbar-title'>
+            <a href='/'>
+              <i className='fas fa-globe-americas fa-lg'></i> {title}
+            </a>
+          </h2>
+        </div>
+        <ul>
+          {lastUpdated && (
+            <li className='navbar-subtext small'>
+              Last updated{' '}
+              <Moment local format='HH:mm MMM DD YYYY '>
+                {lastUpdated}
+              </Moment>{' '}
+            </li>
+          )}
+          <li className='nav-link'>
+            <Link to='/'>
+              <i className='fas fa-globe'></i>
+            </Link>
           </li>
-        )}
-        <li className='nav-link'>
-          <Link to='/'>World</Link>
-        </li>
-        <li className='nav-link'>
-          <Link to='/united-states'>USA</Link>
-        </li>
-        {/* <li className='nav-link'>
+          <li className='nav-link'>
+            <Link to='/united-states'>
+              <i className='fas fa-flag-usa'></i>
+            </Link>
+          </li>
+          {/* <li className='nav-link'>
           <a href='#' onClick={onShowModal}>
             <i className='fas fa-question fa-lg'></i>
           </a>
@@ -94,7 +90,8 @@ const Navbar = ({ title, lastUpdated }) => {
             </div>
           </Rodal>
         </li>*/}
-      </ul>
+        </ul>
+      </div>
     </div>
   );
 };

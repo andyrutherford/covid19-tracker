@@ -1,7 +1,4 @@
 export const formatWorldMap = (confirmedCases, usData) => {
-  console.log(confirmedCases);
-  console.log(usData);
-
   const formatData = (confirmedCases) => {
     // Get data with valid country names
     const a = confirmedCases.locations
@@ -83,7 +80,6 @@ export const formatWorldMap = (confirmedCases, usData) => {
 };
 
 export const formatUSMap = (usData) => {
-  console.log(usData);
   const arr = usData.locations
     .filter((element) => element.country !== undefined)
     .filter((element) => element.latest.confirmed > 0);
@@ -120,6 +116,6 @@ export const formatUSMap = (usData) => {
   const data = {
     markers: [...newMarkers],
   };
-  console.log(data);
+
   return data;
 };

@@ -247,6 +247,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
     if (confirmedData) {
       generateChartData('confirmed');
     }
+    //eslint-disable-next-line
   }, [confirmedData]);
 
   // Generate chart data with deaths data
