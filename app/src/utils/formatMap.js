@@ -75,7 +75,6 @@ export const formatWorldMap = (confirmedCases, usData) => {
   const data = {
     markers: [...worldMarkers, ...usMarkers],
   };
-  console.log(data);
   return data;
 };
 

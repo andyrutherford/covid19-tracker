@@ -40,7 +40,6 @@ export const formatCountryLocations = (locations) => {
 
 export const formatStateLocations = (caseData) => {
   // // Navajo Nation, DC, Guam, US Virgin Islands, Northern Mariana Islands
-  console.log(caseData);
   const data = caseData.locations.map((c) => ({
     loc:
       c.province === 'District of Columbia' ? 'Dist. of Columbia' : c.province,
@@ -69,6 +68,5 @@ export const formatStateLocations = (caseData) => {
     latestDeaths: caseData.latest.deaths,
     locations: final,
   };
-  console.log(formatted);
   return formatted;
 };

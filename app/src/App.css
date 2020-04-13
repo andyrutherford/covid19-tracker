@@ -608,6 +608,7 @@ table th {
   .grid-2,
   .grid-3,
   .grid-3-top,
+  .grid-3-top-us,
   .grid-4 {
     grid-template-columns: 1fr;
   }
@@ -647,30 +648,6 @@ table th {
   width: auto;
 }
 
-/* Sections */
-
-
-/* Modal */
-.modal {
-  color: rgba(0, 0, 0, 0.6);
-}
-
-.modal a {
-  color: black;
-  padding: 0;
-  margin: 0;
-  text-decoration: underline;
-}
-
-.modal a:hover {
-  color: black;
-}
-
-/* Timeline */
-.timeline-container {
-  height: 730px;
-  overflow-y: auto;
-}
 
 /* Search Box */
 .search-box {
