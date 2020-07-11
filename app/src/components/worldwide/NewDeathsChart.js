@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
+import global from '../../global';
+
 var moment = require('moment');
 
 const NewDeathsChart = ({ deathCount }) => {
@@ -11,7 +13,7 @@ const NewDeathsChart = ({ deathCount }) => {
 
     const generateDatesArray = () => {
       const arr = [];
-      for (let i = 1; i < 45; i++) {
+      for (let i = 1; i < global.DAYS_TO_SHOW; i++) {
         const date = moment().subtract(i, 'days').format('M/D/YY');
         arr.push(date);
       }

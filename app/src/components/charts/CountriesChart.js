@@ -4,7 +4,7 @@ import Search from '../Search';
 var moment = require('moment');
 
 const CountriesChart = ({ confirmedCases, deathCount }) => {
-  const countries = ['US', 'Italy', 'Germany', 'Spain', 'United Kingdom'];
+  const countries = ['US', 'India', 'Brazil', 'United Kingdom'];
 
   const defaults = countries.map((c) => ({ label: c, value: c }));
 
@@ -42,7 +42,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
     // Create dates array
     const generateDatesArray = () => {
       const arr = [];
-      for (let i = 1; i < 30; i++) {
+      for (let i = 1; i < 120; i++) {
         const date = moment().subtract(i, 'days').format('M/D/YY');
         arr.push(date);
       }
@@ -124,7 +124,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
     },
     elements: {
       point: {
-        radius: 3,
+        radius: 0,
       },
     },
     scales: {
@@ -160,6 +160,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
         confData.datasets.push({
           label: set.country,
           fill: false,
+          borderWidth: 2,
           backgroundColor: 'rgb(169, 169, 169)',
           borderColor: chartColors[index],
           data: set.totals,
@@ -179,6 +180,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
               ? 'S. Korea'
               : set.country,
           fill: false,
+          borderWidth: 2,
           backgroundColor: 'rgb(169, 169, 169)',
           borderColor: chartColors[index],
           data: set.new,
@@ -198,6 +200,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
         detData.datasets.push({
           label: set.country,
           fill: false,
+          borderWidth: 2,
           backgroundColor: 'rgb(169, 169, 169)',
           borderColor: chartColors[index],
           data: set.totals,
@@ -210,6 +213,7 @@ const CountriesChart = ({ confirmedCases, deathCount }) => {
         newDetData.datasets.push({
           label: set.country,
           fill: false,
+          borderWidth: 2,
           backgroundColor: 'rgb(169, 169, 169)',
           borderColor: chartColors[index],
           data: set.new,
