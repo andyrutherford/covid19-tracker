@@ -2,7 +2,7 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #1B4F72;
+  --primary-color: #1b4f72;
   --dark-color: #333333;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
@@ -140,13 +140,6 @@ h1 {
   text-align: center;
 }
 
-/* Cards */
-.card {
-  padding: 1rem 0 1rem 1rem;
-  border: #ccc 1px dotted;
-  margin: 0.7rem 0;
-}
-
 /* List */
 .list {
   margin: 0.5rem 0;
@@ -249,7 +242,7 @@ h1 {
 
 .grid-3-top {
   display: grid;
-  grid-template-columns: 250px auto 360px;
+  grid-template-columns: 300px auto 360px;
   grid-gap: 1rem;
 }
 
@@ -518,7 +511,7 @@ table th {
 
 /* General sidebar styles */
 .bm-menu {
-  background: #1B4F72;
+  background: #1b4f72;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
@@ -549,7 +542,6 @@ table th {
 }
 
 @media (max-width: 700px) {
-
   /* Disable sidebar on mobile */
   .sidebar {
     display: none;
@@ -567,8 +559,6 @@ table th {
   .navbar {
     margin: 0;
   }
-
-
 
   .card {
     margin-bottom: 0;
@@ -647,7 +637,6 @@ table th {
   height: 600px;
   width: auto;
 }
-
 
 /* Search Box */
 .search-box {

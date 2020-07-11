@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 var moment = require('moment');
 
-const Chart1 = ({ confirmedCases, deathCount }) => {
+const WorldwideChart = ({ confirmedCases, deathCount }) => {
   const [chartConfirmedData, setConfirmedChartData] = useState(null);
   const [chartDeathsData, setChartDeathsData] = useState(null);
 
@@ -131,4 +131,4 @@ const Chart1 = ({ confirmedCases, deathCount }) => {
   );
 };
 
-export default Chart1;
+export default WorldwideChart;

@@ -9,10 +9,7 @@ const Locations = ({ locations, showFlags }) => {
     <div>
       {locations && (
         <Fragment>
-          <div
-            className='container case-totals'
-            style={{ marginLeft: '-1rem' }}
-          >
+          <div className='container case-totals mt-3'>
             <div>
               {' '}
               <h1 className='text-danger text-center large'>
@@ -56,8 +53,8 @@ const Locations = ({ locations, showFlags }) => {
               <ul>
                 {locations.locations.map((c, i) => (
                   <li key={i}>
-                    <div className='grid-2-stats'>
-                      <div className='small'>
+                    <div className='d-flex justify-content-center'>
+                      <div className='col-4 small'>
                         <div className='text-danger text-right'>
                           {c.confirmed.toLocaleString()}
                         </div>{' '}
@@ -65,7 +62,7 @@ const Locations = ({ locations, showFlags }) => {
                           {c.deaths.toLocaleString()}
                         </div>{' '}
                       </div>
-                      <div>
+                      <div className='col-8'>
                         {showFlags && <FlagIcon code={c.loc_code} />}{' '}
                         <p style={{ display: 'inline-block' }}>{c.loc}</p>
                       </div>

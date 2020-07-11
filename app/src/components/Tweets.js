@@ -8,7 +8,7 @@ const Tweets = ({ source }) => {
       <TwitterTimelineEmbed
         sourceType='profile'
         screenName={source}
-        options={{ height: '77vh' }}
+        options={{ height: '600px' }}
       />
     </div>
   );

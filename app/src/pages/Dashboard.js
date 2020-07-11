@@ -5,9 +5,9 @@ import Spinner from '../layout/Spinner';
 import Locations from '../components/Locations';
 import Tweets from '../components/Tweets';
 import Map from '../components/Map';
-import NewCasesChart from '../components/charts/NewCasesChart';
-import NewDeathsChart from '../components/charts/NewDeathsChart';
-import Chart1 from '../components/charts/Chart1';
+import NewCasesChart from '../components/worldwide/NewCasesChart';
+import NewDeathsChart from '../components/worldwide/NewDeathsChart';
+import Chart1 from '../components/worldwide/WorldwideChart';
 import CountriesChart from '../components/charts/CountriesChart';
 import DemographicsCharts from '../components/charts/DemographicsCharts';
 
