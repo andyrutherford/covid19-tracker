@@ -4,7 +4,7 @@ import Search from '../Search';
 var moment = require('moment');
 
 const CountriesChart = ({ confirmedCases, deathCount }) => {
-  const countries = ['US', 'India', 'Brazil', 'United Kingdom'];
+  const countries = ['US', 'India', 'Brazil', 'United Kingdom', 'Russia'];
 
   const defaults = countries.map((c) => ({ label: c, value: c }));
 

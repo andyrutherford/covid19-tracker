@@ -8,8 +8,6 @@ const NewCasesChart = ({ confirmedCases }) => {
   const [chartConfirmedData, setConfirmedChartData] = useState(null);
   const [chartDates, setChartDates] = useState(null);
 
-  console.log(process.env.REACT_APP_DAYS_TO_SHOW);
-
   const formatConfirmedData = () => {
     const { locations } = confirmedCases;
 

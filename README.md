@@ -2,6 +2,8 @@
 
 Visualize the rate of infection and spread of the 2019 novel coronavirus (COVID-19).
 
+Check out the newest version of this project [here](https://github.com/andyrutherford/covid2.0).
+
 <img src="./img/screenshot_desktop.jpg" width="950">
 <img src="./img/screenshot_mobile.jpg" width="250">
 
@@ -38,7 +40,7 @@ COVID19-Tracker uses a number of open source projects to work properly:
 
 ## Demo
 
-Here is a working live demo : https://coronavirus-covid-19-tracker.herokuapp.com/
+Check out the newest version of this project [here](https://github.com/andyrutherford/covid2.0).
 
 ## License
 

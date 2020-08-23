@@ -63,7 +63,7 @@ const Dashboard = ({ caseData }) => {
               <Tweets source='who' />
             </div>
           </section>
-          <section id='worldwide-infections'>
+          <section id='worldwide-infections' className='mt-5'>
             <div className='container'>
               <div className='card'>
                 <h1 className='text-primary'>Worldwide Infections</h1>
@@ -85,7 +85,7 @@ const Dashboard = ({ caseData }) => {
               </div>
             </div>
           </section>
-          <section id='countrywide-infections'>
+          <section id='countrywide-infections' className='mt-5'>
             <div className='container'>
               <CountriesChart
                 confirmedCases={caseData.confirmed}
@@ -97,7 +97,7 @@ const Dashboard = ({ caseData }) => {
               </div> */}
             </div>
           </section>
-          <section id='demographics'>
+          <section id='demographics' className='mt-5'>
             <div className='container'>
               {caseData.demographics && (
                 <DemographicsCharts demographicsData={caseData.demographics} />

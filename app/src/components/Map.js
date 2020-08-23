@@ -13,7 +13,7 @@ const MyPopupMarker = ({ content, position, latest, zoomLevel }) => {
 
     //Set size of circle markers (between 1 to 3)
     //const markerSize = 1.5;
-    const markerSize = zoomLevel * 0.3;
+    const markerSize = zoomLevel * 0.15;
     //return Math.log(latest) * 2.5 < 5 ? 5 : Math.log(latest) * markerSize;
     return Math.log(latest) * markerSize + markerSize;
   };
